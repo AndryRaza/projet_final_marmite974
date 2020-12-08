@@ -67,12 +67,12 @@ Chaque atelier possède les champs suivants :
 
 ### Couleurs
 
-![sparkles](ressources/img_charte_graphique/couleurs.png)
+![sparkles](ressources/charte/couleurs.png)
 
 ### Font 
 
 Police Roboto 
 
-Police Verdana 
+Police Verdana
 
 
