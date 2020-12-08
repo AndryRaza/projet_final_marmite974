@@ -63,6 +63,8 @@ Chaque atelier possède les champs suivants :
 | particulier | voir la liste des ateliers | s'inscrire à un atelier |une page qui affiche la liste des ateliers disponibles |
 | particulier | m'inscrire à un atelier | de réserver ma place | Lorsqu'un particulier s'inscrit à un atelier le nombre de places réservées de celui | 
 
+## Wireframe 
+
 ## Charte graphique 
 
 ### Couleurs
@@ -75,4 +77,5 @@ Police Roboto
 
 Police Verdana
 
+## Trello 
 
