@@ -57,7 +57,7 @@
                         <div class="form-group row row-cols-md-2 row-cols-1">
                          
                             <label for="spécialtite-du-cuisinier" class="col-md-3"> Spécialité </label>
-                            <input type="text" class=" form-control col-md-9" name="specialite_du_cuisinier" pattern="[a-zA-Z0-9 é è à ^ ' @ -]+" >
+                            <input type="text" class=" form-control col-md-9" name="specialite_du_cuisinier" pattern="[a-zA-Z @ & é è' $ # µ ç §]+" >
   
                         </div>
   
@@ -69,11 +69,9 @@
   
                         </div>
 
-                        <div class="form-group d-flex justify-content-between">
-                            <input type="hidden" name="statut_particulier" value="cuisinier">
-                            <input type="hidden" name="atelier_cuisinier" value="atelier_cuisinier">
-                            <label for="inscription_particulier">* : Champ obligatoire</label>
-                            <input class="btn-lg btn-info" type="submit" name="inscription_cuisinier" value="S'inscrire">
+                        <div class="form-group dd-flex justify-content-center">
+                         <input type="submit"class="btn" name="envoyer_l_inscription" value="s'inscrire">
+
                         </div>
 
                     
