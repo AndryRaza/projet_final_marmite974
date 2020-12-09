@@ -21,13 +21,64 @@
 <body>
     <section class="container-fluid">
         <div class="container mt-2">
-            <div class="row">
-                <label for="inputPassword" class="col-sm-2 col-form-label">Titre :</label>
-                <div class="col-sm-10">
-                    <input class="form-control" type="text" placeholder="Default input"
-                        aria-label="default input example">
+            <!-- Formulaire à insérer ici-->
+            <form action="" method="POST">
+
+                <!-- Titre -->
+                <div class="form-group row row-cols-md-2 row-cols-1 mt-5">
+                    <label class="col-md-3" for="nom_particulier">Titre :</label>
+                    <input class="form-control col-md-9" type="text" name="nom_particulier" id="nom_particulier">
                 </div>
-            </div>
+
+                <!-- Description -->
+                <div class="form-group row row-cols-md-2 row-cols-1">
+                    <label class="col-md-3" for="prenom_particulier">Description :</label>
+                    <input class="form-control col-md-9" type="text" name="prenom_particulier" id="prenom_particulier">
+                </div>
+
+                 <!-- Image -->
+                 <div class="form-group row row-cols-md-2 row-cols-1">
+                    <label class="form-label col-md-3" for="formFileSm"></label>
+                    <input class="form-control form-control-sm col-md-9" type="file" id="formFileSm">
+                </div>
+
+                <!-- Date -->
+                <div class="form-group row row-cols-md-2 row-cols-1">
+                    <label class="col-md-3" for="phone_particulier">Date :</label>
+                    <input class="form-control col-md-9" type="number" name="phone_particulier" id="phone_particulier">
+                </div>
+
+                <!-- Début (horaire) -->
+                <div class="form-group row row-cols-md-2 row-cols-1">
+                    <label class="col-md-3" for="mail_particulier">Début (horaire) :</label>
+                    <input class="form-control col-md-9" type="email" name="mail_particulier" id="mail_particulier">
+                </div>
+
+                <!-- Durée -->
+                <div class="form-group row row-cols-md-2 row-cols-1">
+                    <label class="col-md-3" for="mail_particulier">Durée :</label>
+                    <input class="form-control col-md-9" type="email" name="mail_particulier" id="mail_particulier">
+                </div>
+
+                <!-- Places disponible -->
+                <div class="form-group row row-cols-md-2 row-cols-1">
+                    <label class="col-md-3" for="mail_particulier">Places disponible :</label>
+                    <input class="form-control col-md-9" type="email" name="mail_particulier" id="mail_particulier">
+                </div>
+
+                <!-- Prix -->
+                <div class="form-group row row-cols-md-2 row-cols-1">
+                    <label class="col-md-3" for="mail_particulier">Prix :</label>
+                    <input class="form-control col-md-9" type="email" name="mail_particulier" id="mail_particulier">
+                </div>
+
+                <!-- Bouton -->
+                <div class="form-group d-flex justify-content-end">
+                    <input type="hidden" name="statut_particulier" value="particulier">
+                    <input type="hidden" name="atelier_cuisinier" value="atelier_cuisinier">
+                    <input class="btn btn-info" type="submit" name="inscription_particulier" value="Ajouter">
+                </div>
+            </form>
         </div>
     </section>
 </body>
