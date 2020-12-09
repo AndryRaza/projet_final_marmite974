@@ -21,19 +21,21 @@
 <body>
     <section class="container-fluid">
         <div class="container mt-2">
+
+            <div class="h2 text-center">AJOUT ATELIER</div>
             <!-- Formulaire à insérer ici-->
             <form action="" method="POST">
 
                 <!-- Titre -->
                 <div class="form-group row row-cols-md-2 row-cols-1 mt-5">
                     <label class="col-md-3" for="nom_particulier">Titre :</label>
-                    <input class="form-control col-md-9" type="text" name="nom_particulier" id="nom_particulier" required pattern="[A-Za-z é è ^ ¨ ]+" placeholder='Veuillez saisir un titre'>
+                    <input class="form-control col-md-9" type="text" name="nom_particulier" id="nom_particulier" required pattern="[A-Za-z é è ]+" placeholder='Veuillez saisir un titre'>
                 </div>
 
                 <!-- Description -->
                 <div class="form-group row row-cols-md-2 row-cols-1">
                     <label class="col-md-3" for="prenom_particulier">Description :</label>
-                    <input class="form-control col-md-9" type="text" name="prenom_particulier" id="prenom_particulier" required pattern="[A-Za-z é è ]" placeholder='Veuillez saisir une description'>
+                    <input class="form-control col-md-9" type="text" name="prenom_particulier" id="prenom_particulier" required pattern="[A-Za-z é è ]+" placeholder='Veuillez saisir une description'>
                 </div>
 
                  <!-- Image -->
@@ -43,15 +45,35 @@
                 </div>
 
                 <!-- Date -->
-                <div class="form-group row row-cols-md-2 row-cols-1">
+                <div class="form-group row row-cols-md-4 row-cols-1">
                     <label class="col-md-3" for="Date">Date :</label>
-                    <input class="form-control col-md-9" type="date" name="Date" id="Date" required pattern="[0-9]{2}" >
+                    <input class="form-control col-md-3" type="number" name="Day" id="Day" required pattern="[0-9]{2}" >
+                    <div class="input-group">
+                    <div class="input-group-prepend">
+                    </div>
+                    <select class="custom-select" id="inputGroupSelect01">
+                        <option selected>Mois</option>
+                        <option value="1">Janvier</option>
+                        <option value="2">Février</option>
+                        <option value="3">Mars</option>
+                        <option value="4">Avril</option>
+                        <option value="5">Mai</option>
+                        <option value="6">Juin</option>
+                        <option value="7">Juillet</option>
+                        <option value="8">Août</option>
+                        <option value="9">Septembre</option>
+                        <option value="10">Octobre</option>
+                        <option value="11">Novembre</option>
+                        <option value="12">Décembre</option>
+                    </select>
+                    </div>
+                    <input class="form-control col" type="number" name="Year" id="Year" required min="2020" max="2050" >
                 </div>
 
                 <!-- Début (horaire) -->
                 <div class="form-group row row-cols-md-2 row-cols-1">
                     <label class="col-md-3" for="Début(horaire)">Début (horaire) :</label>
-                    <input class="form-control col-md-9" type="number" name="Début(horaire)" id="Début(horaire)" required placeholder="Veuillez choisir l'horaire de début de l'atelier">
+                    <input class="form-control col-md-9" type="number" name="debut_horaire" id="debut_horaire" required placeholder="Veuillez choisir l'horaire de début de l'atelier">
                 </div>
 
                 <!-- Durée -->
