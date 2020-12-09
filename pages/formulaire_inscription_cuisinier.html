@@ -29,7 +29,7 @@
 
                     <form action="">
                         <!--nom du cuisinier-->
-                        <div class="form-group rows-col-1">
+                        <div class="form-group row row-cols-md-2 row-cols-1">
                          
                           <label for="nom-du-cuisinier" class="col-md-3"> Nom</label>
                           <input type="text" class="form-control col-md-9" name="nom_du_cuisinier" required placeholder = " DUPOND " pattern="[A-Z][A-Za-z' -]+">
@@ -38,7 +38,7 @@
 
 
                         <!--prenom du cuisinier-->
-                        <div class="form-group rows-col-1">
+                        <div class="form-group row row-cols-md-2 row-cols-1">
                          
                             <label for="prenom-du-cuisinier" class="col-md-3"> Prenom </label>
                             <input type="text" class="form-control col-md-9" name="prenom_du_cuisinier" required placeholder =" Bernard" pattern="[A-Z][A-Za-z'- ]+">
@@ -46,35 +46,35 @@
                         </div>
 
                         <!--numéro du cuisinier-->  
-                        <div class="form-group rows-col-1">
+                        <div class="form-group row row-cols-md-2 row-cols-1">
                          
                             <label for="telephone-du-cuisinier" class="col-md-3"> téléphone</label>
-                            <input type="phone" class="form-control col-md-9" name="telephone" required pattern="[0-9]{6}">
+                            <input type="phone" class="form-control col-md-9" name="telephone_cuisinier" required pattern="[0-9]{6}">
   
                         </div>
 
                         <!--La spécialité du cuisinier-->
-                        <div class="form-group rows-col-1">
+                        <div class="form-group row row-cols-md-2 row-cols-1">
                          
                             <label for="spécialtite-du-cuisinier" class="col-md-3"> Spécialité </label>
-                            <input type="text" class=" form-control col-md-9" name="specialite_du_cuisinier" pattern="[a-zA-Z0-9 é è à ^ ' @ -] +" >
+                            <input type="text" class=" form-control col-md-9" name="specialite_du_cuisinier" pattern="[a-zA-Z0-9 é è à ^ ' @ -]+" >
   
                         </div>
   
                          <!--l'e-mail du cuisinier-->
-                        <div class="form-group rows-col-1">
+                        <div class="form-group row row-cols-md-2 row-cols-1">
                          
                             <label for="email-du-cuisinier" class="col-md-3"> Email</label>
                             <input type="email" id="email" class=" form-control col-md-9" name="email_du_cuisinier" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
   
                         </div>
 
-                        <div class="form-group dd-flex justify-content-center">
-                         <input type="submit"class="btn" name="envoyer_l_inscription" value="s'incrire">
-
+                        <div class="form-group d-flex justify-content-between">
+                            <input type="hidden" name="statut_particulier" value="cuisinier">
+                            <input type="hidden" name="atelier_cuisinier" value="atelier_cuisinier">
+                            <label for="inscription_particulier">* : Champ obligatoire</label>
+                            <input class="btn-lg btn-info" type="submit" name="inscription_cuisinier" value="S'inscrire">
                         </div>
-
-
 
                     
                     </form>

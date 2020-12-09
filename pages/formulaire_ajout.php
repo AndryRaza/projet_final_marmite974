@@ -73,7 +73,7 @@
                 <!-- Début (horaire) -->
                 <div class="form-group row row-cols-md-2 row-cols-1">
                     <label class="col-md-3" for="Début(horaire)">Début (horaire) :</label>
-                    <input class="form-control col-md-9" type="number" name="Début(horaire)" id="Début(horaire)" required placeholder="Veuillez choisir l'horaire de début de l'atelier">
+                    <input class="form-control col-md-9" type="number" name="debut_horaire" id="debut_horaire" required placeholder="Veuillez choisir l'horaire de début de l'atelier">
                 </div>
 
                 <!-- Durée -->
