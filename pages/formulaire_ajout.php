@@ -29,13 +29,13 @@
                 <!-- Titre -->
                 <div class="form-group row row-cols-md-2 row-cols-1 mt-5">
                     <label class="col-md-3" for="nom_particulier">Titre :</label>
-                    <input class="form-control col-md-9" type="text" name="nom_particulier" id="nom_particulier" required pattern="[A-Za-z é è ^ ¨ ]+" placeholder='Veuillez saisir un titre'>
+                    <input class="form-control col-md-9" type="text" name="nom_particulier" id="nom_particulier" required pattern="[A-Za-z é è ]+" placeholder='Veuillez saisir un titre'>
                 </div>
 
                 <!-- Description -->
                 <div class="form-group row row-cols-md-2 row-cols-1">
                     <label class="col-md-3" for="prenom_particulier">Description :</label>
-                    <input class="form-control col-md-9" type="text" name="prenom_particulier" id="prenom_particulier" required pattern="[A-Za-z é è ]" placeholder='Veuillez saisir une description'>
+                    <input class="form-control col-md-9" type="text" name="prenom_particulier" id="prenom_particulier" required pattern="[A-Za-z é è ]+" placeholder='Veuillez saisir une description'>
                 </div>
 
                  <!-- Image -->
@@ -67,7 +67,7 @@
                         <option value="12">Décembre</option>
                     </select>
                     </div>
-                    <input class="form-control col" type="number" name="Year" id="Year" required pattern="[0-9]{4}" >
+                    <input class="form-control col" type="number" name="Year" id="Year" required pattern="[0-9]{4}" minlength="4" maxlength="4" >
                 </div>
 
                 <!-- Début (horaire) -->
