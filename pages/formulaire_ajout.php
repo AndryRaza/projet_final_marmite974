@@ -21,7 +21,13 @@
 <body>
     <section class="container-fluid">
         <div class="container mt-2">
-            <!-- Formulaire à insérer ici-->
+            <div class="row">
+                <label for="inputPassword" class="col-sm-2 col-form-label">Titre :</label>
+                <div class="col-sm-10">
+                    <input class="form-control" type="text" placeholder="Default input"
+                        aria-label="default input example">
+                </div>
+            </div>
         </div>
     </section>
 </body>
