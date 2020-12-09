@@ -86,13 +86,13 @@
                 <!-- Places disponible -->
                 <div class="form-group row row-cols-md-2 row-cols-1">
                     <label class="col-md-3" for="Places">Places disponibles :</label>
-                    <input class="form-control col-md-9" type="number" name="Places" id="Places" required placeholder="Entrer le nombre de place disponibles" pattern="[0-9]" min="1">
+                    <input class="form-control col-md-9" type="number" name="Places" id="Places" required placeholder="Entrer le nombre de place disponibles" pattern="[0-9]+" min="1">
                 </div>
 
                 <!-- Prix -->
                 <div class="form-group row row-cols-md-2 row-cols-1">
                     <label class="col-md-3" for="Prix">Prix (€) :</label>
-                    <input class="form-control col-md-9" type="number" name="Prix" id="Prix" required placeholder="Veuillez entrer le prix" pattern="[0-9]" min="1">
+                    <input class="form-control col-md-9" type="number" name="Prix" id="Prix" required placeholder="Veuillez entrer le prix" pattern="[0-9]+" min="1">
                 </div>
 
                 <!-- Bouton -->
