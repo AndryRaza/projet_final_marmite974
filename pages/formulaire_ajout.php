@@ -67,7 +67,7 @@
                         <option value="12">Décembre</option>
                     </select>
                     </div>
-                    <input class="form-control col" type="number" name="Year" id="Year" required pattern="[0-9]{4}" minlength="4" maxlength="4" >
+                    <input class="form-control col" type="number" name="Year" id="Year" required min="2020" max="2050" >
                 </div>
 
                 <!-- Début (horaire) -->
