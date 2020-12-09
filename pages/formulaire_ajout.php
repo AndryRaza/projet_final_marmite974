@@ -22,6 +22,63 @@
     <section class="container-fluid">
         <div class="container mt-2">
             <!-- Formulaire à insérer ici-->
+            <form action="" method="POST">
+
+                <!-- Titre -->
+                <div class="form-group row row-cols-md-2 row-cols-1 mt-5">
+                    <label class="col-md-3" for="nom_particulier">Titre :</label>
+                    <input class="form-control col-md-9" type="text" name="nom_particulier" id="nom_particulier" required pattern="[A-Za-z é è ^ ¨ ]+" placeholder='Veuillez saisir un titre'>
+                </div>
+
+                <!-- Description -->
+                <div class="form-group row row-cols-md-2 row-cols-1">
+                    <label class="col-md-3" for="prenom_particulier">Description :</label>
+                    <input class="form-control col-md-9" type="text" name="prenom_particulier" id="prenom_particulier" required pattern="[A-Za-z é è ]" placeholder='Veuillez saisir une description'>
+                </div>
+
+                 <!-- Image -->
+                 <div class="form-group row row-cols-md-2 row-cols-1">
+                    <label class="form-label col-md-3" for="formFileSm">Image :</label>
+                    <input class="form-control form-control-sm col-md-9" type="file" id="formFileSm" required>
+                </div>
+
+                <!-- Date -->
+                <div class="form-group row row-cols-md-2 row-cols-1">
+                    <label class="col-md-3" for="Date">Date :</label>
+                    <input class="form-control col-md-9" type="date" name="Date" id="Date" required pattern="[0-9]{2}" >
+                </div>
+
+                <!-- Début (horaire) -->
+                <div class="form-group row row-cols-md-2 row-cols-1">
+                    <label class="col-md-3" for="Début(horaire)">Début (horaire) :</label>
+                    <input class="form-control col-md-9" type="number" name="Début(horaire)" id="Début(horaire)" required placeholder="Veuillez choisir l'horaire de début de l'atelier">
+                </div>
+
+                <!-- Durée -->
+                <div class="form-group row row-cols-md-2 row-cols-1">
+                    <label class="col-md-3" for="Duree">Durée :</label>
+                    <input class="form-control col-md-9" type="number" name="Duree" id="Duree" required placeholder="Veuillez entrer la durée de l'atelier">
+                </div>
+
+                <!-- Places disponible -->
+                <div class="form-group row row-cols-md-2 row-cols-1">
+                    <label class="col-md-3" for="Places">Places disponibles :</label>
+                    <input class="form-control col-md-9" type="number" name="Places" id="Places" required placeholder="Entrer le nombre de place disponibles" pattern="[0-9]">
+                </div>
+
+                <!-- Prix -->
+                <div class="form-group row row-cols-md-2 row-cols-1">
+                    <label class="col-md-3" for="Prix">Prix (€) :</label>
+                    <input class="form-control col-md-9" type="number" name="Prix" id="Prix" required placeholder="Veuillez entrer le prix" pattern="[0-9]">
+                </div>
+
+                <!-- Bouton -->
+                <div class="form-group d-flex justify-content-end">
+                    <input type="hidden" name="statut_particulier" value="particulier">
+                    <input type="hidden" name="atelier_cuisinier" value="atelier_cuisinier">
+                    <input class="btn btn-info" type="submit" name="inscription_particulier" value="Ajouter">
+                </div>
+            </form>
         </div>
     </section>
 </body>
