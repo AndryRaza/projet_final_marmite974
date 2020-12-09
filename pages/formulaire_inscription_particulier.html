@@ -19,9 +19,11 @@
 <body>
 
     <!-- Header / Nav-->
-    <header>
-        <nav>
-            
+    <header class="container-fluid bg-secondary mb-5">
+        <nav class="navbar">
+            <a href="../index.html"><img src="#" alt="Logo de l'entreprise"></a>
+            <h1 class="py-3">Formulaire d'inscription : Particulier</h1>
+            <a href="../index.html"><input class="btn btn-info" type="button" value="Accueil"></a>
         </nav>
     </header>
 
@@ -33,33 +35,34 @@
 
                 <!-- Nom -->
                 <div class="form-group row row-cols-md-2 row-cols-1">
-                    <label class="col-md-3" for="nom_particulier">Nom :</label>
-                    <input class="form-control col-md-9" type="text" name="nom_particulier" id="nom_particulier">
+                    <label class="col-md-3" for="nom_particulier">* Nom :</label>
+                    <input class="form-control col-md-9" type="text" name="nom_particulier" id="nom_particulier" required autocomplete pattern="[a-zA-Z]{3,32}" minlength="2" placeholder="Smith">
                 </div>
 
                 <!-- Prenom -->
                 <div class="form-group row row-cols-md-2 row-cols-1">
-                    <label class="col-md-3" for="prenom_particulier">Prénom :</label>
-                    <input class="form-control col-md-9" type="text" name="prenom_particulier" id="prenom_particulier">
+                    <label class="col-md-3" for="prenom_particulier">* Prénom :</label>
+                    <input class="form-control col-md-9" type="text" name="prenom_particulier" id="prenom_particulier" required autocomplete minlength="2" pattern="[a-zA-Z-]{3,32}" placeholder="Jhon">
                 </div>
 
                 <!-- Telephone -->
                 <div class="form-group row row-cols-md-2 row-cols-1">
                     <label class="col-md-3" for="phone_particulier">Téléphone :</label>
-                    <input class="form-control col-md-9" type="number" name="phone_particulier" id="phone_particulier">
+                    <input class="form-control col-md-9" type="tel" name="phone_particulier" id="phone_particulier" autocomplete placeholder="012345" pattern="[0-9]{6}">
                 </div>
 
                 <!-- Mail -->
                 <div class="form-group row row-cols-md-2 row-cols-1">
-                    <label class="col-md-3" for="mail_particulier">Adresse email :</label>
-                    <input class="form-control col-md-9" type="email" name="mail_particulier" id="mail_particulier">
+                    <label class="col-md-3" for="mail_particulier">* Adresse email :</label>
+                    <input class="form-control col-md-9" type="email" name="mail_particulier" id="mail_particulier" required autocomplete placeholder="jhonsmith@mail.com" pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?">
                 </div>
 
                 <!-- Bouton -->
-                <div class="form-group">
+                <div class="form-group d-flex justify-content-between">
                     <input type="hidden" name="statut_particulier" value="particulier">
                     <input type="hidden" name="atelier_cuisinier" value="atelier_cuisinier">
-                    <input class="btn btn-info" type="submit" name="inscription_particulier" value="S'inscrire">
+                    <label for="inscription_particulier">* : Champ obligatoire</label>
+                    <input class="btn-lg btn-info" type="submit" name="inscription_particulier" value="S'inscrire">
                 </div>
             </form>
         </div>
