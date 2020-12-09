@@ -47,7 +47,7 @@
                 <!-- Date -->
                 <div class="form-group row row-cols-md-4 row-cols-1">
                     <label class="col-md-3" for="Date">Date :</label>
-                    <input class="form-control col-md-3" type="number" name="Day" id="Day" required pattern="[0-9]{2}" >
+                    <input class="form-control col-md-3" type="number" name="Day" id="Day" required min="1" max="31" value="1" >
                     <div class="input-group">
                     <div class="input-group-prepend">
                     </div>
@@ -71,27 +71,28 @@
                 </div>
 
                 <!-- Début (horaire) -->
-                <div class="form-group row row-cols-md-2 row-cols-1">
-                    <label class="col-md-3" for="Début(horaire)">Début (horaire) :</label>
-                    <input class="form-control col-md-9" type="number" name="Début(horaire)" id="Début(horaire)" required placeholder="Veuillez choisir l'horaire de début de l'atelier">
+                <div class="form-group row row-cols-md-3 row-cols-1">
+                    <label class="col-md-3" for="debut_horaire">Début (horaire) :</label>
+                    <input class="form-control col-md-4 mr-2" type="number" name="debut_horaire" id="debut_horaire" required placeholder="Heures" min="1" max="24">
+                    <input class="form-control col-md-4" type="number" name="debut_horaire" id="debut_horaire" required placeholder="Minutes" min="1" max="60">
                 </div>
 
                 <!-- Durée -->
                 <div class="form-group row row-cols-md-2 row-cols-1">
                     <label class="col-md-3" for="Duree">Durée :</label>
-                    <input class="form-control col-md-9" type="number" name="Duree" id="Duree" required placeholder="Veuillez entrer la durée de l'atelier">
+                    <input class="form-control col-md-9" type="number" name="Duree" id="Duree" required placeholder="Veuillez entrer la durée de l'atelier" min="1">
                 </div>
 
                 <!-- Places disponible -->
                 <div class="form-group row row-cols-md-2 row-cols-1">
                     <label class="col-md-3" for="Places">Places disponibles :</label>
-                    <input class="form-control col-md-9" type="number" name="Places" id="Places" required placeholder="Entrer le nombre de place disponibles" pattern="[0-9]">
+                    <input class="form-control col-md-9" type="number" name="Places" id="Places" required placeholder="Entrer le nombre de place disponibles" pattern="[0-9]" min="1">
                 </div>
 
                 <!-- Prix -->
                 <div class="form-group row row-cols-md-2 row-cols-1">
                     <label class="col-md-3" for="Prix">Prix (€) :</label>
-                    <input class="form-control col-md-9" type="number" name="Prix" id="Prix" required placeholder="Veuillez entrer le prix" pattern="[0-9]">
+                    <input class="form-control col-md-9" type="number" name="Prix" id="Prix" required placeholder="Veuillez entrer le prix" pattern="[0-9]" min="1">
                 </div>
 
                 <!-- Bouton -->
