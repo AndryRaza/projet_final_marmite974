@@ -1,0 +1,9 @@
+[
+    {
+        "name": "Smith",
+        "prenom": "John",
+        "telephone": "012345",
+        "mail": "johnsmith@mail.com",
+        "statut": "particulier"
+    }
+]
