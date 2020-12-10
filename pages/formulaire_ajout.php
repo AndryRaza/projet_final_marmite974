@@ -1,6 +1,4 @@
-<?php 
-/**************************Formulaire pour ajouter un atelier********************************/
-?>
+
 
 <head>
     <meta charset="UTF-8">
@@ -19,23 +17,24 @@
     <title>Ajouter un atelier</title>
 </head>
 <body>
+        
     <section class="container-fluid">
         <div class="container mt-2">
 
             <div class="h2 text-center">AJOUT ATELIER</div>
             <!-- Formulaire à insérer ici-->
-            <form action="" method="POST">
+            <form action="../includes/ajout.php" method="POST">
 
                 <!-- Titre -->
                 <div class="form-group row row-cols-md-2 row-cols-1 mt-5">
-                    <label class="col-md-3" for="nom_particulier">Titre :</label>
-                    <input class="form-control col-md-9" type="text" name="nom_particulier" id="nom_particulier" required pattern="[A-Za-z é è ]+" placeholder='Veuillez saisir un titre'>
+                    <label class="col-md-3" for="titre">Titre :</label>
+                    <input class="form-control col-md-9" type="text" name="titre" id="titre" required pattern="[A-Za-z é è ]+" placeholder='Veuillez saisir un titre'>
                 </div>
 
                 <!-- Description -->
                 <div class="form-group row row-cols-md-2 row-cols-1">
-                    <label class="col-md-3" for="prenom_particulier">Description :</label>
-                    <input class="form-control col-md-9" type="text" name="prenom_particulier" id="prenom_particulier" required pattern="[A-Za-z é è ]+" placeholder='Veuillez saisir une description'>
+                    <label class="col-md-3" for="Description">Description :</label>
+                    <input class="form-control col-md-9" type="text" name="Description" id="Descrption" required pattern="[A-Za-z é è ]+" placeholder='Veuillez saisir une description'>
                 </div>
 
                  <!-- Image -->
@@ -51,20 +50,20 @@
                     <div class="input-group">
                     <div class="input-group-prepend">
                     </div>
-                    <select class="custom-select" id="inputGroupSelect01">
+                    <select class="custom-select" id="inputGroupSelect01" name='Mois'>
                         <option selected>Mois</option>
-                        <option value="1">Janvier</option>
-                        <option value="2">Février</option>
-                        <option value="3">Mars</option>
-                        <option value="4">Avril</option>
-                        <option value="5">Mai</option>
-                        <option value="6">Juin</option>
-                        <option value="7">Juillet</option>
-                        <option value="8">Août</option>
-                        <option value="9">Septembre</option>
-                        <option value="10">Octobre</option>
-                        <option value="11">Novembre</option>
-                        <option value="12">Décembre</option>
+                        <option value="Janvier" >Janvier</option>
+                        <option value="Fevrier">Février</option>
+                        <option value="Mars">Mars</option>
+                        <option value="Avril">Avril</option>
+                        <option value="Mai">Mai</option>
+                        <option value="Juin">Juin</option>
+                        <option value="Juillet">Juillet</option>
+                        <option value="Août">Août</option>
+                        <option value="Septembre">Septembre</option>
+                        <option value="Octobre">Octobre</option>
+                        <option value="Novembre">Novembre</option>
+                        <option value="Decembre">Décembre</option>
                     </select>
                     </div>
                     <input class="form-control col" type="number" name="Year" id="Year" required min="2020" max="2050" >
@@ -99,7 +98,7 @@
                 <div class="form-group d-flex justify-content-end">
                     <input type="hidden" name="statut_particulier" value="particulier">
                     <input type="hidden" name="atelier_cuisinier" value="atelier_cuisinier">
-                    <input class="btn btn-info" type="submit" name="inscription_particulier" value="Ajouter">
+                    <input class="btn btn-info" type="submit" name="ajout_atelier" value="Ajouter">
                 </div>
             </form>
         </div>

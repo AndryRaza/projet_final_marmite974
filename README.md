@@ -80,3 +80,7 @@ Police Verdana
 ## Trello 
 
 https://trello.com/b/ZX5GiRo4/projetfinalmarmite974
+
+## Backlog 
+
+https://docs.google.com/spreadsheets/d/1EUdGTIXxhTbC7d0PUuHeCMj5S3Xxs2AdvdGl4sjPUxo/edit#gid=0

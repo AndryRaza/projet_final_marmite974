@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Smith",
+        "prenom": "John",
+        "telephone": "012345",
+        "mail": "johnsmith@mail.com",
+        "statut": "particulier"
+    },
+    {
+        "name": "Dupond",
+        "prenom": "Bernad",
+        "telephone": "123456",
+        "statut": "",
+        "mail": "zaeae@mail.com"
+    },
+    {
+        "name": "Dupond",
+        "prenom": "Bernard",
+        "telephone": "123456",
+        "statut": "",
+        "mail": "andry@mail.com"
+    },
+    {
+        "name": "Dupond",
+        "prenom": "Bernard",
+        "telephone": "123456",
+        "statut": "",
+        "mail": "andry@mail.com"
+    }
+]
