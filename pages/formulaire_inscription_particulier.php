@@ -1,5 +1,15 @@
+<?php
+session_start();
+if (empty($_SESSION['reussite']) && empty($_SESSION['erreur'])) {
+    $_SESSION['reussite'] = false;
+    $_SESSION['erreur'] = false;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,6 +26,7 @@
 
     <title>Page d'inscription : Particulier</title>
 </head>
+
 <body>
 
     <!-- Header / Nav-->
@@ -27,6 +38,19 @@
         </nav>
     </header>
 
+    <?php
+    if ($_SESSION['reussite'] == true) {
+        echo '<div class="text-center font-weight-bold"> <span class="text-success">Votre inscription a été validée</span> </div>';
+    }
+    $_SESSION['reussite'] = false;
+
+    if ($_SESSION['erreur'] == true) {
+        echo '<div class="text-center font-weight-bold"> <span class="text-danger">Erreur lors de l\'inscription</span> </div>';
+    }
+    $_SESSION['erreur'] = false;
+    ?>
+
+
     <!-- Debut formulaire -->
     <section class="container-fluid">
         <div class="container mt-2">
@@ -36,7 +60,7 @@
                 <!-- Nom -->
                 <div class="form-group row row-cols-md-2 row-cols-1">
                     <label class="col-md-3" for="nom_particulier">* Nom :</label>
-                    <input class="form-control col-md-9" type="text" name="nom_particulier" id="nom_particulier" required autocomplete pattern="[a-zA-Z]{3,32}" minlength="2" placeholder="Smith">
+                    <input class="form-control col-md-9" type="text" name="nom_particulier" id="nom_particulier" required autocomplete pattern="[a-zA-Z\s]{3,32}" minlength="2" placeholder="Smith">
                 </div>
 
                 <!-- Prenom -->
@@ -68,4 +92,5 @@
         </div>
     </section>
 </body>
+
 </html>

@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 $path='../data/membre.json'; //chemin du fichier à traiter
 $json= file_get_contents("../data/membre.json"); //ouvre le fichier
 $cuisinier=json_decode($json, true);//traduire les données en php 
@@ -10,9 +12,10 @@ if (isset($_POST['inscription_cuisinier'])) {
 
    "name" => $_POST['nom_du_cuisinier'],
    "prenom"=> $_POST ['prenom_du_cuisinier'], 
-   "telephone"=> $_POST ['telephone_cuisinier'],
-   "statut"=> $_POST['specialite_du_cuisinier'],
    "mail" => $_POST['email_du_cuisinier'], 
+   "specialite" => $_POST['specialite_du_cuisinier'],
+   "statut"=> $_POST['specialite_du_cuisinier']
+   
 
   );
   /*vérification si le tableau n est pas vide*/
@@ -31,7 +34,11 @@ if (isset($_POST['inscription_cuisinier'])) {
  file_put_contents($path,json_encode($cuisinier)); /*inscri les données en json en suivant le chemin */ 
   }
 
-   
+$_SESSION['reussite_cuisinier'] = true;
+
+header('location:../pages/formulaire_inscription_cuisinier.php'); // redirection sur la page 'formulaire_inscription' apres avoir envoyer nos informations.
+exit();
+
 }
  
 
