@@ -17,10 +17,16 @@
     <title>Ajouter un atelier</title>
 </head>
 <body>
-        
+        <!-- Header / Nav-->
+        <header class="container-fluid bg-secondary mb-5">
+            <nav class="navbar">
+                <a href="../index.html"><img src="#" alt="Logo de l'entreprise"></a>
+                <h1 class="py-3">Formulaire d'ajout d'atelier</h1>
+                <a href="../index.html"><input class="btn btn-info" type="button" value="Accueil"></a>
+            </nav>
+        </header>
     <section class="container-fluid">
         <div class="container mt-2">
-
             <div class="h2 text-center">AJOUT ATELIER</div>
             <!-- Formulaire à insérer ici-->
             <form action="../includes/ajout.php" method="POST" enctype="multipart/form-data">
