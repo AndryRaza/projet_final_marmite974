@@ -12,5 +12,19 @@
         "telephone": "123456",
         "statut": "",
         "mail": "zaeae@mail.com"
+    },
+    {
+        "name": "Dupond",
+        "prenom": "Bernard",
+        "telephone": "123456",
+        "statut": "",
+        "mail": "andry@mail.com"
+    },
+    {
+        "name": "Dupond",
+        "prenom": "Bernard",
+        "telephone": "123456",
+        "statut": "",
+        "mail": "andry@mail.com"
     }
 ]
