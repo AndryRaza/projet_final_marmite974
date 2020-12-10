@@ -34,7 +34,8 @@ if (isset($_POST['inscription_cuisinier'])) {
    
 }
  
-
+header('location:../pages/formulaire_inscription_cuisinier.html'); // redirection sur la page 'formulaire_inscription' apres avoir envoyer nos informations.
+exit();
 
 
 

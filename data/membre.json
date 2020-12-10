@@ -1,7 +1,4 @@
 [
-<<<<<<< HEAD
-    
-=======
     {
         "name": "Smith",
         "prenom": "John",
@@ -16,5 +13,4 @@
         "statut": "",
         "mail": "zaeae@mail.com"
     }
->>>>>>> 57ac88b9c319efbbb5f6e70cd4967a8d70a1cd15
 ]
