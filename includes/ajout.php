@@ -14,7 +14,7 @@ if (isset($_POST['ajout_atelier'])) {
     $newatelier = array(
         "Titre" => $_POST['titre'],
         "Description" => $_POST['Description'],
-        "Date" => $_POST['Day'],
+        "Date" => array($_POST['Day'],$_POST['Mois'],$_POST['Year']),
         "DebutHoraire" => $_POST['debut_horaire'],
         "Duree" => $_POST['Duree'],
         "Places" => $_POST['Places'],
