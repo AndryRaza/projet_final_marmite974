@@ -57,9 +57,11 @@ if (isset($_POST['ajout_atelier'])) {
 }
 
 //si le bouton ajouter est actioner
-
+        $id_atelier = "article_" . md5(uniqid(rand(), true));
+        $_POST["id"] = $id_atelier;
     // on créé un tableau avec les nouvelles données fournis par l'utilisateur 
     $newatelier = array(
+        "Id" => $_POST['id'],
         "Titre" => $_POST['titre'],
         "Description" => $_POST['Description'],
         "Date" => array($_POST['Day'],$_POST['Mois'],$_POST['Year']),
