@@ -22,6 +22,7 @@
                 <tr>
                     <th class="align-middle text-center" scope="col">Nom</th>
                     <th class="align-middle text-center" scope="col">Description</th>
+                    <th class="align-midlle text-center" scope="col">Etat</th>
                     <th class="align-middle text-center" scope="col">Modifier</th>
                 </tr>
         </thead>
