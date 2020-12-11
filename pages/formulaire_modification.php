@@ -1,7 +1,34 @@
-<?php 
-/**************************Formulaire de modification, les informations de l'atelier en question sont récupérées grâce à atelier.json*******************************/
-?>
 
+
+<!-- Fonction qui permet de modifier les informations -->
+<?php if(isset($_POST['submit_parametre'])):?>
+   <!---->
+   <?php 
+        $data_file = "../data/atelier.json";
+        $json = file_get_contents("../data/atelier.json"); 
+        $atelier = json_decode($json, true);
+
+        $id = $_GET['id'];
+        foreach($atelier as $key => $value){
+            if($value['Id'] == $id){
+                $atelier[$key]['Titre'] =  $_POST['titre'];
+                $atelier[$key]['Description'] =  $_POST['Description'];
+                $atelier[$key]['Date'][0] = $_POST['Day'];
+                $atelier[$key]['Date'][1] = $_POST['Mois'];
+                $atelier[$key]['Date'][2] = $_POST['Year'];
+                $atelier[$key]['Duree'] =  $_POST['Duree'];
+                $atelier[$key]['Places'] =  $_POST['Places'];
+                $atelier[$key]['Prix'] =  $_POST['Prix'];
+                file_put_contents($data_file, json_encode($atelier));
+                
+                
+            }
+            
+        }
+        header('Location: ./page_atelier_cuisinier.php');
+    
+   ?>
+<?php endif ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -112,25 +139,3 @@
 <?php endif ?>
 <?php endforeach ?>  
 
-<?php if(isset($_POST['submit_parametre'])):?>
-   <!---->
-   <?php 
-        $data_file = "../data/atelier.json";
-        $json = file_get_contents("../data/atelier.json"); 
-        $atelier = json_decode($json, true);
-
-        $id = $_GET['id'];
-        foreach($atelier as $key => $value){
-            if($value['Id'] == $id){
-                $atelier[$key]['Titre'] =  $_POST['titre'];
-                $atelier[$key]['Description'] =  $_POST['Description'];
-
-                $atelier[$key]['Duree'] =  $_POST['Duree'];
-                $atelier[$key]['Places'] =  $_POST['Places'];
-                $atelier[$key]['Prix'] =  $_POST['Prix'];
-                file_put_contents($data_file, json_encode($atelier));
-            }
-        }
-   ?>
-
-<?php endif ?>
