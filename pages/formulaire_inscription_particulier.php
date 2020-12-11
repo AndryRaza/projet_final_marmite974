@@ -66,13 +66,13 @@ if (empty($_SESSION['reussite']) && empty($_SESSION['erreur'])) {
                 <!-- Prenom -->
                 <div class="form-group row row-cols-md-2 row-cols-1">
                     <label class="col-md-3" for="prenom_particulier">* Prénom :</label>
-                    <input class="form-control col-md-9" type="text" name="prenom_particulier" id="prenom_particulier" required autocomplete minlength="2" pattern="[a-zA-Z-]{3,32}" placeholder="John">
+                    <input class="form-control col-md-9" type="text" name="prenom_particulier" id="prenom_particulier" required autocomplete minlength="2" pattern="[a-zA-Z-\s]{3,32}" placeholder="John">
                 </div>
 
                 <!-- Telephone -->
                 <div class="form-group row row-cols-md-2 row-cols-1">
                     <label class="col-md-3" for="phone_particulier">Téléphone :</label>
-                    <input class="form-control col-md-9" type="tel" name="phone_particulier" id="phone_particulier" autocomplete placeholder="012345" pattern="[0-9]{6}">
+                    <input class="form-control col-md-9" type="tel" name="phone_particulier" id="phone_particulier" autocomplete placeholder="123456" pattern="[0-9]{6}">
                 </div>
 
                 <!-- Mail -->
