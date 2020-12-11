@@ -22,7 +22,7 @@
             <nav class="navbar">
                 <a href="../index.html"><img src="#" alt="Logo de l'entreprise"></a>
                 <h1 class="py-3">Formulaire d'ajout d'atelier</h1>
-                <a href="../index.html"><input class="btn btn-info" type="button" value="Accueil"></a>
+                <a href="../index.php"><input class="btn btn-info" type="button" value="Accueil"></a>
             </nav>
         </header>
     <section class="container-fluid">

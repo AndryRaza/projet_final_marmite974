@@ -1,5 +1,5 @@
-
-<?php //Ici on gere la modification de l'état de l'enchere si on actionne le bouton activer ou desactiver
+<!--Ici on gere la modification de l'état de l'enchere si on actionne le bouton activer ou desactiver -->
+<?php 
 $path = '../data/atelier.json';
 $json = file_get_contents("../data/atelier.json");
 $atelier = json_decode($json, true);
