@@ -7,15 +7,15 @@ $atelier=json_decode($json, true);//traduire les données en php
 
 
 
-foreach($atelier as $key => $value){ /**/ 
+foreach($atelier as $key => $value){ /* read array  */ 
 ?>
 
     <div class="card shadow m-lg-3" style="width: 20rem;">
 
     <div class="position-relative image-container">
-      <div class=" position-absolute  top-0 start-0 font-weight-bold bg-primary"> </div>
-      <div class="position-absolute bg-primary  font-weight-bold" style="bottom:0;"><?php echo $value['Places']?> </div>
-      <img src="assets/dossier.png" class="card-img-top" text="Date" alt="plat">
+      <div class=" position-absolute  top-0 start-0 font-weight-bold bg-primary"><?php echo implode/*affiche la date */('/',$value['Date'])?> </div> 
+      <div class="position-absolute bg-primary  font-weight-bold" style="bottom:0;"><?php echo $value['Places']?> places restantes</div>
+      <img src="ressources\charte\plat2.jpg" class="card-img-top" text="Date" alt="plat">
 
     </div>
     <div class="d-flex">
@@ -26,10 +26,10 @@ foreach($atelier as $key => $value){ /**/
 
       <p class="card-text"><?php echo $value['Description']?></p>
 
-        <div class="d-flex">
-          <p class="card_text mt-2 "><?php echo $value['Prix']?></p>
+        <div class="d-flex justify-content-between">
+          <p class="card_text mt-2 ml-auto "><?php echo $value['Prix']?></p>
            <form>
-             <input class="btn btn-primary" type="submit" name="reserver" value="Réserver">
+             <input class="btn btn-primary d-flex justify-content-right  ml-auto" type="submit" name="reserver" value="Réserver">
            </form>
          
         </div>
