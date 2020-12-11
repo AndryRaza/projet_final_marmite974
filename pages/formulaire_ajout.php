@@ -17,36 +17,42 @@
     <title>Ajouter un atelier</title>
 </head>
 <body>
-        
+        <!-- Header / Nav-->
+        <header class="container-fluid bg-secondary mb-5">
+            <nav class="navbar">
+                <a href="../index.html"><img src="#" alt="Logo de l'entreprise"></a>
+                <h1 class="py-3">Formulaire d'ajout d'atelier</h1>
+                <a href="../index.html"><input class="btn btn-info" type="button" value="Accueil"></a>
+            </nav>
+        </header>
     <section class="container-fluid">
         <div class="container mt-2">
-
             <div class="h2 text-center">AJOUT ATELIER</div>
             <!-- Formulaire à insérer ici-->
-            <form action="../includes/ajout.php" method="POST">
+            <form action="../includes/ajout.php" method="POST" enctype="multipart/form-data">
 
                 <!-- Titre -->
                 <div class="form-group row row-cols-md-2 row-cols-1 mt-5">
                     <label class="col-md-3" for="titre">Titre :</label>
-                    <input class="form-control col-md-9" type="text" name="titre" id="titre" required pattern="[A-Za-z é è ]+" placeholder='Veuillez saisir un titre'>
+                    <input class="form-control col-md-9" type="text" name="titre" id="titre" maxlength="40" required pattern="[A-Za-z é è ]+" placeholder='Veuillez saisir un titre'>
                 </div>
 
                 <!-- Description -->
                 <div class="form-group row row-cols-md-2 row-cols-1">
                     <label class="col-md-3" for="Description">Description :</label>
-                    <input class="form-control col-md-9" type="text" name="Description" id="Descrption" required pattern="[A-Za-z é è ]+" placeholder='Veuillez saisir une description'>
+                    <input class="form-control col-md-9" type="text" name="Description" id="Descrption" maxlength="60" required pattern="[A-Za-z é è ]+" placeholder='Veuillez saisir une description'>
                 </div>
 
                  <!-- Image -->
                  <div class="form-group row row-cols-md-2 row-cols-1">
                     <label class="form-label col-md-3" for="formFileSm">Image :</label>
-                    <input class="form-control form-control-sm col-md-9" type="file" id="formFileSm" required>
+                    <input class="form-control form-control-sm col-md-9" type="file" id="formFileSm" name="formFileSm" required>
                 </div>
 
                 <!-- Date -->
                 <div class="form-group row row-cols-md-4 row-cols-1">
                     <label class="col-md-3" for="Date">Date :</label>
-                    <input class="form-control col-md-3" type="number" name="Day" id="Day" required min="1" max="31" value="1" >
+                    <input class="form-control col-md-3" type="number" name="Day" id="Day" required min="1" max="31" value="1" onKeyPress="if(this.value.length==2) return false;">
                     <div class="input-group">
                     <div class="input-group-prepend">
                     </div>
@@ -66,14 +72,14 @@
                         <option value="Decembre">Décembre</option>
                     </select>
                     </div>
-                    <input class="form-control col" type="number" name="Year" id="Year" required min="2020" max="2050" >
+                    <input class="form-control col" type="number" name="Year" id="Year" value="2020" required min="2020" max="2050" onKeyPress="if(this.value.length==4) return false;" >
                 </div>
 
                 <!-- Début (horaire) -->
                 <div class="form-group row row-cols-md-3 row-cols-1">
                     <label class="col-md-3" for="debut_horaire">Début (horaire) :</label>
-                    <input class="form-control col-md-4 mr-2" type="number" name="debut_horaire" id="debut_horaire" required placeholder="Heures" min="1" max="24">
-                    <input class="form-control col-md-4" type="number" name="debut_horaire" id="debut_horaire" required placeholder="Minutes" min="1" max="60">
+                    <input class="form-control col-md-4 mr-2" type="number" name="debut_horaire" id="debut_horaire" required placeholder="Heures" min="1" max="24"onKeyPress="if(this.value.length==2) return false;">
+                    <input class="form-control col-md-4" type="number" name="debut_horaire" id="debut_horaire" required placeholder="Minutes" min="1" max="60"onKeyPress="if(this.value.length==2) return false;">
                 </div>
 
                 <!-- Durée -->
