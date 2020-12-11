@@ -37,7 +37,7 @@ if (isset($_POST['inscription_particulier'])) {
 
 
     // on vérifie que les champs ne sont pas vides puis qu'ils correspondent bien au regex et pour le mail on utilise un filtre qui valide ou non l'adresse
-    if (!empty($newmembre['nom']) && preg_match('#[a-zA-Z]#', $newmembre['nom']) && !empty($newmembre['prenom']) && preg_match('#[^\S]#', $newmembre['prenom']) && !empty($newmembre['mail']) && filter_var($newmembre['mail'], FILTER_VALIDATE_EMAIL)) {
+    if (!empty($newmembre['nom'])  && preg_match('#(^[\w+]+)$#', $newmembre['nom'])  && !empty($newmembre['prenom'])  && preg_match('#(^[\w+]+)$#', $newmembre['prenom']) && preg_match('#(^[0-9]+)$#', $newmembre['telephone']) && !empty($newmembre['mail']) && filter_var($newmembre['mail'], FILTER_VALIDATE_EMAIL)) {
 
         // on vérifie si le fichier possède des informations ou pas
         if ($membres == null) {
