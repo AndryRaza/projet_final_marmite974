@@ -20,6 +20,13 @@
         <h1 class="text-center">Marmite974</h1>
         <h2 class="text-center">Application de réservation de cours de cuisine</h2>
     </header>
+ 
+    <section class = "container-fluid ">
+       <div class = " row row-cols-md-4 row-cols-1">
+          <?php include 'includes/fonctions.php' ?>
+       </div>
 
+
+    </section>
 </body>
 </html>

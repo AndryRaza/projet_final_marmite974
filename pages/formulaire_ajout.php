@@ -14,7 +14,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 
 
-    <title>Ajouter un atelier</title>
+    <title>Liste des ateliers</title>
 </head>
 <body>
         <!-- Header / Nav-->
@@ -22,7 +22,7 @@
             <nav class="navbar">
                 <a href="../index.html"><img src="#" alt="Logo de l'entreprise"></a>
                 <h1 class="py-3">Formulaire d'ajout d'atelier</h1>
-                <a href="../index.html"><input class="btn btn-info" type="button" value="Accueil"></a>
+                <a href="../index.php"><input class="btn btn-info" type="button" value="Accueil"></a>
             </nav>
         </header>
     <section class="container-fluid">
@@ -65,7 +65,7 @@
                         <option value="Mai">Mai</option>
                         <option value="Juin">Juin</option>
                         <option value="Juillet">Juillet</option>
-                        <option value="Août">Août</option>
+                        <option value="Aout">Août</option>
                         <option value="Septembre">Septembre</option>
                         <option value="Octobre">Octobre</option>
                         <option value="Novembre">Novembre</option>
@@ -78,8 +78,8 @@
                 <!-- Début (horaire) -->
                 <div class="form-group row row-cols-md-3 row-cols-1">
                     <label class="col-md-3" for="debut_horaire">Début (horaire) :</label>
-                    <input class="form-control col-md-4 mr-2" type="number" name="debut_horaire" id="debut_horaire" required placeholder="Heures" min="1" max="24"onKeyPress="if(this.value.length==2) return false;">
-                    <input class="form-control col-md-4" type="number" name="debut_horaire" id="debut_horaire" required placeholder="Minutes" min="1" max="60"onKeyPress="if(this.value.length==2) return false;">
+                    <input class="form-control col-md-4 mr-2" type="number" name="debut_horaireH" id="debut_horaire" required placeholder="Heures" min="1" max="24"onKeyPress="if(this.value.length==2) return false;">
+                    <input class="form-control col-md-4" type="number" name="debut_horaireM" id="debut_horaire" required placeholder="Minutes" min="1" max="60"onKeyPress="if(this.value.length==2) return false;">
                 </div>
 
                 <!-- Durée -->
