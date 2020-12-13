@@ -62,6 +62,8 @@ foreach ($atelier as $key => $value) {
     $expire = true;
   } elseif (strftime('%d') >= $value['Date'][0] && strftime('%m') == $mois && strftime('%Y') == $value['Date'][2]) {
     $expire = true;
+  } elseif (strftime('%Y') > $value['Date'][2]) {
+    $expire = true;
   }
   /**
    * la deuxième partie concerne la cas ou mois et année
