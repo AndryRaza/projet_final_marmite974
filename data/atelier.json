@@ -1,1 +1,21 @@
-[{"Id":"atelier_9e3e49f97a52746d5fda8d9ddd24f016","Titre":"test ssggfffhhhhhyyyhhhhhhhssss","Description":"sss","Date":["1","Avril","2022"],"DebutHoraire":["2","3"],"Image":"..\/ressources\/128110241_3448470128626142_9118409531989305012_n.png","Duree":"3","Places":"1","Prix":"3","etat":"inactif"}]
+[
+    {
+        "Id": "atelier_9e3e49f97a52746d5fda8d9ddd24f016",
+        "Titre": "test ssggfffhhhhhyyyhhhhhhhssss",
+        "Description": "sss",
+        "Date": [
+            "1",
+            "Avril",
+            "2022"
+        ],
+        "DebutHoraire": [
+            "2",
+            "3"
+        ],
+        "Image": "..\/ressources\/128110241_3448470128626142_9118409531989305012_n.png",
+        "Duree": "3",
+        "Places": 4,
+        "Prix": "3",
+        "etat": "inactif"
+    }
+]
