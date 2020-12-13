@@ -4,9 +4,9 @@
         "Titre": "test ssggfffhhhhhyyyhhhhhhhssss",
         "Description": "sss",
         "Date": [
-            "1",
-            "Avril",
-            "2022"
+            "20",
+            "Decembre",
+            "2020"
         ],
         "DebutHoraire": [
             "2",
@@ -14,7 +14,7 @@
         ],
         "Image": "..\/ressources\/128110241_3448470128626142_9118409531989305012_n.png",
         "Duree": "3",
-        "Places": 4,
+        "Places": 1,
         "Prix": "3",
         "etat": "inactif"
     }
