@@ -2,6 +2,7 @@
 
 /**************************Pour afficher les cartes, réserver********************************/
 
+
 $path = '../data/atelier.json'; //chemin du fichier à traiter
 $json = file_get_contents("data/atelier.json"); //ouvre le fichier
 $atelier = json_decode($json, true); //traduire les données en php 

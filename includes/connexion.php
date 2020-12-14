@@ -14,7 +14,7 @@ if (isset($_POST['connexion']))     //Pour gérer la connexion en mode admin
     else 
     {
         foreach ($membre as $key => $value) {
-            if ($value['mail'] === $_POST['mail_user'] && $value['password'] === $_POST['mdp_user']) {
+            if ($value['mail'] === $_POST['mail_user'] && $value['password'] === hash('md5',$_POST['mdp_user'])) {
                 $_SESSION['user'] = $value['name'];
                 $_SESSION['mail'] = $value['mail'];
             }

@@ -1,6 +1,8 @@
 <?php
 $path = '../data/atelier.json';
+$path2 = '../data/membre.json';
 $atelier = json_decode(file_get_contents($path), true);
+$membre = json_decode(file_get_contents($path2),true);
 
 /**
  * si le bouton reserver est cliqué
