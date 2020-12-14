@@ -24,7 +24,7 @@ if (isset($_POST['inscription_cuisinier'])) {
   /* $confirm = password_hash(validation($_POST['confirm_cuisinier']), PASSWORD_DEFAULT); */
   $newcuisinier = array( //stock ds un tableau temporaire les données du newcuisinier
 
-    "name" => validation($_POST['nom_du_cuisinier']),
+    "nom" => validation($_POST['nom_du_cuisinier']),
     "prenom" => validation($_POST['prenom_du_cuisinier']),
     "mail" => validation($_POST['email_du_cuisinier']),
     "specialite" => validation($_POST['specialite_du_cuisinier']),
