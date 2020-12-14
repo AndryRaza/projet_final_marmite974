@@ -20,12 +20,15 @@ if (isset($_POST['connexion']))     //Pour gérer la connexion en mode admin
         }
     }
     header('location: ../index.php'); //On redirige vers la page d'accueil
+    exit();
 }
 
 if (isset($_POST['deconnexion'])) {  //Lorsque l'on se déconnecte
     $_SESSION['admin'] = false; //On est pu en mode admin donc c'est faux
     $_SESSION['user'] = ''; //On met le user à rien
+    session_destroy();
     header('location: ../index.php');    //On redirige vers la page d'accueil
+    exit();
 }
 
 

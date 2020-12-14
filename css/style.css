@@ -8,9 +8,6 @@ body{
     overflow: hidden;
 }
 
-header{
-    background-color: #f3671f;
-}
 
 #choix_statut{
     width:250px;
