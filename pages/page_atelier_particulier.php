@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include '../includes/fonctions.php';
 ?>
 
@@ -22,15 +22,11 @@ include '../includes/fonctions.php';
             <img src="../ressources/img/logo.png" alt="" height="100" class="d-inline-block align-top">
         </a>
         <div class="d-flex flex-column ml-auto">
-                <p class="text-center" style="font-size:30px;">Mode Admin </p>
                 <div class="collapse navbar-collapse mb-4 justify-content-end " id="navbarNav">
                     <ul class="navbar-nav">
 
                         <li class="nav-item active">
-                            <a class="nav-link" href="index.php">Accueil</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="page_admin.php">Voir les membres</a>
+                            <a class="nav-link" href="../index.php">Accueil</a>
                         </li>
                       
                         <li class="nav-item">
@@ -43,15 +39,16 @@ include '../includes/fonctions.php';
                 
             </div>
 </nav>
-
+<section class="container">
 <table class="table table-responsive-md">
     <thead>
         <tr>
             <th class="text-center" scope="col">Nom</th>
-            <th class="text-center" scope="col">Statut</th>
-            <th class="text-center" scope="col">Mail</th>
-            <th class="text-center" scope="col">Spécialité/Téléphone</th>
+            <th class="text-center" scope="col">Date</th>
+            <th class="text-center" scope="col">Prix</th>
         </tr>
     </thead>
-    <?php affichage_membre();  ?>
+    <?php affichage_atelier_particulier();  ?>
 </table>
+
+</section>

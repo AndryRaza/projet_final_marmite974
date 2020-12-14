@@ -38,7 +38,7 @@ if (!isset($_SESSION['erreur_cuisinier'])) {
     if ($_SESSION['reussite_cuisinier'] === true) {
         echo '<div class="text-center font-weight-bold"> <span class="text-success">Votre inscription a été validée</span> </div>';
     }
-    $_SESSION['reussite_cuisinier'] = false;
+    $_SESSION['reussite_cuisinier'] = false;    
 
     if ($_SESSION['erreur_cuisinier'] === true) {
         echo '<div class="text-center font-weight-bold"> <span class="text-danger">Erreur lors de l\'inscription</span> </div>';

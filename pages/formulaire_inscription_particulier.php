@@ -21,7 +21,7 @@ if (empty($_SESSION['reussite']) && empty($_SESSION['erreur'])) {
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="../css/style.css">
 
     <title>Page d'inscription : Particulier</title>
 </head>
@@ -29,13 +29,21 @@ if (empty($_SESSION['reussite']) && empty($_SESSION['erreur'])) {
 <body>
 
     <!-- Header / Nav-->
-    <header class="container-fluid bg-secondary mb-5">
-        <nav class="navbar">
-            <a href="../index.php"><img src="#" alt="Logo de l'entreprise"></a>
-            <h1 class="py-3">Formulaire d'inscription : Particulier</h1>
-            <a href="../index.php"><input class="btn btn-info" type="button" value="Accueil"></a>
-        </nav>
-    </header>
+    <nav class="navbar navbar-expand-md navbar-light ">
+        <a class="navbar-brand " href="../index.php">
+            <img src="../ressources/img/logo.png" alt="" height="100" class="d-inline-block align-top">
+        </a>
+        <div class="d-flex flex-column ml-auto">
+                <div class="collapse navbar-collapse mb-4 justify-content-end " id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="../index.php">Accueil</a>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+</nav>
 
     <?php
     if ($_SESSION['reussite'] == true) {
@@ -83,7 +91,7 @@ if (empty($_SESSION['reussite']) && empty($_SESSION['erreur'])) {
                 <!-- Mot de passe -->
                 <div class="form-group row row-cols-md-2 row-cols-1">
                     <label class="col-md-3" for="mail_particulier">* Mot de passe :</label>
-                    <input class="form-control col-md-9" type="password" name="password_particulier" id="password_particulier" onkeyup="check();" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
+                    <input class="form-control col-md-9" type="password" name="password_particulier" id="password_particulier" onkeyup="check();" required pattern="[^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$]">
                 </div>
 
                 <!-- Confirmation mot de passe -->
