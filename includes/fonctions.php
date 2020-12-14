@@ -15,7 +15,7 @@ foreach($atelier as $key => $value){ /* read array  */
     <div class="position-relative image-container">
       <div class=" position-absolute  top-0 start-0 font-weight-bold bg-primary"><?php echo implode/*affiche la date */('/',$value['Date'])?> </div> 
       <div class="position-absolute bg-primary  font-weight-bold" style="bottom:0;"><?php echo $value['Places']?> places restantes</div>
-      <img src="ressources\charte\plat2.jpg" class="card-img-top" text="Date" alt="plat">
+      <img src="ressources\charte\plat2.jpg" class="card-img-top img-fluid" text="Date" alt="plat" style="height:240px;">
 
     </div>
     <div class="d-flex">
