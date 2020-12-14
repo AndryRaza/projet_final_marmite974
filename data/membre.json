@@ -1,6 +1,6 @@
 [
     {
-        "name": "Smith",
+        "nom": "Smith",
         "prenom": "John",
         "telephone": "012345",
         "mail": "johnsmith@mail.com",
@@ -39,7 +39,7 @@
         "password": "@ndry7493"
     },
     {
-        "name": "DUPOND",
+        "nom": "DUPOND",
         "prenom": "Bernard",
         "mail": "dupondbernard@mail.com",
         "specialite": "Grillade",

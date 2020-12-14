@@ -16,7 +16,11 @@ if (isset($_POST['connexion']))     //Pour gérer la connexion en mode admin
         echo 'Sanji';
     } else {
         foreach ($membre as $key => $value) {
+<<<<<<< HEAD
             if ($value['mail'] == $_POST['mail_user'] && $value['password'] == $_POST['mdp_user']) {
+=======
+            if ($value['mail'] === $_POST['mail_user'] && $value['password'] === hash('md5',$_POST['mdp_user'])) {
+>>>>>>> 3b86dd232006df24209131de5cf399c31f764e1b
                 $_SESSION['user'] = $value['name'];
                 $_SESSION['mail'] = $value['mail'];
                 $_SESSION['statut'] = $value['statut'];

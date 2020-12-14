@@ -20,7 +20,7 @@
         <!-- Header / Nav-->
         <header class="container-fluid bg-secondary mb-5">
             <nav class="navbar">
-                <a href="../index.html"><img src="#" alt="Logo de l'entreprise"></a>
+                <a href="../index.html"><img src="../ressources/img/logo.png" alt="Logo de l'entreprise" height="100"></a>
                 <h1 class="py-3">Formulaire d'ajout d'atelier</h1>
                 <a href="../index.php"><input class="btn btn-info" type="button" value="Accueil"></a>
             </nav>

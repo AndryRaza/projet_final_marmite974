@@ -1,6 +1,8 @@
 <?php 
 /**************************Ajouter un membre "particulier" dans le fichier membre.json********************************/
 
+session_start();
+
 /**
  * on récupère le fichier json puis on le décode en php
  */
@@ -71,7 +73,7 @@ if (isset($_POST['ajout_atelier'])) {
         "Places" => $_POST['Places'],
         "Prix" => $_POST['Prix'],
         "etat" => "inactif",
-
+        "createur" => $_SESSION['mail']
 
     );
 

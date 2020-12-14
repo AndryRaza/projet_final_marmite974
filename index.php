@@ -22,6 +22,8 @@ $data_file = "data/membre.json";
 $json_membre = file_get_contents($data_file);
 $membre = json_decode($json_membre, true);
 
+include 'includes/fonctions.php'
+
 ?>
 
 
@@ -34,7 +36,7 @@ $membre = json_decode($json_membre, true);
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
-    <title>Document</title>
+    <title>Bienvenue sur l'application Marmite974</title>
 </head>
 
 <body>
@@ -47,9 +49,24 @@ $membre = json_decode($json_membre, true);
         ?>
             <div class="d-flex flex-column m-auto">
                 <p class="text-center" style="font-size:30px;">Mode Admin </p>
-                <form action="includes/connexion.php" method="POST">
-                    <input type="submit" class="btn btn-primary justify-self-end ml-3" name="deconnexion" value="Se déconnecter">
-                </form>
+                <div class="collapse navbar-collapse mb-4 justify-content-end " id="navbarNav">
+                    <ul class="navbar-nav">
+
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.php">Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/page_admin.php">Voir les membres</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <form action="includes/connexion.php" method="POST">
+                                <input type="submit" class="btn btn-primary justify-self-end ml-3" name="deconnexion" value="Se déconnecter">
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
         <?php } ?>
 
@@ -131,7 +148,8 @@ $membre = json_decode($json_membre, true);
     <section class="container-fluid ">
         <div class="container">
             <div class=" row row-cols-md-4 row-cols-1">
-                <?php include 'includes/fonctions.php'
+                <?php
+                affichage_atelier();
                 ?>
             </div>
         </div>
