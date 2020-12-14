@@ -77,5 +77,14 @@
         "statut": "cuisinier",
         "id": "cui5fd6fee4e80ed",
         "password": "$2y$10$pVhPEZWPYNWR6J0Wc\/QtdO8.WAJjjHeeyX2t\/7c9K.UVYk4vOs7\/a"
+    },
+    {
+        "name": "Payet",
+        "prenom": "Jean",
+        "mail": "jeanpayet@mail.com",
+        "specialite": "Roti",
+        "statut": "cuisinier",
+        "id": "cui5fd70e84e5e21",
+        "password": "$2y$10$Yixh\/OhB3UV05eoFwbIa5e38kbDhy5NaFgPvp.LnUN.X94YgiapYG"
     }
 ]

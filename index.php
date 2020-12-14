@@ -1,6 +1,8 @@
 <?php
 
 session_start();
+$_SESSION['statut'] = '';
+var_dump($_SESSION['statut']);
 if (!isset($_SESSION['admin'])) //Par défaut on est pas connecté en mode admin
 {
     $_SESSION['admin'] = false;
