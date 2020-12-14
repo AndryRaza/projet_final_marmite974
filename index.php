@@ -43,8 +43,8 @@ include 'includes/fonctions.php'
 
 <body>
 
-    <nav class="navbar navbar-expand-md navbar-light ">
-        <a class="navbar-brand " href="index.php">
+    <nav class="navbar navbar-expand-md navbar-light d-flex justify-content-between ">
+        <a class="navbar-brand" style="margin-left:50px" href="index.php">
             <img src="ressources/img/logo.png" alt="" height="100" class="d-inline-block align-top">
         </a>
         <?php if (($_SESSION['user'] === '' && $_SESSION['admin'])) { //Quand on se connecte en mode admin
@@ -74,7 +74,7 @@ include 'includes/fonctions.php'
 
         <?php if ($_SESSION['user'] === '' && !$_SESSION['admin']) { //Si personne est connecté, on affiche le formulaire de connexion
         ?>
-            <form action="includes/connexion.php" method="POST">
+            <form action="includes/connexion.php" method="POST" class="pt-2" style="margin-right: 50px;">
                 <input class="form-control mb-2" type="text" name="mail_user" placeholder="Votre adresse email">
                 <input class="form-control mb-2" type="password" name="mdp_user" placeholder="Votre mot de passe">
                 Pas encore inscrit ? <a href="pages/choix_utilisateur.html">S'inscrire</a>

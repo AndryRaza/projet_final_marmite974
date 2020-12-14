@@ -1,1 +1,23 @@
-[{"Id":"atelier_66a509b263b28df59125ac2d611a02a0","Titre":"Cuisse de poulet","Description":"Joli cuisses","Date":["5","Decembre","2021"],"DebutHoraire":["20","1"],"Image":"..\/ressources\/logo_cuisine.png","Duree":"30","Places":0,"Prix":"20","etat":"actif","createur":"andry2@mail.com","participant":["","","","",""]}]
+[
+    {
+        "Id": "atelier_66a509b263b28df59125ac2d611a02a0",
+        "Titre": "Cuisse de poulet",
+        "Description": "Joli cuisses",
+        "Date": [
+            "5",
+            "Decembre",
+            "2021"
+        ],
+        "DebutHoraire": [
+            "20",
+            "1"
+        ],
+        "Image": "..\/ressources\/logo_cuisine.png",
+        "Duree": "30",
+        "Places": "5",
+        "Prix": "20",
+        "etat": "actif",
+        "createur": "andry2@mail.com",
+        "participant": []
+    }
+]
