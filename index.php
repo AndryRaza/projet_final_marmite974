@@ -91,6 +91,7 @@ include 'includes/fonctions.php'
                     if ($_SESSION['statut'] == "cuisinier") { //Si le statut est celui d'un cuisinier
                     ?>
                         <div class="collapse navbar-collapse mb-4 justify-content-end " id="navbarNav">
+                        
                             <ul class="navbar-nav">
 
                                 <li class="nav-item active">
@@ -114,6 +115,7 @@ include 'includes/fonctions.php'
                     <?php
                     if ($_SESSION['statut'] == 'particulier') { //Sinon le statut est un particulier et on affiche
                     ?>
+                        <p class="msg">Bonjour <?= $_SESSION['user'] ?></p>
                         <div class="collapse navbar-collapse mb-4 justify-content-end " id="navbarNav">
                             <ul class="navbar-nav">
 
