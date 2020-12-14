@@ -1,9 +1,14 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['ressusite_cuisinier']) && empty($_SESSION['erreur_cuisinier'])) {
+if (!isset($_SESSION['ressusite_cuisinier'])) {
     $_SESSION['ressusite_cuisinier'] = false;
 }
+
+if (!isset($_SESSION['erreur_cuisinier'])) {
+    $_SESSION['erreur_cuisinier'] = false;
+}
+
 ?>
 
 <head>
@@ -22,26 +27,35 @@ if (!isset($_SESSION['ressusite_cuisinier']) && empty($_SESSION['erreur_cuisinie
 </head>
 
 <body>
+    <header class="container-fluid bg-secondary mb-5">
+        <nav class="navbar">
+            <a href="../index.php"><img src="#" alt="Logo de l'entreprise"></a>
+            <h1 class="py-3">Formulaire d'inscription : Particulier</h1>
+            <a href="../index.php"><input class="btn btn-info" type="button" value="Accueil"></a>
+        </nav>
+    </header>
+    <?php
+    if ($_SESSION['reussite_cuisinier'] === true) {
+        echo '<div class="text-center font-weight-bold"> <span class="text-success">Votre inscription a été validée</span> </div>';
+    }
+    $_SESSION['reussite_cuisinier'] = false;
+
+    if ($_SESSION['erreur_cuisinier'] === true) {
+        echo '<div class="text-center font-weight-bold"> <span class="text-danger">Erreur lors de l\'inscription</span> </div>';
+    }
+    $_SESSION['erreur_cuisinier'] = false;
+    ?>
+    
     <section class="container-fluid">
         <div class="container mt-2">
             <!-- Formulaire à insérer ici-->
 
             <h1> Formulaire inscription : Cuisinier.</h1>
 
-            <?php
-            if ($_SESSION['reussite_cuisinier'] == true) {
-                echo '<div class="text-center font-weight-bold"> <span class="text-success">Votre inscription a été validée</span> </div>';
-            }
-            $_SESSION['reussite_cuisinier'] = false;
 
-            if ($_SESSION['erreur_cuisinier'] == true) {
-                echo '<div class="text-center font-weight-bold"> <span class="text-danger">Erreur lors de l\'inscription</span> </div>';
-            }
-            $_SESSION['erreur_cuisinier'] = false;
-            ?>
 
             <section class="container_fluid">
-                <div>
+                <div class="container mt-2">
 
                     <form action="../includes/inscription_cuisinier.php" method="POST">
                         <!--nom du cuisinier-->
@@ -67,6 +81,18 @@ if (!isset($_SESSION['ressusite_cuisinier']) && empty($_SESSION['erreur_cuisinie
                             <label for="email-du-cuisinier" class="col-md-3"> * Email</label>
                             <input type="email" id="email" class=" form-control col-md-9" name="email_du_cuisinier" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
 
+                        </div>
+
+                        <!-- Mot de passe -->
+                        <div class="form-group row row-cols-md-2 row-cols-1">
+                            <label class="col-md-3" for="mail_particulier">* Mot de passe :</label>
+                            <input class="form-control col-md-9" type="password" name="password_cuisinier" id="password_particulier" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
+                        </div>
+
+                        <!-- Confirmation mot de passe -->
+                        <div class="form-group row row-cols-md-2 row-cols-1">
+                            <label class="col-md-3" for="mail_particulier">* Confirmez votre mot de passe :</label>
+                            <input class="form-control col-md-9" type="password" name="confirm_cuisinier" id="confirm_particulier" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
                         </div>
 
                         <!--La spécialité du cuisinier-->

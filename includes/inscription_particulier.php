@@ -21,9 +21,18 @@ function validation($donnees)
     return $donnees;
 };
 
+$mail_existant = false;
+
+foreach ($membres as $key => $value)        //On vérifie que l'adresse email est pas déjà présent 
+{
+    if ($value['mail'] === $_POST['mail_particulier']){
+        $mail_existant = true;
+    }
+}
+
 
 //si le bouton s'inscrire est activé 
-if (isset($_POST['inscription_particulier'])) {
+if (isset($_POST['inscription_particulier']) && !$mail_existant) {
     // on créé un tableau avec les nouvelles données fournis par l'utilisateur 
     /* $confirm = password_hash(validation($_POST['confirm_particulier']), PASSWORD_DEFAULT); */
     $newmembre = array(

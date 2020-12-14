@@ -7,8 +7,7 @@ if (empty($_SESSION['reussite']) && empty($_SESSION['erreur'])) {
 
 ?>
 
-<!DOCTYPE html>
-<html lang="fr">
+
 
 <head>
     <meta charset="UTF-8">
@@ -32,9 +31,9 @@ if (empty($_SESSION['reussite']) && empty($_SESSION['erreur'])) {
     <!-- Header / Nav-->
     <header class="container-fluid bg-secondary mb-5">
         <nav class="navbar">
-            <a href="../index.html"><img src="#" alt="Logo de l'entreprise"></a>
+            <a href="../index.php"><img src="#" alt="Logo de l'entreprise"></a>
             <h1 class="py-3">Formulaire d'inscription : Particulier</h1>
-            <a href="../index.html"><input class="btn btn-info" type="button" value="Accueil"></a>
+            <a href="../index.php"><input class="btn btn-info" type="button" value="Accueil"></a>
         </nav>
     </header>
 
