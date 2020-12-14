@@ -171,16 +171,8 @@ function affichage_membre()
     $json2 = file_get_contents("../data/atelier.json");
     $atelier = json_decode($json2, true);
 
-    $tab_atelier = [];
-
-    foreach ($membre as $key => $value) {
-      if ($value['mail'] === $_SESSION['mail']) {
-        $tab_atelier = $value['atelier'];
-      }
-    }
-
     foreach ($atelier as $key => $value) {
-      if (in_array($value['Id'], $tab_atelier)) {
+      if (in_array($_SESSION['mail'],$atelier[$key]['participant'] )) {
 
     ?>
         <tr>
