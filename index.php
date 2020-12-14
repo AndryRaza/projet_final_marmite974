@@ -97,7 +97,7 @@ include 'includes/fonctions.php'
                                     <a class="nav-link" href="index.php">Accueil</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="pages/listeAtelierManager.php">Voir ses ateliers créés</a>
+                                    <a class="nav-link" href="pages/page_atelier_cuisinier.php">Voir ses ateliers créés</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="pages/formulaire_ajout.php">Ajouter un atelier</a>
