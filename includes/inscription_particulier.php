@@ -25,7 +25,7 @@ $mail_existant = false;
 
 foreach ($membres as $key => $value)        //On vérifie que l'adresse email est pas déjà présent 
 {
-    if ($value['mail'] === $_POST['mail_particulier']){
+    if ($value['mail'] === $_POST['mail_particulier']) {
         $mail_existant = true;
     }
 }
@@ -36,7 +36,7 @@ if (isset($_POST['inscription_particulier']) && !$mail_existant) {
     // on créé un tableau avec les nouvelles données fournis par l'utilisateur 
     /* $confirm = password_hash(validation($_POST['confirm_particulier']), PASSWORD_DEFAULT); */
     $newmembre = array(
-        "nom" => validation($_POST['nom_particulier']),
+        "name" => validation($_POST['nom_particulier']),
         "prenom" => validation($_POST['prenom_particulier']),
         "telephone" => validation($_POST['phone_particulier']),
         "mail" => validation($_POST['mail_particulier']),
@@ -47,7 +47,7 @@ if (isset($_POST['inscription_particulier']) && !$mail_existant) {
 
 
     // on vérifie que les champs ne sont pas vides puis qu'ils correspondent bien au regex et pour le mail on utilise un filtre qui valide ou non l'adresse
-    if (!empty($newmembre['nom'])  /* && preg_match('#(^[\w+]+)$#', $newmembre['nom']) */  && !empty($newmembre['prenom'])  /* && preg_match('#(^[\w+]+)$#', $newmembre['prenom']) */ /* && preg_match('#(^[0-9]+)$#', $newmembre['telephone']) */ && !empty($newmembre['mail']) && filter_var($newmembre['mail'], FILTER_VALIDATE_EMAIL) && !empty($newmembre['password']) /* && preg_match('^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$', $newmembre['password']) */) {
+    if (!empty($newmembre['name'])  /* && preg_match('#(^[\w+]+)$#', $newmembre['nom']) */  && !empty($newmembre['prenom'])  /* && preg_match('#(^[\w+]+)$#', $newmembre['prenom']) */ /* && preg_match('#(^[0-9]+)$#', $newmembre['telephone']) */ && !empty($newmembre['mail']) && filter_var($newmembre['mail'], FILTER_VALIDATE_EMAIL) && !empty($newmembre['password']) /* && preg_match('^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$', $newmembre['password']) */) {
 
         // on vérifie si le fichier possède des informations ou pas
         if ($membres == null) {

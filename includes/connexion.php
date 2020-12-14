@@ -5,6 +5,8 @@ $data_file = "../data/membre.json";
 $json_membre = file_get_contents("../data/membre.json");
 $membre = json_decode($json_membre, true);
 var_dump('Jimbei');
+var_dump($_POST['mail_user']);
+var_dump($_POST['mdp_user']);
 
 if (isset($_POST['connexion']))     //Pour gérer la connexion en mode admin
 {
@@ -17,10 +19,12 @@ if (isset($_POST['connexion']))     //Pour gérer la connexion en mode admin
             if ($value['mail'] == $_POST['mail_user'] && $value['password'] == $_POST['mdp_user']) {
                 $_SESSION['user'] = $value['name'];
                 $_SESSION['mail'] = $value['mail'];
+                $_SESSION['statut'] = $value['statut'];
             }
         }
+        var_dump($_SESSION['statut']);
     }
-    //header('location: ../index.php'); //On redirige vers la page d'accueil
+    header('location: ../index.php'); //On redirige vers la page d'accueil
     exit();
 }
 
@@ -52,9 +56,10 @@ var_dump($mdp); */
         var_dump('Luffy');
     }
 }; */
-var_dump($_POST['mail_user']);
+/* var_dump($_POST['mail_user']);
 var_dump($value['password']);
 var_dump($_POST['mdp_user']);
 var_dump($value['mail']);
 var_dump($value['statut']);
 var_dump($_SESSION['statut']);
+ */

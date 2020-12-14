@@ -30,7 +30,7 @@
         "id": "par5fd33c5c0ca08"
     },
     {
-        "nom": "Raza",
+        "name": "Raza",
         "prenom": "Andry",
         "telephone": "112233",
         "mail": "andry@mail.com",
@@ -46,7 +46,6 @@
         "statut": "cuisinier",
         "id": "cui5fd6f9cae9ae7",
         "password": "$2y$10$az7p4yHHoyAW26W17VfZoOa4tdZAQCn0Oy3G4RinQiJ.9I4Egrk5m"
-<<<<<<< HEAD
     },
     {
         "name": "DUPOND",
@@ -65,8 +64,14 @@
         "statut": "cuisinier",
         "id": "cui5fd70e84e5e21",
         "password": "$2y$10$Yixh\/OhB3UV05eoFwbIa5e38kbDhy5NaFgPvp.LnUN.X94YgiapYG"
-=======
->>>>>>> 956a8ba62f7c88e41c98d0ab2eacda50f8f9acd5
+    },
+    {
+        "name": "Bond",
+        "prenom": "James",
+        "telephone": "223344",
+        "mail": "james.bond@mail.uk",
+        "statut": "particulier",
+        "id": "par5fd7302e07c55",
+        "password": "$2y$10$J0P\/5vb5KX1kCT2MJ6yT\/e0.PpFHkc.zUI5FgUXy9hu8mZbzRnEZa"
     }
- 
 ]
