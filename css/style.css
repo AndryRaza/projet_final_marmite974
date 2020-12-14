@@ -18,9 +18,14 @@ body{
 nav{
     background-color: #f3671f;
 }
+<<<<<<< HEAD
 
 
 .cursor {
+=======
+/*
+#cursor {
+>>>>>>> 51a2cf74449df342938865164c7ee6c9064561da
     width: 40px;
     height: 40px;
     border: 1px dashed brown;
@@ -67,4 +72,9 @@ nav{
         transform: scale(1);
         opacity:0;
     }
+<<<<<<< HEAD
 }
+=======
+}
+*/
+>>>>>>> 51a2cf74449df342938865164c7ee6c9064561da

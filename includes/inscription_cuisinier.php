@@ -19,7 +19,17 @@ function validation($donnees)
   return $donnees;
 };
 
-if (isset($_POST['inscription_cuisinier'])) {
+$mail_existant = false;
+
+
+foreach ($membres as $key => $value)        //On vérifie que l'adresse email est pas déjà présent 
+{
+  if ($value['mail'] === $_POST['mail_particulier']) {
+    $mail_existant = true;
+  }
+}
+
+if (isset($_POST['inscription_cuisinier']) && !$mail_existant) {
   /*tableau d'inscri*/
   /* $confirm = password_hash(validation($_POST['confirm_cuisinier']), PASSWORD_DEFAULT); */
   $newcuisinier = array( //stock ds un tableau temporaire les données du newcuisinier
@@ -54,7 +64,9 @@ if (isset($_POST['inscription_cuisinier'])) {
     $_SESSION['erreur_cuisinier'] = true;
   }
 
-
-  header('location:../pages/formulaire_inscription_cuisinier.php'); // redirection sur la page 'formulaire_inscription' apres avoir envoyer nos informations.
-  exit();
 }
+else{
+  $_SESSION['erreur_cuisinier'] = true;
+}
+header('location:../pages/formulaire_inscription_cuisinier.php'); // redirection sur la page 'formulaire_inscription' apres avoir envoyer nos informations.
+exit();
