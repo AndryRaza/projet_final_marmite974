@@ -25,16 +25,16 @@ if (!isset($_SESSION['user'])) {
 
 <body>
 
-    <header class="container-fluid ">
+    <header class="container-fluid">
         <div class="row row-cols-md-4 row-cols-1">
-            <div>
-                <a href="index.php"><img class=" mt-md-3 col-md-3 col" src="ressources/img/logo.png"></a>
+            <div class=" mt-md-3 col-md-3 text-center ">
+                <a href="index.php"><img src="ressources/img/logo.png" height="150px"></a>
             </div>
-            <div class=" col-md-6 mt-md-3 col">
+            <div class=" col-md-6 mt-md-4">
                 <h1 class="text-center">Marmite974</h1>
                 <h2 class="text-center">Application de réservation de cours de cuisine</h2>
             </div>
-            <div class="col-md-2 w-25 mt-md-3 col">
+            <div class="col-md-2 w-25 mt-md-4">
                 <?php if ($_SESSION['user'] === '' && !$_SESSION['admin']) { //Si personne est connecté, on affiche le formulaire de connexion
                 ?>
                     <form action="includes/connexion.php" method="POST">
@@ -44,21 +44,21 @@ if (!isset($_SESSION['user'])) {
                         <input type="submit" class="btn btn-primary" name="connexion" value="Se connecter">
                     </form>
                 <?php } ?>
-                
+
                 <?php if (($_SESSION['user'] === '' && $_SESSION['admin'])) { ?>
                     <p class="text-center" style="font-size:30px;">Mode Admin </p>
                     <form action="includes/connexion.php" method="POST">
                         <input type="submit" class="btn btn-primary justify-self-end" name="deconnexion" value="Se déconnecter">
-                <?php } ?>
-
-
+                    <?php } ?>
             </div>
         </div>
     </header>
 
     <section class="container-fluid ">
-        <div class=" row row-cols-md-4 row-cols-1">
-            <?php include 'includes/fonctions.php' ?>
+        <div class="container">
+            <div class=" row row-cols-md-4 row-cols-1">
+                <?php include 'includes/fonctions.php' ?>
+            </div>
         </div>
     </section>
 </body>
