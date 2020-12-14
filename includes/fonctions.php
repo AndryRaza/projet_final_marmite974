@@ -70,8 +70,8 @@ function affichage_atelier()
      * sont identiques à la date actuelle 
      * c'est donc le jour qui va faire la différence 
      */
-?>
-    <?php if ($value['etat'] == "actif") : ?>
+
+   if ($value['etat'] == "actif") : ?>
       <!-- affiche que les cartes actives -->
       <div class="card shadow m-lg-3" style="width: 20rem;">
 
@@ -125,6 +125,7 @@ function affichage_atelier()
 <?php
   }
 }
+
 ?>
 
 <?php
@@ -140,26 +141,62 @@ function affichage_membre()
       <td class="text-center">
         <p class="pt-5"><?= $value['nom'] ?></p>
       </td>
-      <td class="text-center"><p class="pt-5"><?= $value['statut'] ?></p></td>
-      <td class="text-center"><p class="pt-5"><?= $value['mail'] ?></p></td>
+      <td class="text-center">
+        <p class="pt-5"><?= $value['statut'] ?></p>
+      </td>
+      <td class="text-center">
+        <p class="pt-5"><?= $value['mail'] ?></p>
+      </td>
       <?php if ($value['statut'] === 'cuisinier') { ?>
-        <td class="text-center"><p class="pt-5"><?= $value['specialite'] ?></p></td>
+        <td class="text-center">
+          <p class="pt-5"><?= $value['specialite'] ?></p>
+        </td>
       <?php  } else { ?>
-        <td class="text-center"><p class="pt-5"><?= $value['telephone'] ?></p></td>
+        <td class="text-center">
+          <p class="pt-5"><?= $value['telephone'] ?></p>
+        </td>
     <?php }
     }
     ?>
     </tr>
-  <?php  
+    <?php
   }
 
 
-function affichage_atelier_particulier(){
-  $json = file_get_contents("../data/membre.json"); //ouvre le fichier
-  $membre = json_decode($json, true); //traduire les données en php 
+  function affichage_atelier_particulier()
+  {
+    $json = file_get_contents("../data/membre.json"); //ouvre le fichier
+    $membre = json_decode($json, true); //traduire les données en php 
 
-  $json2 = file_get_contents("../data/atelier.json");
-  $atelier = json_decode($json2,true);
+    $json2 = file_get_contents("../data/atelier.json");
+    $atelier = json_decode($json2, true);
 
+    $tab_atelier = [];
 
-}
+    foreach ($membre as $key => $value) {
+      if ($value['mail'] === $_SESSION['mail']) {
+        $tab_atelier = $value['atelier'];
+      }
+    }
+
+    foreach ($atelier as $key => $value) {
+      if (in_array($value['Id'], $tab_atelier)) {
+
+    ?>
+        <tr>
+          <td class="text-center">
+            <p class="pt-5"><?= $value['Titre'] ?></p>
+          </td>
+          <td class="text-center">
+            <p class="pt-5"><?= implode('/', $value['Date']) ?></p>
+          </td>
+          <td class="text-center">
+            <p class="pt-5"><?= $value['Prix'] ?></p>
+          </td>
+        <?php }
+        }
+        ?>
+        </tr>
+    <?php
+    }
+  

@@ -16,6 +16,13 @@ if (isset($_POST['reserver'])) {
             $atelier[$key]['Places'] = $value['Places'] - 1;
             file_put_contents($path, json_encode($atelier));
         }
+        foreach ($membre as $key2 => $value2) {
+            if ($value2['mail'] === $_SESSION['mail']) {
+              array_push( $value2['atelier'],$id);
+              file_put_contents($path2, json_encode($membre));
+            }
+          }
     }
+  
 }
 header('Location: ../index.php');

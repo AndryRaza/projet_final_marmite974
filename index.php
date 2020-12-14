@@ -16,7 +16,9 @@ if (!isset($_SESSION['mail'])) {
 if (!isset($_SESSION['statut'])) {
     $_SESSION['statut'] = '';
 }
-
+if (!isset($_SESSION['id_user'])) {
+    $_SESSION['id_user'] = '';
+}
 
 $data_file = "data/membre.json";
 $json_membre = file_get_contents($data_file);
@@ -119,7 +121,7 @@ include 'includes/fonctions.php'
                                     <a class="nav-link" href="index.php">Accueil</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="pages/page_reservation_particulier.php">Voir mes réservations</a>
+                                    <a class="nav-link" href="pages/page_atelier_particulier.php">Voir mes réservations</a>
                                 </li>
                                 <li class="nav-item">
                                     <form action="includes/connexion.php" method="POST">

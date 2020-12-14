@@ -19,6 +19,7 @@ if (isset($_POST['connexion']))     //Pour gérer la connexion en mode admin
             if ($value['mail'] === $_POST['mail_user'] && $value['password'] === hash('md5', $_POST['mdp_user'])) {
                 $_SESSION['user'] = $value['name'];
                 $_SESSION['mail'] = $value['mail'];
+                $_SESSION['id_user'] = $value['id'];
                 $_SESSION['statut'] = $value['statut'];
             }
         }
