@@ -34,8 +34,8 @@ if (!isset($_SESSION['user']))
         <h2 class="text-center">Application de réservation de cours de cuisine</h2>
         </div>
 
-        <?php if  ($_SESSION['user'] === '') { //Si personne est connecté, on affiche le formulaire de connexion?>   
-        <form>
+        <?php if  ($_SESSION['user'] === '' && !$_SESSION['admin']) { //Si personne est connecté, on affiche le formulaire de connexion?>   
+        <form action="includes/connexion.php" method="POST">
             <input class="form-control mb-2" type="text" name="mail_user" placeholder="Votre adresse email">
             <input class="form-control mb-2" type="password" name="mdp_user" placeholder="Votre mot de passe">
             Pas encore inscrit ? <a href="pages/choix_utilisateur.html">S'inscrire</a>
