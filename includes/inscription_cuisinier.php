@@ -24,17 +24,17 @@ if (isset($_POST['inscription_cuisinier'])) {
   /* $confirm = password_hash(validation($_POST['confirm_cuisinier']), PASSWORD_DEFAULT); */
   $newcuisinier = array( //stock ds un tableau temporaire les données du newcuisinier
 
-    "nom" => validation($_POST['nom_du_cuisinier']),
+    "name" => validation($_POST['nom_du_cuisinier']),
     "prenom" => validation($_POST['prenom_du_cuisinier']),
     "mail" => validation($_POST['email_du_cuisinier']),
     "specialite" => validation($_POST['specialite_du_cuisinier']),
     "statut" => $_POST['statut_cuisinier'],
     "id" => uniqid("cui"),
-    "password" => password_hash(validation($_POST['password_cuisinier']), PASSWORD_DEFAULT)
+    "password" => hash('md5', validation($_POST['password_cuisinier']))
 
   );
   // on vérifie que les champs ne sont pas vides puis qu'ils correspondent bien au regex et pour le mail on utilise un filtre qui valide ou non l'adresse
-  if (!empty($newcuisinier['name'])  && preg_match('#(^[\w+]+)$#', $newcuisinier['name'])  && !empty($newcuisinier['prenom'])  && preg_match('#(^[\w+]+)$#', $newcuisinier['prenom']) && preg_match('#(^[\w+]+)$#', $newcuisinier['specialite']) && !empty($newcuisinier['mail']) && filter_var($newcuisinier['mail'], FILTER_VALIDATE_EMAIL) && !empty($newcuisinier['password'])) {
+  if (!empty($newcuisinier['name'])  /* && preg_match('#(^[\w+]+)$#', $newcuisinier['name']) */  && !empty($newcuisinier['prenom'])  /* && preg_match('#(^[\w+]+)$#', $newcuisinier['prenom']) */ /* && preg_match('#(^[\w+]+)$#', $newcuisinier['specialite']) */ && !empty($newcuisinier['mail']) && filter_var($newcuisinier['mail'], FILTER_VALIDATE_EMAIL) && !empty($newcuisinier['password'])) {
 
     /*vérification si le tableau n est pas vide*/
     if ($cuisinier == null) {

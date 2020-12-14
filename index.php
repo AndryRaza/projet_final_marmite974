@@ -16,6 +16,7 @@ if (!isset($_SESSION['mail'])) {
 if (!isset($_SESSION['statut'])) {
     $_SESSION['statut'] = '';
 }
+var_dump($_SESSION['statut']);
 
 
 $data_file = "data/membre.json";
@@ -95,7 +96,7 @@ include 'includes/fonctions.php'
                                     <a class="nav-link" href="index.php">Accueil</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="pages/listeAtelierManager.php">Voir ses ateliers créés</a>
+                                    <a class="nav-link" href="pages/page_atelier_cuisinier.php">Voir ses ateliers créés</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="pages/formulaire_ajout.php">Ajouter un atelier</a>

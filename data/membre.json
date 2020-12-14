@@ -73,5 +73,23 @@
         "statut": "particulier",
         "id": "par5fd7302e07c55",
         "password": "$2y$10$J0P\/5vb5KX1kCT2MJ6yT\/e0.PpFHkc.zUI5FgUXy9hu8mZbzRnEZa"
+    },
+    {
+        "name": "DUPOND",
+        "prenom": "Alain",
+        "mail": "dupondalain@mail.com",
+        "specialite": "Dessert",
+        "statut": "cuisinier",
+        "id": "cui5fd743dd9abbf",
+        "password": "05482173e538ba02ee9a67781b4b80a7"
+    },
+    {
+        "name": "Boubou",
+        "prenom": "Alfred",
+        "mail": "bouboualf@mail.com",
+        "specialite": "Lasagne",
+        "statut": "cuisinier",
+        "id": "cui5fd744aaa25ec",
+        "password": "974fe61917f9e2ea8e0f1bdacc5b3bb4"
     }
 ]

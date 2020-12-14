@@ -30,7 +30,7 @@ if (!isset($_SESSION['erreur_cuisinier'])) {
     <header class="container-fluid bg-secondary mb-5">
         <nav class="navbar">
             <a href="../index.php"><img src="#" alt="Logo de l'entreprise"></a>
-            <h1 class="py-3">Formulaire d'inscription : Particulier</h1>
+            <h1 class="py-3">Formulaire d'inscription : Cuisinier</h1>
             <a href="../index.php"><input class="btn btn-info" type="button" value="Accueil"></a>
         </nav>
     </header>
@@ -48,76 +48,68 @@ if (!isset($_SESSION['erreur_cuisinier'])) {
 
     <section class="container-fluid">
         <div class="container mt-2">
-            <!-- Formulaire à insérer ici-->
 
-            <h1> Formulaire inscription : Cuisinier.</h1>
+            <form action="../includes/inscription_cuisinier.php" method="POST">
+                <!--nom du cuisinier-->
+                <div class="form-group row row-cols-md-2 row-cols-1">
 
-
-
-            <section class="container_fluid">
-                <div class="container mt-2">
-
-                    <form action="../includes/inscription_cuisinier.php" method="POST">
-                        <!--nom du cuisinier-->
-                        <div class="form-group row row-cols-md-2 row-cols-1">
-
-                            <label for="nom-du-cuisinier" class="col-md-3"> * Nom</label>
-                            <input type="text" class="form-control col-md-9" name="nom_du_cuisinier" required placeholder=" DUPOND " pattern="[A-Z][A-Za-z' -]+">
-
-                        </div>
-
-
-                        <!--prenom du cuisinier-->
-                        <div class="form-group row row-cols-md-2 row-cols-1">
-
-                            <label for="prenom-du-cuisinier" class="col-md-3"> * Prénom </label>
-                            <input type="text" class="form-control col-md-9" name="prenom_du_cuisinier" required placeholder=" Bernard" pattern="[A-Z][A-Za-z'- ]+">
-
-                        </div>
-
-                        <!--l'e-mail du cuisinier-->
-                        <div class="form-group row row-cols-md-2 row-cols-1">
-
-                            <label for="email-du-cuisinier" class="col-md-3"> * Email</label>
-                            <input type="email" id="email" class=" form-control col-md-9" name="email_du_cuisinier" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
-
-                        </div>
-
-                        <!--La spécialité du cuisinier-->
-                        <div class="form-group row row-cols-md-2 row-cols-1">
-
-                            <label for="spécialtite-du-cuisinier" class="col-md-3"> Spécialité </label>
-                            <input type="text" class=" form-control col-md-9" name="specialite_du_cuisinier" pattern="[a-zA-Z @ & é è' $ # µ ç §]+">
-
-                        </div>
-
-                        <!-- Mot de passe -->
-                        <div class="form-group row row-cols-md-2 row-cols-1">
-                            <label class="col-md-3" for="mail_particulier">* Mot de passe :</label>
-                            <input class="form-control col-md-9" type="password" name="password_cuisinier" id="password_cuisinier" onkeyup="check();" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
-                        </div>
-
-                        <!-- Confirmation mot de passe -->
-                        <div class="form-group row row-cols-md-2 row-cols-1">
-                            <label class="col-md-3" for="mail_particulier">* Confirmez votre mot de passe :</label>
-                            <input class="form-control col-md-9" type="password" name="confirm_cuisinier" id="confirm_cuisinier" onkeyup="check();" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
-                            <span id="message" class="mx-auto"></span>
-                        </div>
-
-
-                        <div class="form-group d-flex justify-content-between">
-                            <input type="hidden" name="statut_cuisinier" value="cuisinier">
-                            <input type="hidden" name="atelier_cuisinier" value="atelier_cuisinier">
-                            <label for="inscription_particulier">* : Champ obligatoire</label>
-                            <input class="btn-lg btn-info" type="submit" name="inscription_cuisinier" value="S'inscrire">
-                        </div>
-                        <small><strong>Attention :</strong> le mot de passe doit contenir minimum 8 caractères dont une lettre en majuscule, une minuscule, un chiffre et un caractère spécial.</small>
-                    </form>
+                    <label for="nom-du-cuisinier" class="col-md-3"> * Nom</label>
+                    <input type="text" class="form-control col-md-9" name="nom_du_cuisinier" required placeholder=" DUPOND " pattern="[A-Z][A-Za-z' -]+">
 
                 </div>
-            </section>
+
+
+                <!--prenom du cuisinier-->
+                <div class="form-group row row-cols-md-2 row-cols-1">
+
+                    <label for="prenom-du-cuisinier" class="col-md-3"> * Prénom </label>
+                    <input type="text" class="form-control col-md-9" name="prenom_du_cuisinier" required placeholder=" Bernard" pattern="[A-Z][A-Za-z'- ]+">
+
+                </div>
+
+                <!--l'e-mail du cuisinier-->
+                <div class="form-group row row-cols-md-2 row-cols-1">
+
+                    <label for="email-du-cuisinier" class="col-md-3"> * Email</label>
+                    <input type="email" id="email" class=" form-control col-md-9" name="email_du_cuisinier" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+
+                </div>
+
+                <!--La spécialité du cuisinier-->
+                <div class="form-group row row-cols-md-2 row-cols-1">
+
+                    <label for="spécialtite-du-cuisinier" class="col-md-3"> Spécialité </label>
+                    <input type="text" class=" form-control col-md-9" name="specialite_du_cuisinier" pattern="[a-zA-Z @ & é è' $ # µ ç §]+">
+
+                </div>
+
+                <!-- Mot de passe -->
+                <div class="form-group row row-cols-md-2 row-cols-1">
+                    <label class="col-md-3" for="mail_particulier">* Mot de passe :</label>
+                    <input class="form-control col-md-9" type="password" name="password_cuisinier" id="password_cuisinier" onkeyup="check();" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
+                </div>
+
+                <!-- Confirmation mot de passe -->
+                <div class="form-group row row-cols-md-2 row-cols-1">
+                    <label class="col-md-3" for="mail_particulier">* Confirmez votre mot de passe :</label>
+                    <input class="form-control col-md-9" type="password" name="confirm_cuisinier" id="confirm_cuisinier" onkeyup="check();" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
+                    <span id="message" class="mx-auto"></span>
+                </div>
+
+
+                <div class="form-group d-flex justify-content-between">
+                    <input type="hidden" name="statut_cuisinier" value="cuisinier">
+                    <input type="hidden" name="atelier_cuisinier" value="atelier_cuisinier">
+                    <label for="inscription_particulier">* : Champ obligatoire</label>
+                    <input class="btn-lg btn-info" type="submit" name="inscription_cuisinier" value="S'inscrire">
+                </div>
+                <small><strong>Attention :</strong> le mot de passe doit contenir minimum 8 caractères dont une lettre en majuscule, une minuscule, un chiffre et un caractère spécial (ex : @$!%*?& ).</small>
+            </form>
 
         </div>
+    </section>
+
+    </div>
     </section>
     <script>
         var check = function() {
