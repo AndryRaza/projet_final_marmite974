@@ -18,5 +18,25 @@
         "Prix": "20",
         "etat": "actif",
         "createur": "andry2@mail.com"
+    },
+    {
+        "Id": "atelier_46456d67cbc967dcf38698ee8e8521ae",
+        "Titre": "Tarte aux fraises ",
+        "Description": "recette de la tarte aux fraises",
+        "Date": [
+            "10",
+            "Fevrier",
+            "2021"
+        ],
+        "DebutHoraire": [
+            "9",
+            "15"
+        ],
+        "Image": "..\/ressources\/logo.png",
+        "Duree": "3",
+        "Places": 8,
+        "Prix": "150",
+        "etat": "actif",
+        "createur": "dupondalain@mail.com"
     }
 ]
