@@ -45,7 +45,7 @@ include 'includes/fonctions.php'
         </a>
         <?php if (($_SESSION['user'] === '' && $_SESSION['admin'])) { //Quand on se connecte en mode admin
         ?>
-            <div class="d-flex flex-column m-auto">
+            <div class="d-flex flex-column ml-auto">
                 <p class="text-center" style="font-size:30px;">Mode Admin </p>
                 <div class="collapse navbar-collapse mb-4 justify-content-end " id="navbarNav">
                     <ul class="navbar-nav">

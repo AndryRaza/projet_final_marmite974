@@ -152,3 +152,14 @@ function affichage_membre()
     </tr>
   <?php  
   }
+
+
+function affichage_atelier_particulier(){
+  $json = file_get_contents("../data/membre.json"); //ouvre le fichier
+  $membre = json_decode($json, true); //traduire les données en php 
+
+  $json2 = file_get_contents("../data/atelier.json");
+  $atelier = json_decode($json2,true);
+
+
+}

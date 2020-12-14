@@ -23,6 +23,7 @@ function validation($donnees)
 
 $mail_existant = false;
 
+
 foreach ($membres as $key => $value)        //On vérifie que l'adresse email est pas déjà présent 
 {
     if ($value['mail'] === $_POST['mail_particulier']){
@@ -68,6 +69,9 @@ if (isset($_POST['inscription_particulier']) && !$mail_existant) {
     } else {
         $_SESSION['erreur'] = true;
     }
+}
+else {
+    $_SESSION['erreur'] = true;
 }
 
 

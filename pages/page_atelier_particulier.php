@@ -48,10 +48,10 @@ include '../includes/fonctions.php';
     <thead>
         <tr>
             <th class="text-center" scope="col">Nom</th>
-            <th class="text-center" scope="col">Statut</th>
-            <th class="text-center" scope="col">Mail</th>
+            <th class="text-center" scope="col">Date</th>
+            <th class="text-center" scope="col">Prix</th>
             <th class="text-center" scope="col">Spécialité/Téléphone</th>
         </tr>
     </thead>
-    <?php affichage_membre();  ?>
+    <?php affichage_atelier_particulier();  ?>
 </table>
