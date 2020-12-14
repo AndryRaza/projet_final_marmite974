@@ -1,24 +1,10 @@
 [
     {
-        "name": "Smith",
+        "nom": "Smith",
         "prenom": "John",
         "telephone": "012345",
         "mail": "johnsmith@mail.com",
         "statut": "particulier"
-    },
-    {
-        "name": "DUPOND",
-        "prenom": "Bernard",
-        "mail": "dupondbernard@mail.com",
-        "specialite": "Grillade",
-        "statut": "cuisinier"
-    },
-    {
-        "name": "DUPOND",
-        "prenom": "Bernard",
-        "mail": "dupondbernard@mail.com",
-        "specialite": "Grillade",
-        "statut": "cuisinier"
     },
     {
         "nom": "Bonjour",
@@ -44,38 +30,22 @@
         "id": "par5fd33c5c0ca08"
     },
     {
-        "name": "DUPOND",
-        "prenom": "Bernard",
-        "mail": "dupondbernard@mail.com",
-        "specialite": "Grillade",
-        "statut": "cuisinier",
-        "id": "cui5fd33c992601c"
-    },
-    {
-        "nom": "Smith",
-        "prenom": "John",
+        "nom": "Raza",
+        "prenom": "Andry",
         "telephone": "112233",
-        "mail": "johnsmith@mail.com",
+        "mail": "andry@mail.com",
         "statut": "particulier",
         "id": "par5fd6f8576f46b",
-        "password": "$2y$10$aAJ9cRC9DdXSnxc0vywsYecjOxhtFpBF9JL6aIausvfaHHaZF8qWe"
+        "password": "@ndry7493"
     },
     {
-        "name": "DUPOND",
+        "nom": "DUPOND",
         "prenom": "Bernard",
         "mail": "dupondbernard@mail.com",
         "specialite": "Grillade",
         "statut": "cuisinier",
         "id": "cui5fd6f9cae9ae7",
         "password": "$2y$10$az7p4yHHoyAW26W17VfZoOa4tdZAQCn0Oy3G4RinQiJ.9I4Egrk5m"
-    },
-    {
-        "name": "DUPOND",
-        "prenom": "Bernard",
-        "mail": "dupondbernard@mail.com",
-        "specialite": "Grillade",
-        "statut": "cuisinier",
-        "id": "cui5fd6fee4e80ed",
-        "password": "$2y$10$pVhPEZWPYNWR6J0Wc\/QtdO8.WAJjjHeeyX2t\/7c9K.UVYk4vOs7\/a"
     }
+ 
 ]
