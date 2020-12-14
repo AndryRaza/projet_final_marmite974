@@ -1,9 +1,14 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['ressusite_cuisinier']) && empty($_SESSION['erreur_cuisinier'])) {
+if (!isset($_SESSION['ressusite_cuisinier'])) {
     $_SESSION['ressusite_cuisinier'] = false;
 }
+
+if (!isset($_SESSION['erreur_cuisinier'])) {
+    $_SESSION['erreur_cuisinier'] = false;
+}
+
 ?>
 
 <head>
@@ -22,26 +27,35 @@ if (!isset($_SESSION['ressusite_cuisinier']) && empty($_SESSION['erreur_cuisinie
 </head>
 
 <body>
+    <header class="container-fluid bg-secondary mb-5">
+        <nav class="navbar">
+            <a href="../index.php"><img src="#" alt="Logo de l'entreprise"></a>
+            <h1 class="py-3">Formulaire d'inscription : Particulier</h1>
+            <a href="../index.php"><input class="btn btn-info" type="button" value="Accueil"></a>
+        </nav>
+    </header>
+    <?php
+    if ($_SESSION['reussite_cuisinier'] === true) {
+        echo '<div class="text-center font-weight-bold"> <span class="text-success">Votre inscription a été validée</span> </div>';
+    }
+    $_SESSION['reussite_cuisinier'] = false;
+
+    if ($_SESSION['erreur_cuisinier'] === true) {
+        echo '<div class="text-center font-weight-bold"> <span class="text-danger">Erreur lors de l\'inscription</span> </div>';
+    }
+    $_SESSION['erreur_cuisinier'] = false;
+    ?>
+    
     <section class="container-fluid">
         <div class="container mt-2">
             <!-- Formulaire à insérer ici-->
 
             <h1> Formulaire inscription : Cuisinier.</h1>
 
-            <?php
-            if ($_SESSION['reussite_cuisinier'] == true) {
-                echo '<div class="text-center font-weight-bold"> <span class="text-success">Votre inscription a été validée</span> </div>';
-            }
-            $_SESSION['reussite_cuisinier'] = false;
 
-            if ($_SESSION['erreur_cuisinier'] == true) {
-                echo '<div class="text-center font-weight-bold"> <span class="text-danger">Erreur lors de l\'inscription</span> </div>';
-            }
-            $_SESSION['erreur_cuisinier'] = false;
-            ?>
 
             <section class="container_fluid">
-                <div>
+                <div class="container mt-2">
 
                     <form action="../includes/inscription_cuisinier.php" method="POST">
                         <!--nom du cuisinier-->
