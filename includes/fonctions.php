@@ -21,7 +21,7 @@ foreach ($atelier as $key => $value) { /* read array  */
     </div>
     <div class="d-flex">
       <h3 class="card-text"> <?php echo $value['Duree'] ?></h3>
-      <h3 class="card-title ml-auto"><?php echo $value['Titre'] ?></h3>
+      <h3 class="card-title ml-auto" style="font-size:18px;"><?php echo $value['Titre'] ?></h3>
     </div>
     <div class="card-body">
 

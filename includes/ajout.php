@@ -71,7 +71,7 @@ if (isset($_POST['ajout_atelier'])) {
         "Places" => $_POST['Places'],
         "Prix" => $_POST['Prix'],
         "etat" => "inactif",
-        
+
 
     );
 
