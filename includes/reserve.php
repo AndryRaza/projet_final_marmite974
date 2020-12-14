@@ -20,6 +20,8 @@ if (isset($_POST['reserver'])) {
       file_put_contents($path, json_encode($atelier));
     }
   }
-}
-header('Location: ../index.php');
+
+  header('Location: ../index.php#card_'.$id);
 exit();
+}
+

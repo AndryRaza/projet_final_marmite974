@@ -71,7 +71,7 @@ if (!isset($_SESSION['atelier_ajout_error'])) {
                 <!-- Image -->
                 <div class="form-group row row-cols-md-2 row-cols-1">
                     <label class="form-label col-md-3" for="formFileSm">Image :</label>
-                    <input class="form-control form-control-sm col-md-9" type="file" id="formFileSm" name="formFileSm">
+                    <input class="form-control form-control-sm col-md-9" type="file" id="formFileSm" name="formFileSm" required>
                 </div>
 
                 <!-- Date -->
@@ -104,7 +104,7 @@ if (!isset($_SESSION['atelier_ajout_error'])) {
                 <div class="form-group row row-cols-md-3 row-cols-1">
                     <label class="col-md-3" for="debut_horaire">Début (horaire) :</label>
                     <input class="form-control col-md-4 mr-2" type="number" name="debut_horaireH" id="debut_horaire" required placeholder="Heures" min="1" max="24" onKeyPress="if(this.value.length==2) return false;">
-                    <input class="form-control col-md-4" type="number" name="debut_horaireM" id="debut_horaire" required placeholder="Minutes" min="1" max="60" onKeyPress="if(this.value.length==2) return false;">
+                    <input class="form-control col-md-4" type="number" name="debut_horaireM" id="debut_horaire" required placeholder="Minutes" min="0" max="60" onKeyPress="if(this.value.length==2) return false;">
                 </div>
 
                 <!-- Durée -->

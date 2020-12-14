@@ -19,7 +19,7 @@ include '../includes/fonctions.php';
 
 <nav class="navbar navbar-expand-md navbar-light ">
         <a class="navbar-brand " href="index.php">
-            <img src="../ressources/img/logo.png" alt="" height="100" class="d-inline-block align-top">
+            <img src="../ressources/img/logo.png" alt="logo" height="180" class="d-inline-block align-top">
         </a>
         <div class="d-flex flex-column ml-auto">
                 <div class="collapse navbar-collapse mb-4 justify-content-end " id="navbarNav">

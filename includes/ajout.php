@@ -25,7 +25,7 @@ if (isset($_POST['ajout_atelier'])) {
     //message d'erreur
     if($_FILES['formFileSm']['error'] > 0 )
     {
-      Echo "Erreur pas d'image séléctionner!";
+      Echo "Erreur pas d'image séléctionné!";
       die;
     }
 
@@ -49,13 +49,13 @@ if (isset($_POST['ajout_atelier'])) {
     // Création de la variable nom temporaire qui va récuperer le fichier et le mettre dans un fichier temporaire
     $tmpName = $_FILES['formFileSm']['tmp_name'];
     // Ensuite on crée une variable qui va indiquer un chemin pour placer l'image
-    $fileName = "../ressources/" . $fileName ;
+    $fileName = "ressources/img/" . $fileName ;
     //envoie de l'image que l'on récupere dans le dossier temporaire pour le mettre dans le dossier Ressources
     $resultat = move_uploaded_file($tmpName, $fileName);
     
   }
   else {
-    $fileName = "../ressources/img/logo.png";
+    $fileName = "ressources/img/logo.png";
   }
 
   
@@ -71,6 +71,11 @@ if (isset($_POST['ajout_atelier'])) {
     && isset($_POST['Duree'])
     && isset($_POST['Places'])
     && isset($_POST['Prix'])
+    && $_POST['Prix'] >0
+    && $_POST['Places'] >0
+    && $_POST['Duree'] >0
+    && $_POST['debut_horaireH'] >0
+    && $_POST['debut_horaireM'] >=0
   ) {
     //si le bouton ajouter est actioner
     $id_atelier = "atelier_" . md5(uniqid(rand(), true));
@@ -82,7 +87,7 @@ if (isset($_POST['ajout_atelier'])) {
       "Description" => htmlspecialchars($_POST['Description']),
       "Date" => array($_POST['Day'], $_POST['Mois'], $_POST['Year']),
       "DebutHoraire" => array((int) $_POST['debut_horaireH'], (int)$_POST['debut_horaireM']),
-      "Image" => ' $fileName',
+      "Image" =>  $fileName,
       "Duree" => (int)$_POST['Duree'],
       "Places" => (int) $_POST['Places'],
       "Prix" => (int) $_POST['Prix'],

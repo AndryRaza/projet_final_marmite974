@@ -2,19 +2,32 @@
 
 /**************************Pour afficher les cartes, réserver********************************/
 
+// fonction pour valider les données 
+function validation($donnees)
+{
+    // trim supprime les espaces, les retours à la ligne, les tabulations et autres "blanc"
+    $donnees = trim($donnees);
+    // stipslashes supprime les anti slash présent dans la chaîne 
+    $donnees = stripslashes($donnees);
+    // htmlsprecialchars convertit les caractères spéciaux en entités html
+    $donnees = htmlspecialchars($donnees);
+    return $donnees;
+};
+
 function affichage_atelier()
 {
   $path = '../data/atelier.json'; //chemin du fichier à traiter
   $json = file_get_contents("data/atelier.json"); //ouvre le fichier
   $atelier = json_decode($json, true); //traduire les données en php 
-  $expire = false;
+ 
 
   if ($atelier===[])
   {
     echo '<p class="text-center w-100 animate__animated animate__backInUp" style="font-size:30px"> Rien pour le moment ! <br> Revenez plus tard ! </p>';
   }
-
-  foreach ($atelier as $key => $value) {
+  $reverse_atelier = array_reverse($atelier); // Pour pouvoir afficher les ateliers récemments ajoutés 
+  foreach ($reverse_atelier as $key => $value) {
+    $expire = false;
     setlocale(LC_TIME, 'fra_fra'); // pour afficher la date en français
 
     /**
@@ -77,11 +90,11 @@ function affichage_atelier()
 
    if ($value['etat'] == "actif") : ?>
       <!-- affiche que les cartes actives -->
-      <div class="card shadow m-lg-3" style="width: 20rem;">
+      <div class="card shadow  mb-3 mx-md-3 " style="width: 20rem;" id="card_<?= $value['Id'] ?>">
 
         <div class="position-relative image-container">
-          <div class=" position-absolute  top-0 start-0 font-weight-bold bg-primary text-white"style="font-size:20px">À partir du <br><?php echo /*affiche la date */ implode(' ', $value['Date']) ?> </div>
-          <div class="position-absolute bg-primary text-white font-weight-bold" style="bottom:0;font-size:23px">
+          <div class=" position-absolute  top-0 start-0 font-weight-bold text-white"style="font-size:20px;background-color:#d05c62">À partir du <br><?php echo /*affiche la date */ implode(' ', $value['Date']) ?> </div>
+          <div class="position-absolute text-white font-weight-bold" style="bottom:0;font-size:23px;background-color:#d05c62">
             <?php if ($expire == true) {
               echo 'Expiré';
             } elseif ($value['Places'] > 0) {
@@ -90,11 +103,11 @@ function affichage_atelier()
               echo 'Complet';
             }  ?>
           </div>
-          <img src="ressources\charte\plat2.jpg" class="card-img-top" text="Date" alt="plat" height="300px" width="200px">
+          <img src="<?= $value['Image'] ?>" class="card-img-top" text="Date" alt="plat" height="300px" width="200px">
 
         </div>
         <div>
-          <p class="card-text"> Durée : <?php echo $value['Duree'] ?> jours</p>
+          <p class="card-text"> Durée : <?php echo $value['Duree'] ?> h</p>
           <h4 class="card-title ml-auto text-center"><?php echo $value['Titre'] ?></h4>
         </div>
         <div class="card-body">
@@ -246,7 +259,7 @@ function affichage_membre()
             <p class="pt-4"><?= $value['Titre'] ?></p>
           </td>
           <td class="text-center">
-            <p class="pt-4"><?= implode('/', $value['Date']) ?></p>
+            <p class="pt-4"><?= implode('/', $value['Date']) ?> à <?php implode(':',$value['DebutHoraire']) ?></p>
           </td>
           <td class="text-center">
             <p class="pt-4"><?= $value['Prix'] ?></p>
