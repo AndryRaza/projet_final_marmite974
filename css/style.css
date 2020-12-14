@@ -4,7 +4,7 @@ body{
     margin: 0;
     padding: 0;
     height: 100vh;
-    cursor: none;
+    
     overflow: hidden;
 }
 
@@ -19,7 +19,8 @@ nav{
     background-color: #f3671f;
 }
 
-#cursor {
+
+.cursor {
     width: 40px;
     height: 40px;
     border: 1px dashed white;
@@ -29,7 +30,7 @@ nav{
    pointer-events: none;
 }
 
-#cursor::before {
+.cursor::before {
     content: '';
     position: absolute;
     top: 50%;
@@ -53,10 +54,9 @@ nav{
     to {
         transform: scale(0.7) rotate(190deg);
     }
- 
-   }
+}
 
- @keyframes Anim2 {
+@keyframes Anim2 {
     0%{
         transform: scale(1);
     }
