@@ -70,7 +70,7 @@ foreach ($atelier as $key => $value) {
    * c'est donc le jour qui va faire la différence 
    */
 ?>
-
+<?php if($value['etat'] == "actif"):?> <!-- affiche que les cartes actives -->
   <div class="card shadow m-lg-3" style="width: 20rem;">
 
     <div class="position-relative image-container">
@@ -119,7 +119,7 @@ foreach ($atelier as $key => $value) {
       </div>
     </div>
   </div>
-
+<?php endif ?>
 <?php
 }
 ?>
