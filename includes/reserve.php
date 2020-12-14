@@ -14,7 +14,7 @@ $membre = json_decode(file_get_contents($path2), true);
 if (isset($_POST['reserver'])) {
   $id = $_POST['id'];
   foreach ($atelier as $key => $value) {
-    if ($value['Id'] == $id && $_SESSION['user'] == 'particulier') {
+    if ($value['Id'] == $id && $_SESSION['statut'] == 'particulier') {
       $atelier[$key]['Places'] = $value['Places'] - 1;
       array_push($atelier[$key]['participant'], $_SESSION['mail']);
       file_put_contents($path, json_encode($atelier));
