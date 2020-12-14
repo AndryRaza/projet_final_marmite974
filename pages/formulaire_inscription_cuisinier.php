@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['ressusite_cuisinier'])) {
+if (!isset($_SESSION['ressusite_cuisinier']) && empty($_SESSION['erreur_cuisinier'])) {
     $_SESSION['ressusite_cuisinier'] = false;
 }
 ?>
@@ -27,6 +27,18 @@ if (!isset($_SESSION['ressusite_cuisinier'])) {
             <!-- Formulaire à insérer ici-->
 
             <h1> Formulaire inscription : Cuisinier.</h1>
+
+            <?php
+            if ($_SESSION['reussite_cuisinier'] == true) {
+                echo '<div class="text-center font-weight-bold"> <span class="text-success">Votre inscription a été validée</span> </div>';
+            }
+            $_SESSION['reussite_cuisinier'] = false;
+
+            if ($_SESSION['erreur_cuisinier'] == true) {
+                echo '<div class="text-center font-weight-bold"> <span class="text-danger">Erreur lors de l\'inscription</span> </div>';
+            }
+            $_SESSION['erreur_cuisinier'] = false;
+            ?>
 
             <section class="container_fluid">
                 <div>

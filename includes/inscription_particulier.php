@@ -12,8 +12,11 @@ $membres = json_decode($json, true);
 // fonction pour valider les données 
 function validation($donnees)
 {
+    // trim supprime les espaces, les retours à la ligne, les tabulations et autres "blanc"
     $donnees = trim($donnees);
+    // stipslashes supprime les anti slash présent dans la chaîne 
     $donnees = stripslashes($donnees);
+    // htmlsprecialchars convertit les caractères spéciaux en entités html
     $donnees = htmlspecialchars($donnees);
     return $donnees;
 };
@@ -27,17 +30,14 @@ if (isset($_POST['inscription_particulier'])) {
         "prenom" => validation($_POST['prenom_particulier']),
         "telephone" => validation($_POST['phone_particulier']),
         "mail" => validation($_POST['mail_particulier']),
-        "statut" => $_POST['statut_particulier']
+        "statut" => $_POST['statut_particulier'],
+        "id" => uniqid("par"),
+        "password" => validation($_POST['password'])
     );
-
-    var_dump($newmembre['nom']);
-    var_dump($newmembre['prenom']);
-    var_dump($newmembre['telephone']);
-    var_dump($newmembre['mail']);
 
 
     // on vérifie que les champs ne sont pas vides puis qu'ils correspondent bien au regex et pour le mail on utilise un filtre qui valide ou non l'adresse
-    if (!empty($newmembre['nom'])  && preg_match('#(^[\w+]+)$#', $newmembre['nom'])  && !empty($newmembre['prenom'])  && preg_match('#(^[\w+]+)$#', $newmembre['prenom']) && preg_match('#(^[0-9]+)$#', $newmembre['telephone']) && !empty($newmembre['mail']) && filter_var($newmembre['mail'], FILTER_VALIDATE_EMAIL)) {
+    if (!empty($newmembre['nom'])  && preg_match('#(^[\w+]+)$#', $newmembre['nom'])  && !empty($newmembre['prenom'])  && preg_match('#(^[\w+]+)$#', $newmembre['prenom']) && preg_match('#(^[0-9]+)$#', $newmembre['telephone']) && !empty($newmembre['mail']) && filter_var($newmembre['mail'], FILTER_VALIDATE_EMAIL) && !empty($newmembre['password'])) {
 
         // on vérifie si le fichier possède des informations ou pas
         if ($membres == null) {

@@ -81,6 +81,18 @@ if (empty($_SESSION['reussite']) && empty($_SESSION['erreur'])) {
                     <input class="form-control col-md-9" type="email" name="mail_particulier" id="mail_particulier" required autocomplete placeholder="jhonsmith@mail.com" pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?">
                 </div>
 
+                <!-- Mot de passe -->
+                <div class="form-group row row-cols-md-2 row-cols-1">
+                    <label class="col-md-3" for="mail_particulier">* Mot de passe :</label>
+                    <input class="form-control col-md-9" type="password" name="password_particulier" id="password_particulier" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
+                </div>
+
+                <!-- Confirmation mot de passe -->
+                <div class="form-group row row-cols-md-2 row-cols-1">
+                    <label class="col-md-3" for="mail_particulier">* Confirmez votre mot de passe :</label>
+                    <input class="form-control col-md-9" type="password" name="confirm_particulier" id="confirm_particulier" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
+                </div>
+
                 <!-- Bouton -->
                 <div class="form-group d-flex justify-content-between">
                     <input type="hidden" name="statut_particulier" value="particulier">
