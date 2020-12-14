@@ -111,8 +111,7 @@ if (!isset($_SESSION['erreur_cuisinier'])) {
                             <label for="inscription_particulier">* : Champ obligatoire</label>
                             <input class="btn-lg btn-info" type="submit" name="inscription_cuisinier" value="S'inscrire">
                         </div>
-
-
+                        <small><strong>Attention :</strong> le mot de passe doit contenir minimum 8 caractères dont une lettre en majuscule, une minuscule, un chiffre et un caractère spécial.</small>
                     </form>
 
                 </div>
