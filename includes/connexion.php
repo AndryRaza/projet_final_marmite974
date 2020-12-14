@@ -16,6 +16,7 @@ if (isset($_POST['connexion']))     //Pour gérer la connexion en mode admin
         foreach ($membre as $key => $value) {
             if ($value['mail'] === $_POST['mail_user'] && $value['password'] === $_POST['mdp_user']) {
                 $_SESSION['user'] = $value['name'];
+                $_SESSION['mail'] = $value['mail'];
             }
         }
     }
@@ -26,6 +27,7 @@ if (isset($_POST['connexion']))     //Pour gérer la connexion en mode admin
 if (isset($_POST['deconnexion'])) {  //Lorsque l'on se déconnecte
     $_SESSION['admin'] = false; //On est pu en mode admin donc c'est faux
     $_SESSION['user'] = ''; //On met le user à rien
+    $_SESSION['mail'] = '';
     session_destroy();
     header('location: ../index.php');    //On redirige vers la page d'accueil
     exit();
