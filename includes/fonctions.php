@@ -104,15 +104,15 @@ function affichage_atelier()
               <?php
               if ($expire == true) {
               ?>
-                <input class="btn btn-primary d-flex justify-content-right  ml-auto" type="submit" name="reserver" value="Terminé" disabled>
+                <input class="btn btn-primary d-flex justify-content-right  ml-auto mt-3" type="submit" name="reserver" value="Terminé" disabled>
               <?php
               } elseif ($value['Places'] > 0) {
               ?>
-                <input class="btn btn-primary d-flex justify-content-right  ml-auto mt-4" type="submit" name="reserver" value="Réserver">
+                <input class="btn btn-primary d-flex justify-content-right  ml-auto mt-3" type="submit" name="reserver" value="Réserver">
               <?php
               } else {
               ?>
-                <input class="btn btn-primary d-flex justify-content-right  ml-auto" type="submit" name="reserver" value="Complet" disabled>
+                <input class="btn btn-primary d-flex justify-content-right  ml-auto mt-3" type="submit" name="reserver" value="Complet" disabled>
               <?php
               }
               ?>

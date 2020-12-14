@@ -43,7 +43,7 @@ include 'includes/fonctions.php'
 
 <body>
 
-    <nav class="navbar navbar-expand-md navbar-light d-flex justify-content-between">
+    <nav class="navbar navbar-expand-md navbar-light d-flex justify-content-between ">
         <a class="navbar-brand" style="margin-left:50px" href="index.php">
             <img src="ressources/img/logo.png" alt="" height="100" class="d-inline-block align-top">
         </a>
