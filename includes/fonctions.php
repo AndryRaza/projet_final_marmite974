@@ -14,6 +14,23 @@ function validation($donnees)
     return $donnees;
 };
 
+function correction_date($jour,$mois,$year){  //On corrige si la date est incorrecte
+
+  if ($jour > 30 && $mois === 'Fevrier' && $year%4 === 0){  //Année bissextile 
+    return array(29, $mois, $year);
+  }
+
+  if ($jour > 29 && $mois === 'Fevrier' && $year%4 != 0){  //Année non bissextile
+    return array(28, $mois, $year);
+  }
+
+  if ($jour > 31 && ($mois==='Avril' || $mois ==='Juin' || $mois ==='Septembre' || $mois ==='Novembre') ) //Année où l'on a que 30 jours
+  {
+    return array(30, $mois, $year);
+  }
+}
+
+
 function affichage_atelier()
 {
   $path = '../data/atelier.json'; //chemin du fichier à traiter
