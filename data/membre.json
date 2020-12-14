@@ -50,5 +50,23 @@
         "specialite": "Grillade",
         "statut": "cuisinier",
         "id": "cui5fd33c992601c"
+    },
+    {
+        "nom": "Smith",
+        "prenom": "John",
+        "telephone": "112233",
+        "mail": "johnsmith@mail.com",
+        "statut": "particulier",
+        "id": "par5fd6f8576f46b",
+        "password": "$2y$10$aAJ9cRC9DdXSnxc0vywsYecjOxhtFpBF9JL6aIausvfaHHaZF8qWe"
+    },
+    {
+        "name": "DUPOND",
+        "prenom": "Bernard",
+        "mail": "dupondbernard@mail.com",
+        "specialite": "Grillade",
+        "statut": "cuisinier",
+        "id": "cui5fd6f9cae9ae7",
+        "password": "$2y$10$az7p4yHHoyAW26W17VfZoOa4tdZAQCn0Oy3G4RinQiJ.9I4Egrk5m"
     }
 ]

@@ -97,7 +97,7 @@ foreach ($atelier as $key => $value) {
       <p class="card-text"><?php echo $value['Description'] ?></p>
 
       <div class="d-flex justify-content-between">
-        <p class="card_text mt-2 ml-auto "><?php echo $value['Prix'] ?></p>
+        <p class="card_text mt-2 ml-auto display-6"><?php echo $value['Prix'] . ' €' ?></p>
         <form action="includes/reserve.php" method="POST">
           <input type="hidden" value="<?php echo $value['Id'] ?>" name="id">
           <?php
