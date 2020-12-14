@@ -25,39 +25,41 @@ if (!isset($_SESSION['user'])) {
 
 <body>
 
-    <header class="container-fluid">
-        <div class="row row-cols-md-4 row-cols-1">
-            <div class=" mt-md-3 col-md-3 text-center ">
-                <a href="index.php"><img src="ressources/img/logo.png" height="150px"></a>
-            </div>
-            <div class=" col-md-6 mt-md-4">
-                <h1 class="text-center">Marmite974</h1>
-                <h2 class="text-center">Application de réservation de cours de cuisine</h2>
-            </div>
-            <div class="col-md-2 w-25 mt-md-4">
-                <?php if ($_SESSION['user'] === '' && !$_SESSION['admin']) { //Si personne est connecté, on affiche le formulaire de connexion
-                ?>
-                    <form action="includes/connexion.php" method="POST">
-                        <input class="form-control mb-2" type="text" name="mail_user" placeholder="Votre adresse email">
-                        <input class="form-control mb-2" type="password" name="mdp_user" placeholder="Votre mot de passe">
-                        Pas encore inscrit ? <a href="pages/choix_utilisateur.html">S'inscrire</a>
-                        <input type="submit" class="btn btn-primary" name="connexion" value="Se connecter">
-                    </form>
-                <?php } ?>
-
-                <?php if (($_SESSION['user'] === '' && $_SESSION['admin'])) { ?>
-                    <p class="text-center" style="font-size:30px;">Mode Admin </p>
-                    <form action="includes/connexion.php" method="POST">
-                        <input type="submit" class="btn btn-primary justify-self-end" name="deconnexion" value="Se déconnecter">
-                    <?php } ?>
-            </div>
+    <nav class="navbar navbar-expand-md navbar-light w-100">    
+        <a class="m-auto" href="index.php"><img  src="ressources/img/logo.png"></a>
+        <div class="d-flex flex-column">
+        <h1 class="text-center">Marmite974</h1>
+        <h2 class="text-center">Application de réservation de cours de cuisine</h2>
         </div>
+        <?php if (($_SESSION['user'] === '' && $_SESSION['admin'])) { ?>
+            <p class="text-center" style="font-size:30px;">Mode Admin </p>
+            <form class="m-auto" action="includes/connexion.php" method="POST">
+                <input type="submit" class="btn btn-primary justify-self-end" name="deconnexion" value="Se déconnecter">
+            <?php } ?>
+
+            <?php if ($_SESSION['user'] === '' && !$_SESSION['admin']) { //Si personne est connecté, on affiche le formulaire de connexion
+            ?>
+                <form class="m-auto" action="includes/connexion.php" method="POST">
+                    <input class="form-control mb-2" type="text" name="mail_user" placeholder="Votre adresse email">
+                    <input class="form-control mb-2" type="password" name="mdp_user" placeholder="Votre mot de passe">
+                    Pas encore inscrit ? <a href="pages/choix_utilisateur.html">S'inscrire</a>
+                    <input type="submit" class="btn btn-primary" name="connexion" value="Se connecter">
+                </form>
+            <?php } ?>
+    </nav>
+    <header class="container-fluid">
+
+  
+
+
+     
     </header>
 
     <section class="container-fluid ">
         <div class="container">
             <div class=" row row-cols-md-4 row-cols-1">
-                <?php include 'includes/fonctions.php' ?>
+                <?php include 'includes/fonctions.php' 
+                ?>
             </div>
         </div>
     </section>
