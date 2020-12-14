@@ -15,7 +15,7 @@ foreach ($atelier as $key => $value) {
    * le mois indiqué dans Date est associé à un chiffre
    * afin de pouvoir le comparer au mois actuel
    */
-  if ($atelier['key']['Date'][1] == 'Janvier') {
+  if ($value['Date'][1] == 'Janvier') {
     $mois = 1;
   }
   if ($value['Date'][1] == 'Fevrier') {
