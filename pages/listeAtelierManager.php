@@ -37,7 +37,7 @@ session_start();
                         <td class="align-middle text-center" scope="col"> <?= $value['etat'] ?> </td>
                         <td class="align-middle text-center" scope="col">
                             <form method="POST" enctype="multipart/form-data" action="#<?= $value['Id'] ?> ">
-                                <input name="indice" value="<?= $value['Id'] ?>" style="display: none;">
+                                <input name="indice" value="<?= $value['Id'] ?>" type="hidden">
                                 <input class="btn-sm btn-primary mb-2" type="submit" value="Activer" name="submit_activer">
                                 <input class="btn-sm btn-primary mb-2" type="submit" value="Désactiver" name="submit_desactiver">
                             </form>

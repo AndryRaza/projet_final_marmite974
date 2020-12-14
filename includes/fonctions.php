@@ -9,6 +9,10 @@ function affichage_atelier()
   $atelier = json_decode($json, true); //traduire les données en php 
   $expire = false;
 
+  if ($atelier===[])
+  {
+    echo '<p class="text-center w-100 animate__animated animate__backInUp" style="font-size:30px"> Rien pour le moment ! <br> Revenez plus tard ! </p>';
+  }
 
   foreach ($atelier as $key => $value) {
     setlocale(LC_TIME, 'fra_fra'); // pour afficher la date en français
@@ -171,19 +175,90 @@ function affichage_membre()
     $json2 = file_get_contents("../data/atelier.json");
     $atelier = json_decode($json2, true);
 
+    $expire = false;
+
     foreach ($atelier as $key => $value) {
+      setlocale(LC_TIME, 'fra_fra'); // pour afficher la date en français
+
+      /**
+       * le mois indiqué dans Date est associé à un chiffre
+       * afin de pouvoir le comparer au mois actuel
+       */
+      if ($value['Date'][1] == 'Janvier') {
+        $mois = 1;
+      }
+      if ($value['Date'][1] == 'Fevrier') {
+        $mois = 2;
+      }
+      if ($value['Date'][1] == 'Mars') {
+        $mois = 3;
+      }
+      if ($value['Date'][1] == 'Avril') {
+        $mois = 4;
+      }
+      if ($value['Date'][1] == 'Mai') {
+        $mois = 5;
+      }
+      if ($value['Date'][1] == 'Juin') {
+        $mois = 6;
+      }
+      if ($value['Date'][1] == 'Juillet') {
+        $mois = 7;
+      }
+      if ($value['Date'][1] == 'Aout') {
+        $mois = 8;
+      }
+      if ($value['Date'][1] == 'Septembre') {
+        $mois = 9;
+      }
+      if ($value['Date'][1] == 'Octobre') {
+        $mois = 10;
+      }
+      if ($value['Date'][1] == 'Novembre') {
+        $mois = 11;
+      }
+      if ($value['Date'][1] == 'Decembre') {
+        $mois = 12;
+      }
+  
+      /**
+       * on compare le mois et l'année actuel 
+       * au mois et à l'année du fichier 
+       * si la date actuel est supérieur alors 
+       * l'atelier a expiré et donc indisponible
+       */
+      if (strftime('%m') > $mois && strftime('%Y') >= $value['Date'][2]) {
+        $expire = true;
+      } elseif (strftime('%d') >= $value['Date'][0] && strftime('%m') == $mois && strftime('%Y') == $value['Date'][2]) {
+        $expire = true;
+      }
+      /**
+       * la deuxième partie concerne la cas ou mois et année
+       * sont identiques à la date actuelle 
+       * c'est donc le jour qui va faire la différence 
+       */
+
       if (in_array($_SESSION['mail'],$atelier[$key]['participant'] )) {
 
     ?>
         <tr>
           <td class="text-center">
-            <p class="pt-5"><?= $value['Titre'] ?></p>
+            <p class="pt-4"><?= $value['Titre'] ?></p>
           </td>
           <td class="text-center">
-            <p class="pt-5"><?= implode('/', $value['Date']) ?></p>
+            <p class="pt-4"><?= implode('/', $value['Date']) ?></p>
           </td>
           <td class="text-center">
-            <p class="pt-5"><?= $value['Prix'] ?></p>
+            <p class="pt-4"><?= $value['Prix'] ?></p>
+          </td>
+          <td class="text-center">
+            <?php if (!$expire){ ?>
+            <form action="../includes/annulation.php" method="POST">
+              <input type="hidden" value="<?= $atelier[$key]['Id'];?>" name="id_atelier"> 
+              <input type="hidden" value="<?= $_SESSION['mail']?>" name="user">
+              <input type="submit" class="btn btn-primary mt-4" name="annuler" id="annuler" value="Annuler">
+            </form>
+            <?php } ?>
           </td>
         <?php }
         }

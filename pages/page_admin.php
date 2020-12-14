@@ -18,7 +18,7 @@ include '../includes/fonctions.php';
 </head>
 
 <nav class="navbar navbar-expand-md navbar-light ">
-        <a class="navbar-brand " href="index.php">
+        <a class="navbar-brand " href="../index.php">
             <img src="../ressources/img/logo.png" alt="" height="100" class="d-inline-block align-top">
         </a>
         <div class="d-flex flex-column ml-auto">
@@ -27,7 +27,7 @@ include '../includes/fonctions.php';
                     <ul class="navbar-nav">
 
                         <li class="nav-item active">
-                            <a class="nav-link" href="index.php">Accueil</a>
+                            <a class="nav-link" href="../index.php">Accueil</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="page_admin.php">Voir les membres</a>

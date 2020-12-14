@@ -46,6 +46,7 @@ include '../includes/fonctions.php';
             <th class="text-center" scope="col">Nom</th>
             <th class="text-center" scope="col">Date</th>
             <th class="text-center" scope="col">Prix</th>
+            <th scope="col"></th>
         </tr>
     </thead>
     <?php affichage_atelier_particulier();  ?>

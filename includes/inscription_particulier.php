@@ -43,8 +43,8 @@ if (isset($_POST['inscription_particulier']) && !$mail_existant) {
         "mail" => validation($_POST['mail_particulier']),
         "statut" => $_POST['statut_particulier'],
         "id" => uniqid("par"),
-        "password" =>hash('md5',validation($_POST['password_particulier'])),
-        "atelier"=> []
+        "password" =>hash('md5',validation($_POST['password_particulier']))
+        
     );
 
 
@@ -76,3 +76,4 @@ else {
 
 
 header('Location:../pages/formulaire_inscription_particulier.php');
+exit();
