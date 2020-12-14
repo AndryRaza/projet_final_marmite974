@@ -13,3 +13,15 @@ if (isset($_POST['deconnexion'])){  //Lorsque l'on se déconnecte
     $_SESSION['user'] = ''; //On met le user à rien
     header('location: ../index.php');    //On redirige vers la page d'accueil
 }
+
+$data_file = "../data/membre.json";
+$json_membre = file_get_contents("../data/membre.json"); 
+$membre = json_decode($json_membre, true);
+
+(foreach $membre as $key => $value)
+if ['mail_user'] === $_POST ['mail_user'] && $value['mdp_user'] === $_POST['mdp_user']
+{
+    $_SESSION['user'] = ['name']
+}
+
+endforeach 

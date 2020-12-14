@@ -83,13 +83,14 @@ if (empty($_SESSION['reussite']) && empty($_SESSION['erreur'])) {
                 <!-- Mot de passe -->
                 <div class="form-group row row-cols-md-2 row-cols-1">
                     <label class="col-md-3" for="mail_particulier">* Mot de passe :</label>
-                    <input class="form-control col-md-9" type="password" name="password_particulier" id="password_particulier" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
+                    <input class="form-control col-md-9" type="password" name="password_particulier" id="password_particulier" onkeyup="check();" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
                 </div>
 
                 <!-- Confirmation mot de passe -->
                 <div class="form-group row row-cols-md-2 row-cols-1">
                     <label class="col-md-3" for="mail_particulier">* Confirmez votre mot de passe :</label>
-                    <input class="form-control col-md-9" type="password" name="confirm_particulier" id="confirm_particulier" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
+                    <input class="form-control col-md-9" type="password" name="confirm_particulier" id="confirm_particulier" onkeyup="check();" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
+                    <span id="message" class="mx-auto"></span>
                 </div>
 
                 <!-- Bouton -->
@@ -104,3 +105,18 @@ if (empty($_SESSION['reussite']) && empty($_SESSION['erreur'])) {
     </section>
 </body>
 
+<script>
+    var check = function() {
+        if (document.getElementById('password_particulier').value != '') {
+            if (document.getElementById('password_particulier').value == document.getElementById('confirm_particulier').value) {
+                document.getElementById('message').style.color = 'green';
+                document.getElementById('message').innerHTML = 'Mot de passe confirmé';
+            } else {
+                document.getElementById('message').style.color = 'red';
+                document.getElementById('message').innerHTML = 'Mot de passe incorrect';
+            }
+        }
+    }
+</script>
+
+</html>

@@ -26,6 +26,30 @@ foreach($atelier as $key => $value){ /* read array  */
 
       <p class="card-text"><?php echo $value['Description']?></p>
 
+<<<<<<< HEAD
+      <div class="d-flex justify-content-between">
+        <p class="card_text mt-2 ml-auto display-6"><?php echo $value['Prix'] . ' €' ?></p>
+        <form action="includes/reserve.php" method="POST">
+          <input type="hidden" value="<?php echo $value['Id'] ?>" name="id">
+          <?php
+          if ($expire == true) {
+          ?>
+            <input class="btn btn-primary d-flex justify-content-right  ml-auto" type="submit" name="reserver" value="Terminé" disabled>
+          <?php
+          } elseif ($value['Places'] > 0) {
+          ?>
+            <input class="btn btn-primary d-flex justify-content-right  ml-auto" type="submit" name="reserver" value="Réserver">
+          <?php
+          } else {
+          ?>
+            <input class="btn btn-primary d-flex justify-content-right  ml-auto" type="submit" name="reserver" value="Complet" disabled>
+          <?php
+          }
+          ?>
+        </form>
+
+      </div>
+=======
         <div class="d-flex justify-content-between">
           <p class="card_text mt-2 ml-auto "><?php echo $value['Prix']?></p>
            <form>
@@ -33,6 +57,7 @@ foreach($atelier as $key => $value){ /* read array  */
            </form>
          
         </div>
+>>>>>>> bde29ec73e90187f2ce7b57408b6676c114c8494
     </div>
   </div>
 

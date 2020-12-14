@@ -45,7 +45,7 @@ if (!isset($_SESSION['erreur_cuisinier'])) {
     }
     $_SESSION['erreur_cuisinier'] = false;
     ?>
-    
+
     <section class="container-fluid">
         <div class="container mt-2">
             <!-- Formulaire à insérer ici-->
@@ -83,24 +83,25 @@ if (!isset($_SESSION['erreur_cuisinier'])) {
 
                         </div>
 
-                        <!-- Mot de passe -->
-                        <div class="form-group row row-cols-md-2 row-cols-1">
-                            <label class="col-md-3" for="mail_particulier">* Mot de passe :</label>
-                            <input class="form-control col-md-9" type="password" name="password_cuisinier" id="password_particulier" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
-                        </div>
-
-                        <!-- Confirmation mot de passe -->
-                        <div class="form-group row row-cols-md-2 row-cols-1">
-                            <label class="col-md-3" for="mail_particulier">* Confirmez votre mot de passe :</label>
-                            <input class="form-control col-md-9" type="password" name="confirm_cuisinier" id="confirm_particulier" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
-                        </div>
-
                         <!--La spécialité du cuisinier-->
                         <div class="form-group row row-cols-md-2 row-cols-1">
 
                             <label for="spécialtite-du-cuisinier" class="col-md-3"> Spécialité </label>
                             <input type="text" class=" form-control col-md-9" name="specialite_du_cuisinier" pattern="[a-zA-Z @ & é è' $ # µ ç §]+">
 
+                        </div>
+
+                        <!-- Mot de passe -->
+                        <div class="form-group row row-cols-md-2 row-cols-1">
+                            <label class="col-md-3" for="mail_particulier">* Mot de passe :</label>
+                            <input class="form-control col-md-9" type="password" name="password_cuisinier" id="password_cuisinier" onkeyup="check();" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
+                        </div>
+
+                        <!-- Confirmation mot de passe -->
+                        <div class="form-group row row-cols-md-2 row-cols-1">
+                            <label class="col-md-3" for="mail_particulier">* Confirmez votre mot de passe :</label>
+                            <input class="form-control col-md-9" type="password" name="confirm_cuisinier" id="confirm_cuisinier" onkeyup="check();" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
+                            <span id="message" class="mx-auto"></span>
                         </div>
 
 
@@ -119,4 +120,17 @@ if (!isset($_SESSION['erreur_cuisinier'])) {
 
         </div>
     </section>
+    <script>
+        var check = function() {
+            if (document.getElementById('password_cuisinier').value != '') {
+                if (document.getElementById('password_cuisinier').value == document.getElementById('confirm_cuisinier').value) {
+                    document.getElementById('message').style.color = 'green';
+                    document.getElementById('message').innerHTML = 'Mot de passe confirmé';
+                } else {
+                    document.getElementById('message').style.color = 'red';
+                    document.getElementById('message').innerHTML = 'Mot de passe incorrect';
+                }
+            }
+        }
+    </script>
 </body>
