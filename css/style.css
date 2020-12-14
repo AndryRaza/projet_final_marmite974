@@ -15,6 +15,13 @@ body{
 nav{
     background-color: #f3671f;
 }
+
+.barre{
+    width:100%;
+    background-color:black;
+    height:2px;
+    border : 2px solid black;
+}
 /*
 <<<<<<< HEAD
 =======

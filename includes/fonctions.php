@@ -76,8 +76,8 @@ function affichage_atelier()
       <div class="card shadow m-lg-3" style="width: 20rem;">
 
         <div class="position-relative image-container">
-          <div class=" position-absolute  top-0 start-0 font-weight-bold bg-primary text-white"><?php echo /*affiche la date */ implode('/', $value['Date']) ?> </div>
-          <div class="position-absolute bg-primary text-white font-weight-bold" style="bottom:0;">
+          <div class=" position-absolute  top-0 start-0 font-weight-bold bg-primary text-white"style="font-size:20px">À partir du <br><?php echo /*affiche la date */ implode(' ', $value['Date']) ?> </div>
+          <div class="position-absolute bg-primary text-white font-weight-bold" style="bottom:0;font-size:23px">
             <?php if ($expire == true) {
               echo 'Expiré';
             } elseif ($value['Places'] > 0) {
@@ -86,19 +86,19 @@ function affichage_atelier()
               echo 'Complet';
             }  ?>
           </div>
-          <img src="ressources\charte\plat2.jpg" class="card-img-top" text="Date" alt="plat">
+          <img src="ressources\charte\plat2.jpg" class="card-img-top" text="Date" alt="plat" height="300px" width="200px">
 
         </div>
         <div>
           <p class="card-text"> Durée : <?php echo $value['Duree'] ?> jours</p>
-          <h4 class="card-title ml-auto"><?php echo $value['Titre'] ?></h4>
+          <h4 class="card-title ml-auto text-center"><?php echo $value['Titre'] ?></h4>
         </div>
         <div class="card-body">
-
+          <div class="barre"></div>
           <p class="card-text"><?php echo $value['Description'] ?></p>
 
           <div class="d-flex justify-content-between">
-            <p class="card_text mt-2 ml-auto "><?php echo $value['Prix'] ?></p>
+            <p class="card_text mt-2 ml-auto" style="font-size:40px"><?php echo $value['Prix'] ?>€</p>
             <form action="includes/reserve.php" method="POST">
               <input type="hidden" value="<?php echo $value['Id'] ?>" name="id">
               <?php
@@ -108,7 +108,7 @@ function affichage_atelier()
               <?php
               } elseif ($value['Places'] > 0) {
               ?>
-                <input class="btn btn-primary d-flex justify-content-right  ml-auto" type="submit" name="reserver" value="Réserver">
+                <input class="btn btn-primary d-flex justify-content-right  ml-auto mt-4" type="submit" name="reserver" value="Réserver">
               <?php
               } else {
               ?>
