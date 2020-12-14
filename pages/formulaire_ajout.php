@@ -84,7 +84,7 @@
 
                 <!-- Durée -->
                 <div class="form-group row row-cols-md-2 row-cols-1">
-                    <label class="col-md-3" for="Duree">Durée :</label>
+                    <label class="col-md-3" for="Duree">Durée (H) :</label>
                     <input class="form-control col-md-9" type="number" name="Duree" id="Duree" required placeholder="Veuillez entrer la durée de l'atelier" min="1">
                 </div>
 
