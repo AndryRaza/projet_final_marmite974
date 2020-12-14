@@ -11,6 +11,11 @@ if (!isset($_SESSION['admin'])) //Par défaut on est pas connecté en mode admin
 if (!isset($_SESSION['user'])) {
     $_SESSION['user'] = ''; //Par défaut aucun compte est connecté
 }
+
+if (!isset($_SESSION['mail'])){
+    $_SESSION['mail'] = '';
+}
+
 ?>
 
 
@@ -27,39 +32,47 @@ if (!isset($_SESSION['user'])) {
 
 <body>
 
-    <header class="container-fluid">
-        <div class="row row-cols-md-4 row-cols-1">
-            <div class=" mt-md-3 col-md-3 text-center ">
-                <a href="index.php"><img src="ressources/img/logo.png" height="150px"></a>
+    <nav class="navbar navbar-expand-md navbar-light ">    
+    <a class="navbar-brand " href="index.php">
+      <img src="ressources/img/logo.png" alt=""  height="100" class="d-inline-block align-top">
+    </a>
+        <?php if (($_SESSION['user'] === '' && $_SESSION['admin'])) { //Quand on se connecte en mode admin?>    
+            <div class="d-flex flex-column m-auto">
+            <p class="text-center" style="font-size:30px;">Mode Admin </p>
+            <form action="includes/connexion.php" method="POST">
+                <input type="submit" class="btn btn-primary justify-self-end ml-3" name="deconnexion" value="Se déconnecter">
+            </form>
             </div>
-            <div class=" col-md-6 mt-md-4">
-                <h1 class="text-center">Marmite974</h1>
-                <h2 class="text-center">Application de réservation de cours de cuisine</h2>
-            </div>
-            <div class="col-md-2 w-25 mt-md-4">
-                <?php if ($_SESSION['user'] === '' && !$_SESSION['admin']) { //Si personne est connecté, on affiche le formulaire de connexion
-                ?>
-                    <form action="includes/connexion.php" method="POST">
-                        <input class="form-control mb-2" type="text" name="mail_user" placeholder="Votre adresse email">
-                        <input class="form-control mb-2" type="password" name="mdp_user" placeholder="Votre mot de passe">
-                        Pas encore inscrit ? <a href="pages/choix_utilisateur.html">S'inscrire</a>
-                        <input type="submit" class="btn btn-primary" name="connexion" value="Se connecter">
-                    </form>
-                <?php } ?>
+            <?php } ?>
 
-                <?php if (($_SESSION['user'] === '' && $_SESSION['admin'])) { ?>
-                    <p class="text-center" style="font-size:30px;">Mode Admin </p>
-                    <form action="includes/connexion.php" method="POST">
-                        <input type="submit" class="btn btn-primary justify-self-end" name="deconnexion" value="Se déconnecter">
-                    <?php } ?>
-            </div>
+            <?php if ($_SESSION['user'] === '' && !$_SESSION['admin']) { //Si personne est connecté, on affiche le formulaire de connexion
+            ?>
+                <form  action="includes/connexion.php" method="POST">
+                    <input class="form-control mb-2" type="text" name="mail_user" placeholder="Votre adresse email">
+                    <input class="form-control mb-2" type="password" name="mdp_user" placeholder="Votre mot de passe">
+                    Pas encore inscrit ? <a href="pages/choix_utilisateur.html">S'inscrire</a>
+                    <input type="submit" class="btn btn-primary" name="connexion" value="Se connecter">
+                </form>
+            <?php } ?>
+
+            <?php 
+            
+                
+            ?>
+    </nav>
+ 
+    <header class="container-fluid py-5">
+    <div class="d-flex flex-column">
+        <h1 class="text-center">Marmite974</h1>
+        <h2 class="text-center">Application de réservation de cours de cuisine</h2>
         </div>
     </header>
-
+    
     <section class="container-fluid ">
         <div class="container">
             <div class=" row row-cols-md-4 row-cols-1">
-                <?php include 'includes/fonctions.php' ?>
+                <?php include 'includes/fonctions.php' 
+                ?>
             </div>
         </div>
     </section>
