@@ -28,6 +28,10 @@ $membre = json_decode($json_membre, true);
     <link rel="stylesheet" href="css/style.css">
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 
     <title>Document</title>
 </head>
@@ -90,9 +94,9 @@ $membre = json_decode($json_membre, true);
     </nav>
 
     <header class="container-fluid py-5">
-        <div class="d-flex flex-column">
-            <h1 class="text-center">Marmite974</h1>
-            <h2 class="text-center">Application de réservation de cours de cuisine</h2>
+    <div class="d-flex flex-column">
+        <h1 class="text-center animate__animated animate__bounce">Marmite974</h1> <!--Animation JS avec animate css -->
+        <h2 class="text-center animate__animated animate__backInUp">Application de réservation de cours de cuisine</h2><!--Animation JS avec animate css -->
         </div>
     </header>
 
