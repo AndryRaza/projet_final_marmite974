@@ -69,6 +69,18 @@ if (!isset($_SESSION['ressusite_cuisinier']) && empty($_SESSION['erreur_cuisinie
 
                         </div>
 
+                        <!-- Mot de passe -->
+                        <div class="form-group row row-cols-md-2 row-cols-1">
+                            <label class="col-md-3" for="mail_particulier">* Mot de passe :</label>
+                            <input class="form-control col-md-9" type="password" name="password_cuisinier" id="password_particulier" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
+                        </div>
+
+                        <!-- Confirmation mot de passe -->
+                        <div class="form-group row row-cols-md-2 row-cols-1">
+                            <label class="col-md-3" for="mail_particulier">* Confirmez votre mot de passe :</label>
+                            <input class="form-control col-md-9" type="password" name="confirm_cuisinier" id="confirm_particulier" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
+                        </div>
+
                         <!--La spécialité du cuisinier-->
                         <div class="form-group row row-cols-md-2 row-cols-1">
 
