@@ -62,6 +62,11 @@ include 'includes/fonctions.php'
                             <li class="nav-item">
                                 <a class="nav-link" href="pages/page_admin.php">Voir les membres</a>
                             </li>
+                            <li class="nav-item">
+                            <form action="../includes/connexion.php" method="POST">
+                                <input type="submit" class="btn btn-primary justify-self-end ml-3 mt-3" name="deconnexion" value="Se déconnecter">
+                            </form>
+                        </li>
                         </ul>
                     </div>
                 </div>
