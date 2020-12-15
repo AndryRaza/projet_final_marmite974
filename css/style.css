@@ -42,36 +42,35 @@ nav {
   text-decoration: underline;
 }
 
-.navbar-nav li a{
-  font-size:16px;
-  margin-top:16px;
+.navbar-nav li a {
+  font-size: 16px;
+  margin-top: 16px;
 }
 
-.description{
-  height:100px;
-  overflow:hidden;
-  text-align:justify;
+.description {
+  height: 100px;
+  overflow: hidden;
+  text-align: justify;
 }
 
-@media all and (max-width:400px){
+@media all and (max-width: 400px) {
   .msg {
     text-align: center;
   }
-  .navbar-brand
-  {
-    margin:0%;
+  .navbar-brand {
+    margin: 0%;
   }
 
-  .logo{
-    margin-left:60%;
+  .logo {
+    margin-left: 60%;
   }
 
-  #form_co{
-    margin-left:20%;
+  #form_co {
+    margin-left: 20%;
   }
-  
-  #connexion{
-    margin-left:15%;
-    margin-top:10px;
+
+  #connexion {
+    margin-left: 15%;
+    margin-top: 10px;
   }
 }

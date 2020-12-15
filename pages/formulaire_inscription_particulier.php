@@ -30,14 +30,14 @@ if (empty($_SESSION['reussite']) && empty($_SESSION['erreur'])) {
 
     <!-- Header / Nav-->
     <header>
-            <nav class="container-fluid navbar mb-5">
-                <div class="container">
+        <nav class="container-fluid navbar mb-5">
+            <div class="container">
                 <a href="../index.html"><img src="../ressources/img/logo.png" alt="Logo de l'entreprise" class="logo" height="100"></a>
                 <h1 class="py-3">Formulaire d'inscription : Particulier</h1>
                 <a href="../index.php"><input class="btn btn-primary" type="button" value="Accueil"></a>
-                </div>
-            </nav>
-        </header>
+            </div>
+        </nav>
+    </header>
 
     <?php
     if ($_SESSION['reussite'] == true) {

@@ -31,13 +31,13 @@ if (!isset($_SESSION['erreur_cuisinier'])) {
 <body>
     <!-- Header / Nav-->
     <header>
-            <nav class="container-fluid navbar mb-5">
-                <div class="container">
+        <nav class="container-fluid navbar mb-5">
+            <div class="container">
                 <a href="../index.html"><img src="../ressources/img/logo.png" class="logo" alt="Logo de l'entreprise" height="100"></a>
                 <h1 class="py-3">Formulaire d'inscription : Cuisinier</h1>
                 <a href="../index.php"><input class="btn btn-info" type="button" value="Accueil"></a>
-                </div>
-            </nav>
+            </div>
+        </nav>
     </header>
     <?php
     if ($_SESSION['reussite_cuisinier'] === true) {
