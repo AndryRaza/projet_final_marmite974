@@ -56,6 +56,12 @@ nav {
   text-align: justify;
 }
 
+footer {
+  height: 180px;
+  background-color: #f3671f;
+  font-size: 13px;
+}
+
 @media all and (max-width: 400px) {
   .msg {
     text-align: center;
@@ -75,5 +81,9 @@ nav {
   #connexion {
     margin-left: 15%;
     margin-top: 10px;
+  }
+
+  footer {
+    height: auto;
   }
 }

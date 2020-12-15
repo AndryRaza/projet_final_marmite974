@@ -28,6 +28,7 @@ include 'includes/fonctions.php'
 
 ?>
 
+<!DOCTYPE html>
 
 <head>
     <meta charset="UTF-8">
@@ -44,15 +45,19 @@ include 'includes/fonctions.php'
 
 <body>
     <section class="contenu">
-        <nav class="navbar navbar-expand-md navbar-light d-flex justify-content-between">
+        <nav class="navbar navbar-expand-md navbar-light d-flex justify-content-between ">
             <div class="container">
                 <a class="navbar-brand" href="index.php">
                     <img src="ressources/img/logo.png" alt="" height="100" class="d-inline-block align-top logo">
                 </a>
+
                 <?php if (($_SESSION['user'] === '' && $_SESSION['admin'])) { //Quand on se connecte en mode admin
                 ?>
-                    <div class="d-flex flex-column ml-auto">
+                    <div class="ml-auto">
                         <p class="text-center" style="font-size:30px;">Mode Admin </p>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
                         <div class="collapse navbar-collapse mb-4 justify-content-end " id="navbarNav">
                             <ul class="navbar-nav">
 
@@ -61,6 +66,11 @@ include 'includes/fonctions.php'
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="pages/page_admin.php">Voir les membres</a>
+                                </li>
+                                <li class="nav-item">
+                                    <form action="includes/connexion.php" method="POST">
+                                        <input type="submit" class="btn btn-primary justify-self-end ml-3 mt-3" name="deconnexion" value="Se déconnecter">
+                                    </form>
                                 </li>
                             </ul>
                         </div>
@@ -87,6 +97,9 @@ include 'includes/fonctions.php'
                         if ($_SESSION['statut'] == "cuisinier") { //Si le statut est celui d'un cuisinier
                         ?>
                             <p class="msg text-center" style="font-size:20px; ">Bonjour <?= $_SESSION['user'] ?></p>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
                             <div class="collapse navbar-collapse mb-4 justify-content-end " id="navbarNav">
 
                                 <ul class="navbar-nav pt-2">
@@ -113,6 +126,9 @@ include 'includes/fonctions.php'
                         if ($_SESSION['statut'] == 'particulier') { //Sinon le statut est un particulier et on affiche
                         ?>
                             <p class="msg text-center" style="font-size:20px;">Bonjour <?= $_SESSION['user'] ?></p>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
                             <div class="collapse navbar-collapse  justify-content-end mb-3" id="navbarNav">
                                 <ul class="navbar-nav">
 
