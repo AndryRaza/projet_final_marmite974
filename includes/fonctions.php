@@ -124,12 +124,12 @@ function affichage_atelier()
               echo 'Complet';
             }  ?>
           </div>
-          <img src="ressources/img/<?= $value['Image'] ?>" class="card-img-top" text="Date" alt="plat" height="300px" width="200px">
+          <img src="ressources/img/<?= $value['Image'] ?>" class="card-img-top"  alt="plat" height="300" width="200">
 
         </div>
         <div>
           <p class="card-text"> Durée : <?php echo $value['Duree'] ?> h</p>
-          <p class="card-text"> Commence à <?php echo implode('h:',$value['DebutHoraire']) ?> </p>
+          <p class="card-text"> Commence à <?php echo implode('h: ',$value['DebutHoraire']) ?> </p>
           <p class="card-text"> Nombre maximum de participants : <?= $value['Places_reservees'] ?> </p>
           <h4 class="card-title ml-auto text-center"><?php echo $value['Titre'] ?></h4>
         </div>
