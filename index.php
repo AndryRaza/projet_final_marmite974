@@ -91,7 +91,7 @@ include 'includes/fonctions.php'
                     if ($_SESSION['statut'] == "cuisinier") { //Si le statut est celui d'un cuisinier
                     ?>
                         <div class="collapse navbar-collapse mb-4 justify-content-end " id="navbarNav">
-                        
+
                             <ul class="navbar-nav">
 
                                 <li class="nav-item active">
@@ -158,4 +158,8 @@ include 'includes/fonctions.php'
             </div>
         </div>
     </section>
+
+
+    <!--- Footer -->
+    <?php include 'includes/footer.php'; ?>
 </body>

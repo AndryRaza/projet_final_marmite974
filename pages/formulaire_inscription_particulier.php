@@ -34,16 +34,16 @@ if (empty($_SESSION['reussite']) && empty($_SESSION['erreur'])) {
             <img src="../ressources/img/logo.png" alt="" height="100" class="d-inline-block align-top">
         </a>
         <div class="d-flex flex-column ml-auto">
-                <div class="collapse navbar-collapse mb-4 justify-content-end " id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="../index.php">Accueil</a>
-                        </li>
-                    </ul>
-                </div>
-                
+            <div class="collapse navbar-collapse mb-4 justify-content-end " id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="../index.php">Accueil</a>
+                    </li>
+                </ul>
             </div>
-</nav>
+
+        </div>
+    </nav>
 
     <?php
     if ($_SESSION['reussite'] == true) {
@@ -113,6 +113,9 @@ if (empty($_SESSION['reussite']) && empty($_SESSION['erreur'])) {
         </div>
     </section>
 </body>
+
+<!-- Footer -->
+<?php include '../includes/footer.php'; ?>
 
 <script>
     var check = function() {
