@@ -43,12 +43,16 @@
                         <th class="align-middle text-center" scope="col">Description</th>
                         <th class="align-midlle text-center" scope="col">Etat</th>
                         <th class="align-middle text-center" scope="col">Modifier</th>
+                        <?php include '../pages/listeAtelierManager.php'; ?>
                     </tr>
                 </thead>
             </table>
         </div>
+        
     </div>
 </section>
-<?php include '../pages/listeAtelierManager.php'; ?>
+
 <?php } else {header('Location: ../index.php');} ?>
 </body>
+  <!-- Footer -->
+  <?php include '../includes/footer.php' ?>
