@@ -16,7 +16,7 @@ include '../includes/fonctions.php';
 // lors de l'envoie du formulaire on fait une vérification que c'est bien une image etc.
 if (isset($_POST['ajout_atelier'])) {
   
-  $dossier = 'ressources/img';
+  $dossier = 'ressources/img/';
   $fichier = basename($_FILES['image']['name']);
   $taille_maxi = 1000000;
   $taille = filesize($_FILES['image']['tmp_name']);
