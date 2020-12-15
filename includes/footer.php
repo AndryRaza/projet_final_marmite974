@@ -4,7 +4,7 @@
 </head>
 
 <!-- Footer -->
-<footer class="page-footer footer font-small pt-4 container-fluid" style="background-color: #F3671F; font-size:13px;">
+<footer class="page-footer footer font-small  container-fluid" style="background-color: #F3671F; font-size:13px;">
 
     <!-- Footer Links -->
     <div class="container-fluid text-center text-md-left">

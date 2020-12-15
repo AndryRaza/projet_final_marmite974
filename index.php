@@ -43,7 +43,7 @@ include 'includes/fonctions.php'
 </head>
 
 <body>
-    
+    <section class="contenu">
     <nav class="navbar navbar-expand-md navbar-light d-flex justify-content-between">
         <div class="container">
             <a class="navbar-brand" href="index.php">
@@ -155,10 +155,10 @@ include 'includes/fonctions.php'
             </div>
         </div>
     </section>
-
+    </section>
 
     <!--- Footer -->
-    <footer class="page-footer footer font-small pt-4 container-fluid" style="background-color: #F3671F; position:relative; bottom:0; left:0; font-size:13px;">
+    <footer class="page-footer footer font-small  container-fluid" style="background-color: #F3671F; position:relative; bottom:0; left:0; font-size:13px;">
 
         <!-- Footer Links -->
         <div class="container-fluid text-center text-md-left">
