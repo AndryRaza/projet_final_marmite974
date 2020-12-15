@@ -5,31 +5,32 @@
 // fonction pour valider les données 
 function validation($donnees)
 {
-    // trim supprime les espaces, les retours à la ligne, les tabulations et autres "blanc"
-    $donnees = trim($donnees);
-    // stipslashes supprime les anti slash présent dans la chaîne 
-    $donnees = stripslashes($donnees);
-    // htmlsprecialchars convertit les caractères spéciaux en entités html
-    $donnees = htmlspecialchars($donnees);
-    return $donnees;
+  // trim supprime les espaces, les retours à la ligne, les tabulations et autres "blanc"
+  $donnees = trim($donnees);
+  // stipslashes supprime les anti slash présent dans la chaîne 
+  $donnees = stripslashes($donnees);
+  // htmlsprecialchars convertit les caractères spéciaux en entités html
+  $donnees = htmlspecialchars($donnees);
+  return $donnees;
 };
 
-function correction_date($jour,$mois,$year){  //On corrige si la date est incorrecte
+function correction_date($jour, $mois, $year)
+{  //On corrige si la date est incorrecte
 
-  if ($jour > 30 && $mois === 'Fevrier' && $year%4 === 0){  //Année bissextile 
+  if ($jour > 30 && $mois === 'Fevrier' && $year % 4 === 0) {  //Année bissextile 
     return array(29, $mois, $year);
   }
 
-  if ($jour > 29 && $mois === 'Fevrier' && $year%4 != 0){  //Année non bissextile
+  if ($jour > 29 && $mois === 'Fevrier' && $year % 4 != 0) {  //Année non bissextile
     return array(28, $mois, $year);
   }
 
-  if ($jour > 31 && ($mois==='Avril' || $mois ==='Juin' || $mois ==='Septembre' || $mois ==='Novembre') ) //Année où l'on a que 30 jours
+  if ($jour > 31 && ($mois === 'Avril' || $mois === 'Juin' || $mois === 'Septembre' || $mois === 'Novembre')) //Année où l'on a que 30 jours
   {
     return array(30, $mois, $year);
   }
 
-  return array($jour,$mois,$year);
+  return array($jour, $mois, $year);
 }
 
 
@@ -38,10 +39,9 @@ function affichage_atelier()
   $path = '../data/atelier.json'; //chemin du fichier à traiter
   $json = file_get_contents("data/atelier.json"); //ouvre le fichier
   $atelier = json_decode($json, true); //traduire les données en php 
- 
 
-  if ($atelier===[])
-  {
+
+  if ($atelier === []) {
     echo '<p class="text-center w-100 animate__animated animate__backInUp" style="font-size:30px"> Rien pour le moment ! <br> Revenez plus tard ! </p>';
   }
   $reverse_atelier = array_reverse($atelier); // Pour pouvoir afficher les ateliers récemments ajoutés 
@@ -107,12 +107,14 @@ function affichage_atelier()
      * c'est donc le jour qui va faire la différence 
      */
 
-   if ($value['etat'] == "Actif") : ?>
+    if ($value['etat'] == "Actif") : ?>
       <!-- affiche que les cartes actives -->
       <div class="card shadow  mb-3 mx-md-3 " style="width: 20rem;" id="card_<?= $value['Id'] ?>">
 
         <div class="position-relative image-container">
-          <div class=" position-absolute  top-0 start-0 font-weight-bold text-white"style="font-size:20px;background-color:#d05c62">À partir du <br><?php echo /*affiche la date */ implode(' ', $value['Date']) ?> </div>
+          <div class=" position-absolute  top-0 start-0 font-weight-bold text-white" style="font-size:20px;background-color:#d05c62">À partir du <br><?php echo /*affiche la date */ implode(' ', $value['Date']) ?>
+          
+          </div>
           <div class="position-absolute text-white font-weight-bold" style="bottom:0;font-size:23px;background-color:#d05c62">
             <?php if ($expire == true) {
               echo 'Expiré';
@@ -127,6 +129,8 @@ function affichage_atelier()
         </div>
         <div>
           <p class="card-text"> Durée : <?php echo $value['Duree'] ?> h</p>
+          <p class="card-text"> Commence à <?php echo implode(':',$value['DebutHoraire']) ?> </p>
+          <p class="card-text"> Nombre maximum de participants : <?= $value['Places_reservees'] ?> </p>
           <h4 class="card-title ml-auto text-center"><?php echo $value['Titre'] ?></h4>
         </div>
         <div class="card-body">
@@ -252,7 +256,7 @@ function affichage_membre()
       if ($value['Date'][1] == 'Decembre') {
         $mois = 12;
       }
-  
+
       /**
        * on compare le mois et l'année actuel 
        * au mois et à l'année du fichier 
@@ -270,7 +274,7 @@ function affichage_membre()
        * c'est donc le jour qui va faire la différence 
        */
 
-      if (in_array($_SESSION['mail'],$atelier[$key]['participant'] )) {
+      if (in_array($_SESSION['mail'], $atelier[$key]['participant'])) {
 
     ?>
         <tr>
@@ -278,24 +282,23 @@ function affichage_membre()
             <p class="pt-4"><?= $value['Titre'] ?></p>
           </td>
           <td class="text-center">
-            <p class="pt-4"><?= implode('/', $value['Date']) ?> à <?php implode(':',$value['DebutHoraire']) ?></p>
+            <p class="pt-4"><?= implode('/', $value['Date']) ?> à <?php implode(':', $value['DebutHoraire']) ?></p>
           </td>
           <td class="text-center">
             <p class="pt-4"><?= $value['Prix'] ?></p>
           </td>
           <td class="text-center">
-            <?php if (!$expire){ ?>
-            <form action="../includes/annulation.php" method="POST">
-              <input type="hidden" value="<?= $atelier[$key]['Id'];?>" name="id_atelier"> 
-              <input type="hidden" value="<?= $_SESSION['mail']?>" name="user">
-              <input type="submit" class="btn btn-primary mt-4" name="annuler" id="annuler" value="Annuler">
-            </form>
+            <?php if (!$expire) { ?>
+              <form action="../includes/annulation.php" method="POST">
+                <input type="hidden" value="<?= $atelier[$key]['Id']; ?>" name="id_atelier">
+                <input type="hidden" value="<?= $_SESSION['mail'] ?>" name="user">
+                <input type="submit" class="btn btn-primary mt-4" name="annuler" id="annuler" value="Annuler">
+              </form>
             <?php } ?>
           </td>
-        <?php }
-        }
-        ?>
-        </tr>
-    <?php
+      <?php }
     }
-  
+      ?>
+        </tr>
+      <?php
+    }
