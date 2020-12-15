@@ -29,31 +29,13 @@ if (empty($_SESSION['reussite']) && empty($_SESSION['erreur'])) {
 <body>
 
     <!-- Header / Nav-->
-<<<<<<< HEAD
-    <nav class="navbar navbar-expand-md navbar-light ">
-        <a class="navbar-brand " href="../index.php">
-            <img src="../ressources/img/logo.png" alt="" height="100" class="d-inline-block align-top">
-        </a>
-        <div class="d-flex flex-column ml-auto">
-            <div class="collapse navbar-collapse mb-4 justify-content-end " id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="../index.php">Accueil</a>
-                    </li>
-                </ul>
-            </div>
-
-        </div>
-    </nav>
-=======
     <header>
-            <nav class="container-fluid navbar mb-5">
-                <a href="../index.html"><img src="../ressources/img/logo.png" alt="Logo de l'entreprise" height="100"></a>
-                <h1 class="py-3">Formulaire d'inscription : Particulier</h1>
-                <a href="../index.php"><input class="btn btn-info" type="button" value="Accueil"></a>
-            </nav>
-        </header>
->>>>>>> ff316e2cb7feb5ebf6d0a3b46e5c4a32a7d88c3e
+        <nav class="container-fluid navbar mb-5">
+            <a href="../index.html"><img src="../ressources/img/logo.png" alt="Logo de l'entreprise" height="100"></a>
+            <h1 class="py-3">Formulaire d'inscription : Particulier</h1>
+            <a href="../index.php"><input class="btn btn-info" type="button" value="Accueil"></a>
+        </nav>
+    </header>
 
     <?php
     if ($_SESSION['reussite'] == true) {
@@ -140,4 +122,3 @@ if (empty($_SESSION['reussite']) && empty($_SESSION['erreur'])) {
         }
     }
 </script>
-

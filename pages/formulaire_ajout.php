@@ -134,4 +134,7 @@ if (!isset($_SESSION['atelier_ajout_error'])) {
             </form>
         </div>
     </section>
+
+    <!-- Footer -->
+    <?php include '../includes/footer.php' ?>
 </body>
