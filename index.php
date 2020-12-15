@@ -75,11 +75,11 @@ include 'includes/fonctions.php'
 
         <?php if ($_SESSION['user'] === '' && !$_SESSION['admin']) { //Si personne est connecté, on affiche le formulaire de connexion
         ?>
-            <form action="includes/connexion.php" method="POST" class="pt-2" style="margin-right: 50px;">
+            <form action="includes/connexion.php" method="POST" class="pt-2 " style="margin-right: 50px;" id="form_co">
                 <input class="form-control mb-2" type="text" name="mail_user" placeholder="Votre adresse email">
                 <input class="form-control mb-2" type="password" name="mdp_user" placeholder="Votre mot de passe">
                <span style="font-size:13px;"> Pas encore inscrit ?  <a href="pages/choix_utilisateur.html">S'inscrire</a></span>
-                <input type="submit" class="btn btn-primary" name="connexion" value="Se connecter">
+                <input type="submit" class="btn btn-primary" name="connexion" id="connexion"value="Se connecter">
             </form>
         <?php } ?>
 
@@ -164,5 +164,5 @@ include 'includes/fonctions.php'
 
 
     <!--- Footer -->
-    <?php include 'includes/footer.php'; ?>
+    <?php include 'includes/footer.php' ?>
 </body>

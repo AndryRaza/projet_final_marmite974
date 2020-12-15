@@ -59,4 +59,13 @@ nav {
   #logo{
     margin-left:60%;
   }
+
+  #form_co{
+    margin-left:20%;
+  }
+  
+  #connexion{
+    margin-left:15%;
+    margin-top:10px;
+  }
 }
