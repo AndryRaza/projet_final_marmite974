@@ -7,13 +7,13 @@
 <footer class="page-footer footer font-small  container-fluid" style="background-color: #F3671F; font-size:13px;">
 
     <!-- Footer Links -->
-    <div class="container-fluid text-center text-md-left">
+    <div class="container-fluid text-center text-md-left ">
 
         <!-- Grid row -->
         <div class="row">
 
             <!-- Grid column -->
-            <div class="col-md-6 mt-md-0 mt-3">
+            <div class="col-md-6 mt-md-2 mt-3">
 
                 <!-- Content -->
                 <h5 class="text-uppercase">Marmite974</h5>
@@ -25,7 +25,7 @@
             <hr class="clearfix w-100 d-md-none pb-3">
 
             <!-- Grid column -->
-            <div class="col-md-3 mb-md-0 mb-3">
+            <div class="col-md-3 mt-md-2 mt-0 b-md-0 mb-3">
 
                 <!-- Links -->
                 <h5 class="text-uppercase">Coordonnées</h5>
@@ -46,7 +46,7 @@
             <!-- Grid column -->
 
             <!-- Grid column -->
-            <div class="col-md-3 mb-md-0 mb-3">
+            <div class="col-md-3 mt-md-2 mt-0  mb-md-0 mb-3">
 
                 <!-- Links -->
                 <h5 class="text-uppercase">Réseaux sociaux</h5>

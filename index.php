@@ -167,7 +167,7 @@ include 'includes/fonctions.php'
             <div class="row">
 
                 <!-- Grid column -->
-                <div class="col-md-6 mt-md-0 mt-3">
+                <div class="col-md-6 mt-md-2 mt-3">
 
                     <!-- Content -->
                     <h5 class="text-uppercase">Marmite974</h5>
@@ -179,7 +179,7 @@ include 'includes/fonctions.php'
                 <hr class="clearfix w-100 d-md-none pb-3">
 
                 <!-- Grid column -->
-                <div class="col-md-3 mb-md-0 mb-3">
+                <div class="col-md-3 mt-md-2 mt-0  mb-md-0 mb-3">
 
                     <!-- Links -->
                     <h5 class="text-uppercase">Coordonnées</h5>
@@ -200,7 +200,7 @@ include 'includes/fonctions.php'
                 <!-- Grid column -->
 
                 <!-- Grid column -->
-                <div class="col-md-3 mb-md-0 mb-3">
+                <div class="col-md-3 mb-md-0  mt-md-2 mt-0 mb-3">
 
                     <!-- Links -->
                     <h5 class="text-uppercase">Réseaux sociaux</h5>
