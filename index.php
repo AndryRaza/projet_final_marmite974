@@ -43,7 +43,7 @@ include 'includes/fonctions.php'
 </head>
 
 <body>
-
+    
     <nav class="navbar navbar-expand-md navbar-light d-flex justify-content-between">
         <div class="container">
             <a class="navbar-brand" href="index.php">
