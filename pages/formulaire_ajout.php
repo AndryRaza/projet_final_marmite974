@@ -68,7 +68,7 @@ if (!isset($_SESSION['atelier_ajout_error'])) {
                     <!-- Description -->
                     <div class="form-group row row-cols-md-2 row-cols-1">
                         <label class="col-md-3" for="Description">Description :</label>
-                        <input class="form-control col-md-9" type="text" name="Description" id="Descrption" maxlength="60" required pattern="[A-Za-z é è ]+" placeholder='Veuillez saisir une description'>
+                        <input class="form-control col-md-9" type="text" name="Description" id="Description" maxlength="60" required pattern="[A-Za-z é è ' ]+" placeholder='Veuillez saisir une description'>
                     </div>
 
                     <!-- Image -->
