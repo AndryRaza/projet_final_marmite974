@@ -1,9 +1,10 @@
 <head>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 </head>
 
 <!-- Footer -->
-<footer class="page-footer footer font-small pt-4 container-fluid" style="background-color: #F3671F; position:absolute; bottom:0; left:0; font-size:13px;">
+<footer class="page-footer footer font-small pt-4 container-fluid" style="background-color: #F3671F;bottom:0; left:0; font-size:13px;">
 
     <!-- Footer Links -->
     <div class="container-fluid text-center text-md-left">
@@ -75,7 +76,4 @@
     <!-- Footer Links -->
 
 </footer>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
-
 <!-- Footer -->

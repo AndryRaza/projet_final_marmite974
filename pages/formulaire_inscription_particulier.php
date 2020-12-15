@@ -27,84 +27,85 @@ if (empty($_SESSION['reussite']) && empty($_SESSION['erreur'])) {
 </head>
 
 <body>
+    <section class="contenu">
+        <!-- Header / Nav-->
+        <header>
+            <nav class="container-fluid navbar mb-5">
+                <div class="container">
+                    <a href="../index.html"><img src="../ressources/img/logo.png" alt="Logo de l'entreprise" class="logo" height="100"></a>
+                    <h1 class="py-3">Formulaire d'inscription : Particulier</h1>
+                    <a href="../index.php"><input class="btn btn-primary" type="button" value="Accueil"></a>
+                </div>
+            </nav>
+        </header>
 
-    <!-- Header / Nav-->
-    <header>
-        <nav class="container-fluid navbar mb-5">
-            <div class="container">
-                <a href="../index.html"><img src="../ressources/img/logo.png" alt="Logo de l'entreprise" class="logo" height="100"></a>
-                <h1 class="py-3">Formulaire d'inscription : Particulier</h1>
-                <a href="../index.php"><input class="btn btn-primary" type="button" value="Accueil"></a>
+        <?php
+        if ($_SESSION['reussite'] == true) {
+            echo '<div class="text-center font-weight-bold"> <span class="text-success">Votre inscription a été validée</span> </div>';
+        }
+        $_SESSION['reussite'] = false;
+
+        if ($_SESSION['erreur'] == true) {
+            echo '<div class="text-center font-weight-bold"> <span class="text-danger">Erreur lors de l\'inscription</span> </div>';
+        }
+        $_SESSION['erreur'] = false;
+        ?>
+
+
+        <!-- Debut formulaire -->
+        <section class="container-fluid">
+            <div class="container mt-2">
+                <!-- Formulaire à insérer ici-->
+                <form action="../includes/inscription_particulier.php" method="POST">
+
+                    <!-- Nom -->
+                    <div class="form-group row row-cols-md-2 row-cols-1">
+                        <label class="col-md-3" for="nom_particulier">* Nom :</label>
+                        <input class="form-control col-md-9" type="text" name="nom_particulier" id="nom_particulier" required autocomplete pattern="[a-zA-Z\s]{3,32}" minlength="2" placeholder="Smith">
+                    </div>
+
+                    <!-- Prenom -->
+                    <div class="form-group row row-cols-md-2 row-cols-1">
+                        <label class="col-md-3" for="prenom_particulier">* Prénom :</label>
+                        <input class="form-control col-md-9" type="text" name="prenom_particulier" id="prenom_particulier" required autocomplete minlength="2" pattern="[a-zA-Z-\s]{3,32}" placeholder="John">
+                    </div>
+
+                    <!-- Telephone -->
+                    <div class="form-group row row-cols-md-2 row-cols-1">
+                        <label class="col-md-3" for="phone_particulier">Téléphone :</label>
+                        <input class="form-control col-md-9" type="tel" name="phone_particulier" id="phone_particulier" autocomplete placeholder="123456" pattern="[0-9]{6}">
+                    </div>
+
+                    <!-- Mail -->
+                    <div class="form-group row row-cols-md-2 row-cols-1">
+                        <label class="col-md-3" for="mail_particulier">* Adresse email :</label>
+                        <input class="form-control col-md-9" type="email" name="mail_particulier" id="mail_particulier" required autocomplete placeholder="jhonsmith@mail.com" pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?">
+                    </div>
+
+                    <!-- Mot de passe -->
+                    <div class="form-group row row-cols-md-2 row-cols-1">
+                        <label class="col-md-3" for="mail_particulier">* Mot de passe :</label>
+                        <input class="form-control col-md-9" type="password" name="password_particulier" id="password_particulier" onkeyup="check();" required pattern="[^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$]">
+                    </div>
+
+                    <!-- Confirmation mot de passe -->
+                    <div class="form-group row row-cols-md-2 row-cols-1">
+                        <label class="col-md-3" for="mail_particulier">* Confirmez votre mot de passe :</label>
+                        <input class="form-control col-md-9" type="password" name="confirm_particulier" id="confirm_particulier" onkeyup="check();" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
+                        <span id="message" class="mx-auto"></span>
+                    </div>
+
+                    <!-- Bouton -->
+                    <div class="form-group d-flex justify-content-between">
+                        <input type="hidden" name="statut_particulier" value="particulier">
+                        <input type="hidden" name="atelier_cuisinier" value="atelier_cuisinier">
+                        <label for="inscription_particulier">* : Champ obligatoire</label>
+                        <input class="btn-lg btn-info" type="submit" name="inscription_particulier" value="S'inscrire">
+                    </div>
+                    <small><strong>Attention :</strong> le mot de passe doit contenir minimum 8 caractères dont une lettre en majuscule, une minuscule, un chiffre et un caractère spécial(ex : @$!%*?& ).</small>
+                </form>
             </div>
-        </nav>
-    </header>
-
-    <?php
-    if ($_SESSION['reussite'] == true) {
-        echo '<div class="text-center font-weight-bold"> <span class="text-success">Votre inscription a été validée</span> </div>';
-    }
-    $_SESSION['reussite'] = false;
-
-    if ($_SESSION['erreur'] == true) {
-        echo '<div class="text-center font-weight-bold"> <span class="text-danger">Erreur lors de l\'inscription</span> </div>';
-    }
-    $_SESSION['erreur'] = false;
-    ?>
-
-
-    <!-- Debut formulaire -->
-    <section class="container-fluid">
-        <div class="container mt-2">
-            <!-- Formulaire à insérer ici-->
-            <form action="../includes/inscription_particulier.php" method="POST">
-
-                <!-- Nom -->
-                <div class="form-group row row-cols-md-2 row-cols-1">
-                    <label class="col-md-3" for="nom_particulier">* Nom :</label>
-                    <input class="form-control col-md-9" type="text" name="nom_particulier" id="nom_particulier" required autocomplete pattern="[a-zA-Z\s]{3,32}" minlength="2" placeholder="Smith">
-                </div>
-
-                <!-- Prenom -->
-                <div class="form-group row row-cols-md-2 row-cols-1">
-                    <label class="col-md-3" for="prenom_particulier">* Prénom :</label>
-                    <input class="form-control col-md-9" type="text" name="prenom_particulier" id="prenom_particulier" required autocomplete minlength="2" pattern="[a-zA-Z-\s]{3,32}" placeholder="John">
-                </div>
-
-                <!-- Telephone -->
-                <div class="form-group row row-cols-md-2 row-cols-1">
-                    <label class="col-md-3" for="phone_particulier">Téléphone :</label>
-                    <input class="form-control col-md-9" type="tel" name="phone_particulier" id="phone_particulier" autocomplete placeholder="123456" pattern="[0-9]{6}">
-                </div>
-
-                <!-- Mail -->
-                <div class="form-group row row-cols-md-2 row-cols-1">
-                    <label class="col-md-3" for="mail_particulier">* Adresse email :</label>
-                    <input class="form-control col-md-9" type="email" name="mail_particulier" id="mail_particulier" required autocomplete placeholder="jhonsmith@mail.com" pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?">
-                </div>
-
-                <!-- Mot de passe -->
-                <div class="form-group row row-cols-md-2 row-cols-1">
-                    <label class="col-md-3" for="mail_particulier">* Mot de passe :</label>
-                    <input class="form-control col-md-9" type="password" name="password_particulier" id="password_particulier" onkeyup="check();" required pattern="[^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$]">
-                </div>
-
-                <!-- Confirmation mot de passe -->
-                <div class="form-group row row-cols-md-2 row-cols-1">
-                    <label class="col-md-3" for="mail_particulier">* Confirmez votre mot de passe :</label>
-                    <input class="form-control col-md-9" type="password" name="confirm_particulier" id="confirm_particulier" onkeyup="check();" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
-                    <span id="message" class="mx-auto"></span>
-                </div>
-
-                <!-- Bouton -->
-                <div class="form-group d-flex justify-content-between">
-                    <input type="hidden" name="statut_particulier" value="particulier">
-                    <input type="hidden" name="atelier_cuisinier" value="atelier_cuisinier">
-                    <label for="inscription_particulier">* : Champ obligatoire</label>
-                    <input class="btn-lg btn-info" type="submit" name="inscription_particulier" value="S'inscrire">
-                </div>
-                <small><strong>Attention :</strong> le mot de passe doit contenir minimum 8 caractères dont une lettre en majuscule, une minuscule, un chiffre et un caractère spécial(ex : @$!%*?& ).</small>
-            </form>
-        </div>
+        </section>
     </section>
 </body>
 
