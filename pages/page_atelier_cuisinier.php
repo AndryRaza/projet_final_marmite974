@@ -45,10 +45,11 @@
                         <th class="align-middle text-center" scope="col">Modifier</th>
                     </tr>
                 </thead>
+                <?php include '../pages/listeAtelierManager.php'; ?>
             </table>
         </div>
     </div>
 </section>
-<?php include '../pages/listeAtelierManager.php'; ?>
+<?php include '../includes/footer.php' ?>
 <?php } else {header('Location: ../index.php');} ?>
 </body>
