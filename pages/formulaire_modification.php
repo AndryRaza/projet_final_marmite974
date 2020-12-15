@@ -45,7 +45,7 @@
 <!-- Header / Nav-->
 <header>
     <nav class="navbar container-fluid mb-5">
-        <a href="../index.html"><img src="../ressources/img/logo.png" alt="Logo" height="180"></a>
+        <a href="../index.html"><img src="../ressources/img/logo.png" alt="Logo" class="logo" height="180"></a>
         <h1 class="py-3 text-center">Formulaire d'ajout d'atelier</h1>
         <div>
             <a href="../index.php">
