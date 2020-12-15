@@ -45,35 +45,35 @@ include 'includes/fonctions.php'
 
     <nav class="navbar navbar-expand-md navbar-light d-flex justify-content-between">
         <div class="container">
-        <a class="navbar-brand" href="index.php">
-            <img src="ressources/img/logo.png" alt="" height="100" class="d-inline-block align-top logo">
-        </a>
-        <?php if (($_SESSION['user'] === '' && $_SESSION['admin'])) { //Quand on se connecte en mode admin
-        ?>
-            <div class="d-flex flex-column ml-auto">
-                <p class="text-center" style="font-size:30px;">Mode Admin </p>
-                <div class="collapse navbar-collapse mb-4 justify-content-end " id="navbarNav">
-                    <ul class="navbar-nav">
+            <a class="navbar-brand" href="index.php">
+                <img src="ressources/img/logo.png" alt="" height="100" class="d-inline-block align-top logo">
+            </a>
+            <?php if (($_SESSION['user'] === '' && $_SESSION['admin'])) { //Quand on se connecte en mode admin
+            ?>
+                <div class="d-flex flex-column ml-auto">
+                    <p class="text-center" style="font-size:30px;">Mode Admin </p>
+                    <div class="collapse navbar-collapse mb-4 justify-content-end " id="navbarNav">
+                        <ul class="navbar-nav">
 
-                        <li class="nav-item active">
-                            <a class="nav-link" href="index.php">Accueil</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="pages/page_admin.php">Voir les membres</a>
-                        </li>
-
+                            <li class="nav-item active">
+                                <a class="nav-link" href="index.php">Accueil</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="pages/page_admin.php">Voir les membres</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-
-            </div>
-        <?php } ?>
+            <?php } ?>
+        </div>
 
         <?php if ($_SESSION['user'] === '' && !$_SESSION['admin']) { //Si personne est connecté, on affiche le formulaire de connexion
         ?>
             <form action="includes/connexion.php" method="POST" class="pt-2 " style="margin-right: 50px;" id="form_co">
                 <input class="form-control mb-2" type="text" name="mail_user" placeholder="Votre adresse email">
                 <input class="form-control mb-2" type="password" name="mdp_user" placeholder="Votre mot de passe">
-               <span style="font-size:13px;"> Pas encore inscrit ?  <a href="pages/choix_utilisateur.html">S'inscrire</a></span>
-                <input type="submit" class="btn btn-primary" name="connexion" id="connexion"value="Se connecter">
+                <span style="font-size:13px;"> Pas encore inscrit ? <a href="pages/choix_utilisateur.html">S'inscrire</a></span>
+                <input type="submit" class="btn btn-primary" name="connexion" id="connexion" value="Se connecter">
             </form>
         <?php } ?>
 
@@ -132,8 +132,8 @@ include 'includes/fonctions.php'
                     }
                 }
             }
-            ?>
-        </div>
+        }
+        ?>
     </nav>
 
     <header class="container-fluid py-5">
