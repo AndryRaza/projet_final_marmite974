@@ -46,12 +46,12 @@
                         <?php include '../pages/listeAtelierManager.php'; ?>
                     </tr>
                 </thead>
+                <?php include '../pages/listeAtelierManager.php'; ?>
             </table>
         </div>
         
     </div>
 </section>
-
 <?php } else {header('Location: ../index.php');} ?>
 </body>
   <!-- Footer -->

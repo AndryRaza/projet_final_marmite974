@@ -58,6 +58,8 @@ nav {
 
 footer {
   height: 180px;
+  background-color: #F3671F; 
+  font-size:13px;
 }
 
 @media all and (max-width: 400px) {
