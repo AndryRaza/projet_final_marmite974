@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,24 +32,25 @@
 </head>
 
 <body>
-    <section class="contenu">
-        <div class="container">
-            <div class="table-responsive">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th class="align-middle text-center" scope="col">Nom</th>
-                            <th class="align-middle text-center" scope="col">Description</th>
-                            <th class="align-midlle text-center" scope="col">Etat</th>
-                            <th class="align-middle text-center" scope="col">Modifier</th>
-                        </tr>
-                    </thead>
-                </table>
+    <?php if ($_SESSION['user'] !== '' && $_SESSION['statut'] === 'cuisinier') { ?>
+        <section class="contenu">
+            <div class="container">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="align-middle text-center" scope="col">Nom</th>
+                                <th class="align-middle text-center" scope="col">Description</th>
+                                <th class="align-midlle text-center" scope="col">Etat</th>
+                                <th class="align-middle text-center" scope="col">Modifier</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
             </div>
-        </div>
-    </section>
-    <?php include '../pages/listeAtelierManager.php'; ?>
+        </section>
+        <?php include '../pages/listeAtelierManager.php'; ?>
+    <?php } else {
+        header('Location: ../index.php');
+    } ?>
 </body>
-
-<!-- Footer -->
-<?php include '../includes/footer.php' ?>

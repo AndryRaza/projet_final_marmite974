@@ -1,9 +1,11 @@
 <!-- Fonction qui permet de modifier les informations -->
-<?php if (isset($_POST['submit_parametre'])) : ?>
+<?php
+session_start();
+if (isset($_POST['submit_parametre'])) : ?>
 
     <!---->
     <?php
-    session_start();
+
     $data_file = "../data/atelier.json";
     $json = file_get_contents("../data/atelier.json");
     $atelier = json_decode($json, true);
@@ -148,18 +150,17 @@
                                 <div class="d-flex justify-content-end">
                                     <button type="submit" name="submit_parametre" class="btn btn-warning text-uppercase text-white font-weight-bold btn AjoutEnchere mb-5" style="width:220px; height:80px;">Enregistrer modification</button>
                             </form>
+                        <?php endif ?>
+                    <?php endforeach ?>
                 </div>
             </section>
         </section>
-
-
-    <?php endif ?>
-<?php endforeach ?>
-<?php } else {
-        echo '<p class="text-center" style="color:red; font-size:40px;">Erreur</p>';
+    <?php
+    } else {
+        header('Location: ../index.php');
     }
-?>
-<!-- Footer -->
-<?php include '../includes/footer.php' ?>
+    ?>
+    <!-- Footer -->
+    <?php include '../includes/footer.php' ?>
 
 </body>

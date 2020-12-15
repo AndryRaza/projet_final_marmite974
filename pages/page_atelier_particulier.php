@@ -15,7 +15,7 @@ include '../includes/fonctions.php';
     <title>Page d'administration</title>
 </head>
 
-<body>
+<?php if ($_SESSION['user'] !== '' && $_SESSION['statut'] === 'particulier') { ?>
     <section class="contenu">
         <nav class="navbar navbar-expand-md navbar-light ">
             <div class="container">
@@ -51,7 +51,9 @@ include '../includes/fonctions.php';
 
         </section>
     </section>
-</body>
-
+    </section>
+<?php } else {
+    header('Location: ../index.php');
+} ?>
 <!-- Footer -->
 <?php include '../includes/footer.php' ?>
