@@ -12,7 +12,7 @@ include 'fonctions.php';
 $mail_existant = false;
 
 
-foreach ($membres as $key => $value)        //On vérifie que l'adresse email est pas déjà présent 
+foreach ($cuisinier as $key => $value)        //On vérifie que l'adresse email est pas déjà présent 
 {
   if ($value['mail'] === $_POST['mail_particulier']) {
     $mail_existant = true;

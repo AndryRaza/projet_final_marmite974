@@ -119,7 +119,7 @@ function affichage_atelier()
             <?php if ($expire == true) {
               echo 'Expiré';
             } elseif ($value['Places'] > 0) {
-              echo $value['Places'] . ' place(s) restante(s)';
+              echo $value['Places'] . '/' . $value['Places_reservees'] .' place(s) restante(s)';
             } else {
               echo 'Complet';
             }  ?>
@@ -130,7 +130,6 @@ function affichage_atelier()
         <div>
           <p class="card-text"> Durée : <?php echo $value['Duree'] ?> h</p>
           <p class="card-text"> Commence à <?php echo implode('h: ',$value['DebutHoraire']) ?> </p>
-          <p class="card-text"> Nombre maximum de participants : <?= $value['Places_reservees'] ?> </p>
           <h4 class="card-title ml-auto text-center"><?php echo $value['Titre'] ?></h4>
         </div>
         <div class="card-body">
@@ -282,7 +281,8 @@ function affichage_membre()
             <p class="pt-4"><?= $value['Titre'] ?></p>
           </td>
           <td class="text-center">
-            <p class="pt-4"><?= implode('/', $value['Date']) ?> à <?php implode(':', $value['DebutHoraire']) ?></p>
+            <p class="pt-4"><?= implode('/', $value['Date']) ?> </p>
+            <p class="pt-4"><?php implode('h:', $value['DebutHoraire']) ?></p>
           </td>
           <td class="text-center">
             <p class="pt-4"><?= $value['Prix'] ?></p>

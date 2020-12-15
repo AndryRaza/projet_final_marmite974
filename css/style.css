@@ -62,7 +62,7 @@ footer {
   font-size: 13px;
 }
 
-@media all and (max-width: 400px) {
+@media all and (max-width: 480px) {
   .msg {
     text-align: center;
   }
@@ -71,7 +71,8 @@ footer {
   }
 
   .logo {
-    margin-left: 60%;
+    margin-left: 119%;
+    
   }
 
   #form_co {
@@ -86,4 +87,17 @@ footer {
   footer {
     height: auto;
   }
+
+  .navbar-toggler {
+    margin:auto;
+  }
+
+  .navbar-nav{
+    text-align:center;
+  }
+
+  .card{
+    margin:auto;
+  }
+
 }

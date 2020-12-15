@@ -16,7 +16,7 @@
     <!-- Header / Nav-->
     <header class="container-fluid  mb-5" style="background-color: #f3671f">
         <nav class="navbar container">
-            <a href="../index.html"><img src="../ressources/img/logo.png" class="logo" alt="Logo de l'entreprise" height="100"></a>
+            <a href="../index.php"><img src="../ressources/img/logo.png" class="logo" alt="Logo de l'entreprise" height="100"></a>
             <h1 class="py-3">Liste des ateliers</h1>
             <div>
                 <a href="../index.php">
