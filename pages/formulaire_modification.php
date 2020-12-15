@@ -1,9 +1,11 @@
 <!-- Fonction qui permet de modifier les informations -->
-<?php if (isset($_POST['submit_parametre'])) : ?>
+<?php 
+session_start();
+if (isset($_POST['submit_parametre'])) : ?>
     
     <!---->
     <?php
-    session_start();
+    
     $data_file = "../data/atelier.json";
     $json = file_get_contents("../data/atelier.json");
     $atelier = json_decode($json, true);
@@ -156,7 +158,7 @@
 <?php endif ?>
 <?php endforeach ?>
 <?php } else {
-        echo '<p class="text-center" style="color:red; font-size:40px;">Erreur</p>';
+          header('Location: ../index.php');
     }
 ?>
 <!-- Footer -->

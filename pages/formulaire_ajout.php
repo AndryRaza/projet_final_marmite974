@@ -142,7 +142,7 @@ if (!isset($_SESSION['atelier_ajout_error'])) {
     <?php }
 
 else {
-    echo '<p class="text-center" style="color:red; font-size:40px;">Erreur</p>';
+    header('Location: ../index.php');
 }
 ?>
     <?php include '../includes/footer.php' ?>

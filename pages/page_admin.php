@@ -1,6 +1,9 @@
 <?php
 
+session_start();
+
 include '../includes/fonctions.php';
+
 ?>
 
 <head>
@@ -14,13 +17,15 @@ include '../includes/fonctions.php';
     <link rel="stylesheet" href="../css/style.css">
     <title>Page d'administration</title>
 </head>
+<body>
 
-<section class="contenu">
+<?php if ($_SESSION['admin']) { ?>
     <nav class="navbar navbar-expand-md navbar-light ">
         <div class="container">
             <a class="navbar-brand " href="../index.php">
                 <img src="../ressources/img/logo.png" alt="" height="100" class="d-inline-block align-top logo">
             </a>
+            
             <div class="d-flex flex-column ml-auto">
                 <p class="text-center" style="font-size:30px;">Mode Admin </p>
                 <div class="collapse navbar-collapse mb-4 justify-content-end " id="navbarNav">
@@ -44,6 +49,8 @@ include '../includes/fonctions.php';
             </div>
         </div>
     </nav>
+    <section class="contenu">
+  
 
     <table class="table table-responsive-md">
         <thead>
@@ -57,7 +64,11 @@ include '../includes/fonctions.php';
         <?php affichage_membre();  ?>
     </table>
 </section>
-
-
+<?php } else {
+      header('Location: ../index.php');
+}
+?>
 <!-- Footer -->
 <?php include '../includes/footer.php' ?>
+
+</body>

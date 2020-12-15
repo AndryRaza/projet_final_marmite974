@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,6 +31,8 @@
 <title>Ajouter un atelier</title>
 </head>
 
+<body>
+<?php if ($_SESSION['user'] !== '' && $_SESSION['statut'] === 'cuisinier') { ?>
 <section class="contenu">
     <div class="container">
         <div class="table-responsive">
@@ -45,3 +49,5 @@
     </div>
 </section>
 <?php include '../pages/listeAtelierManager.php'; ?>
+<?php } else {header('Location: ../index.php');} ?>
+</body>
