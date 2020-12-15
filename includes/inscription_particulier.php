@@ -9,17 +9,7 @@ $path = '../data/membre.json';
 $json = file_get_contents("../data/membre.json");
 $membres = json_decode($json, true);
 
-// fonction pour valider les données 
-function validation($donnees)
-{
-    // trim supprime les espaces, les retours à la ligne, les tabulations et autres "blanc"
-    $donnees = trim($donnees);
-    // stipslashes supprime les anti slash présent dans la chaîne 
-    $donnees = stripslashes($donnees);
-    // htmlsprecialchars convertit les caractères spéciaux en entités html
-    $donnees = htmlspecialchars($donnees);
-    return $donnees;
-};
+include 'fonctions.php';
 
 $mail_existant = false;
 
@@ -43,8 +33,8 @@ if (isset($_POST['inscription_particulier']) && !$mail_existant) {
         "mail" => validation($_POST['mail_particulier']),
         "statut" => $_POST['statut_particulier'],
         "id" => uniqid("par"),
-        "password" =>hash('md5',validation($_POST['password_particulier'])),
-        "atelier"=> []
+        "password" =>hash('md5',validation($_POST['password_particulier']))
+        
     );
 
 
@@ -76,3 +66,4 @@ else {
 
 
 header('Location:../pages/formulaire_inscription_particulier.php');
+exit();

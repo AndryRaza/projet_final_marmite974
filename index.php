@@ -45,7 +45,7 @@ include 'includes/fonctions.php'
 
     <nav class="navbar navbar-expand-md navbar-light d-flex justify-content-between ">
         <a class="navbar-brand" style="margin-left:50px" href="index.php">
-            <img src="ressources/img/logo.png" alt="" height="100" class="d-inline-block align-top">
+            <img src="ressources/img/logo.png" alt="" height="180" class="d-inline-block align-top">
         </a>
         <?php if (($_SESSION['user'] === '' && $_SESSION['admin'])) { //Quand on se connecte en mode admin
         ?>

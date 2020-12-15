@@ -7,17 +7,7 @@ $json = file_get_contents("../data/membre.json"); //ouvre le fichier
 $cuisinier = json_decode($json, true); //traduire les données en php 
 /* rècupère les données ( A chaque inscription d'un cuisinier) et les affiches ds un tableau. */
 
-//fonction de validation des données de chaque champ
-function validation($donnees)
-{
-  // trim supprime les espaces, les retours à la ligne, les tabulations et autres "blanc"
-  $donnees = trim($donnees);
-  // stipslashes supprime les anti slash présent dans la chaîne 
-  $donnees = stripslashes($donnees);
-  // htmlsprecialchars convertit les caractères spéciaux en entités html
-  $donnees = htmlspecialchars($donnees);
-  return $donnees;
-};
+include 'fonctions.php';
 
 $mail_existant = false;
 

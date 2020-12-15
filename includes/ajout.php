@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 /**************************Ajouter un membre "particulier" dans le fichier membre.json********************************/
 
 session_start();
@@ -12,10 +13,11 @@ $atelier = json_decode($json, true);
 
 
 
-    // lors de l'envoie du formulaire on fait une vérification que c'est bien une image etc.
+// lors de l'envoie du formulaire on fait une vérification que c'est bien une image etc.
 if (isset($_POST['ajout_atelier'])) {
-    // vérification image et upload
-{
+  // vérification image et upload
+
+  if (isset($_FILES['formFileSm'])) {
     //taille MAX 
     $maxSize = 1000000;
     //format autorisé
@@ -23,7 +25,7 @@ if (isset($_POST['ajout_atelier'])) {
     //message d'erreur
     if($_FILES['formFileSm']['error'] > 0 )
     {
-      Echo "Erreur pas d'image séléctionner!";
+      Echo "Erreur pas d'image séléctionné!";
       die;
     }
 
@@ -47,53 +49,74 @@ if (isset($_POST['ajout_atelier'])) {
     // Création de la variable nom temporaire qui va récuperer le fichier et le mettre dans un fichier temporaire
     $tmpName = $_FILES['formFileSm']['tmp_name'];
     // Ensuite on crée une variable qui va indiquer un chemin pour placer l'image
-    $fileName = "../ressources/" . $fileName ;
+    $fileName = "ressources/img/" . $fileName ;
     //envoie de l'image que l'on récupere dans le dossier temporaire pour le mettre dans le dossier Ressources
     $resultat = move_uploaded_file($tmpName, $fileName);
-    //si le fichier a bien été transferer un message apparait et vous renvoie sur le formulaire d'ajout
-    if($resultat)
-    {
-      Echo "Transfert terminé";
-      header ("Location:../pages/formulaire_ajout.php");
-    }
-}
+    
+  }
+  else {
+    $fileName = "ressources/img/logo.png";
+  }
 
-//si le bouton ajouter est actioner
-        $id_atelier = "atelier_" . md5(uniqid(rand(), true));
-        $_POST["id"] = $id_atelier;
+  
+
+  if (
+    isset($_POST['titre'])
+    && isset($_POST['Description'])
+    && isset($_POST['Day'])
+    && isset($_POST['Mois'])
+    && isset($_POST['Year'])
+    && isset($_POST['debut_horaireH'])
+    && isset($_POST['debut_horaireM'])
+    && isset($_POST['Duree'])
+    && isset($_POST['Places'])
+    && isset($_POST['Prix'])
+    && $_POST['Prix'] >0
+    && $_POST['Places'] >0
+    && $_POST['Duree'] >0
+    && $_POST['debut_horaireH'] >0
+    && $_POST['debut_horaireM'] >=0
+  ) {
+    //si le bouton ajouter est actioner
+    $id_atelier = "atelier_" . md5(uniqid(rand(), true));
+    $_POST["id"] = $id_atelier;
     // on créé un tableau avec les nouvelles données fournis par l'utilisateur 
     $newatelier = array(
-        "Id" => $_POST['id'],
-        "Titre" => $_POST['titre'],
-        "Description" => $_POST['Description'],
-        "Date" => array($_POST['Day'],$_POST['Mois'],$_POST['Year']),
-        "DebutHoraire" => array($_POST['debut_horaireH'],$_POST['debut_horaireM']),
-        "Image" => $fileName,
-        "Duree" => $_POST['Duree'],
-        "Places" => $_POST['Places'],
-        "Prix" => $_POST['Prix'],
-        "etat" => "inactif",
-        "createur" => $_SESSION['mail'],
-        "participant" => []
+      "Id" =>  $_POST['id'],
+      "Titre" => htmlspecialchars($_POST['titre']),
+      "Description" => htmlspecialchars($_POST['Description']),
+      "Date" => correction_date($_POST['Day'],$_POST['Mois'],$_POST['Year'])
+      ,
+      "DebutHoraire" => array((int) $_POST['debut_horaireH'], (int)$_POST['debut_horaireM']),
+      "Image" =>  $fileName,
+      "Duree" => (int)$_POST['Duree'],
+      "Places" => (int) $_POST['Places'],
+      "Prix" => (int) $_POST['Prix'],
+      "etat" => "inactif",
+      "createur" => $_SESSION['mail'],
+      "participant" => []
 
     );
 
-     // on vérifie si le fichier possède des informations ou pas
+    // on vérifie si le fichier possède des informations ou pas
     if ($atelier == null) {
-        // on crée un tableau vide si il n'y a pas de données dans le fichier json.
-        $firstatelier = array();
-        // on place le nouveau client dans le précédent tableau qui lui ira dans le fichier json
-        array_push($firstatelier, $newatelier);
-        // on inscrit le tout dans le fichier json
-        file_put_contents($path, json_encode($firstatelier));
+      // on crée un tableau vide si il n'y a pas de données dans le fichier json.
+      $firstatelier = array();
+      // on place le nouveau client dans le précédent tableau qui lui ira dans le fichier json
+      array_push($firstatelier, $newatelier);
+      // on inscrit le tout dans le fichier json
+      file_put_contents($path, json_encode($firstatelier));
     } else {
-        // si les données sont déjà dans le fichier json on ajoute directement le nouveau membre à ceux déjà présent
-        array_push($atelier, $newatelier);
-        // on inscrit le tout dans le fichier json
-        file_put_contents($path, json_encode($atelier));
+      // si les données sont déjà dans le fichier json on ajoute directement le nouveau membre à ceux déjà présent
+      array_push($atelier, $newatelier);
+      // on inscrit le tout dans le fichier json
+      file_put_contents($path, json_encode($atelier));
     }
-} 
 
-
-
-?>
+    $_SESSION['atelier_ajout'] = true;
+    header('Location: ../pages/formulaire_ajout.php');
+  } else {
+    $_SESSION['atelier_ajout_error'] = true;
+    header('Location: ../pages/formulaire_ajout.php');
+  }
+}
