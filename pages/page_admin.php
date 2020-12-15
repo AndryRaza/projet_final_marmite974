@@ -15,12 +15,13 @@ include '../includes/fonctions.php';
     <title>Page d'administration</title>
 </head>
 
-<nav class="navbar navbar-expand-md navbar-light ">
-    <div class="container">
-        <a class="navbar-brand " href="../index.php">
-            <img src="../ressources/img/logo.png" alt="" height="100" class="d-inline-block align-top logo">
-        </a>
-        <div class="d-flex flex-column ml-auto">
+<section class="contenu">
+    <nav class="navbar navbar-expand-md navbar-light ">
+        <div class="container">
+            <a class="navbar-brand " href="../index.php">
+                <img src="../ressources/img/logo.png" alt="" height="100" class="d-inline-block align-top logo">
+            </a>
+            <div class="d-flex flex-column ml-auto">
                 <p class="text-center" style="font-size:30px;">Mode Admin </p>
                 <div class="collapse navbar-collapse mb-4 justify-content-end " id="navbarNav">
                     <ul class="navbar-nav">
@@ -31,7 +32,7 @@ include '../includes/fonctions.php';
                         <li class="nav-item">
                             <a class="nav-link" href="page_admin.php">Voir les membres</a>
                         </li>
-                      
+
                         <li class="nav-item">
                             <form action="../includes/connexion.php" method="POST">
                                 <input type="submit" class="btn btn-primary justify-self-end ml-3 mt-3" name="deconnexion" value="Se déconnecter">
@@ -39,22 +40,23 @@ include '../includes/fonctions.php';
                         </li>
                     </ul>
                 </div>
-                
-            </div>
-    </div>
-</nav>
 
-<table class="table table-responsive-md">
-    <thead>
-        <tr>
-            <th class="text-center" scope="col">Nom</th>
-            <th class="text-center" scope="col">Statut</th>
-            <th class="text-center" scope="col">Mail</th>
-            <th class="text-center" scope="col">Spécialité/Téléphone</th>
-        </tr>
-    </thead>
-    <?php affichage_membre();  ?>
-</table>
+            </div>
+        </div>
+    </nav>
+
+    <table class="table table-responsive-md">
+        <thead>
+            <tr>
+                <th class="text-center" scope="col">Nom</th>
+                <th class="text-center" scope="col">Statut</th>
+                <th class="text-center" scope="col">Mail</th>
+                <th class="text-center" scope="col">Spécialité/Téléphone</th>
+            </tr>
+        </thead>
+        <?php affichage_membre();  ?>
+    </table>
+</section>
 
 
 <!-- Footer -->
