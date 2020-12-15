@@ -162,7 +162,7 @@ include 'includes/fonctions.php'
 
         <section class="container-fluid ">
             <div class="container">
-                <div class=" row row-cols-md-4 row-cols-1">
+                <div class=" row row-cols-md-3 row-cols-1">
                     <?php
                     affichage_atelier();
                     ?>

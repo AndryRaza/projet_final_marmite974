@@ -281,7 +281,8 @@ function affichage_membre()
             <p class="pt-4"><?= $value['Titre'] ?></p>
           </td>
           <td class="text-center">
-            <p class="pt-4"><?= implode('/', $value['Date']) ?> à <?php implode(':', $value['DebutHoraire']) ?></p>
+            <p class="pt-4"><?= implode('/', $value['Date']) ?> </p>
+            <p class="pt-4"><?php implode('h:', $value['DebutHoraire']) ?></p>
           </td>
           <td class="text-center">
             <p class="pt-4"><?= $value['Prix'] ?></p>

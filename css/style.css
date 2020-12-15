@@ -96,4 +96,8 @@ footer {
     text-align:center;
   }
 
+  .card{
+    margin:auto;
+  }
+
 }
