@@ -42,6 +42,4 @@
             </thead>
     </div>
 </div>
-<?php include '../pages/listeAtelierManager.php';
-
-include '../includes/footer.php'; ?>
+<?php include '../pages/listeAtelierManager.php'; ?>
