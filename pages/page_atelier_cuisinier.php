@@ -3,7 +3,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../styles/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
     <!-- jQuery and JS bundle w/ Popper.js -->
@@ -29,19 +29,25 @@
 <title>Ajouter un atelier</title>
 </head>
 
-<section class="contenu">
-    <div class="container">
-        <div class="table-responsive">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th class="align-middle text-center" scope="col">Nom</th>
-                        <th class="align-middle text-center" scope="col">Description</th>
-                        <th class="align-midlle text-center" scope="col">Etat</th>
-                        <th class="align-middle text-center" scope="col">Modifier</th>
-                    </tr>
-                </thead>
+<body>
+    <section class="contenu">
+        <div class="container">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="align-middle text-center" scope="col">Nom</th>
+                            <th class="align-middle text-center" scope="col">Description</th>
+                            <th class="align-midlle text-center" scope="col">Etat</th>
+                            <th class="align-middle text-center" scope="col">Modifier</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
         </div>
-    </div>
-</section>
-<?php include '../pages/listeAtelierManager.php'; ?>
+    </section>
+    <?php include '../pages/listeAtelierManager.php'; ?>
+</body>
+
+<!-- Footer -->
+<?php include '../includes/footer.php' ?>

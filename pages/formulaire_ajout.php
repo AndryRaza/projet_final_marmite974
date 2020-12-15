@@ -52,21 +52,7 @@ if (!isset($_SESSION['atelier_ajout_error'])) {
             echo '<div class="text-center font-weight-bold"> <span class="text-danger">Erreur lors de l\'ajout</span> </div>';
         }
         $_SESSION['atelier_ajout_error'] = false;
-        ?>
-        <section class="container-fluid">
-            <div class="container mt-2">
-                <div class="h2 text-center">AJOUT ATELIER</div>
-                <!-- Formulaire à insérer ici-->
-                <form action="../includes/ajout.php" method="POST" enctype="multipart/form-data">
 
-                    <!-- Titre -->
-                    <div class="form-group row row-cols-md-2 row-cols-1 mt-5">
-                        <label class="col-md-3" for="titre">Titre :</label>
-                        <input class="form-control col-md-9" type="text" name="titre" id="titre" maxlength="140" required pattern="[A-Za-z é è ]+" placeholder='Veuillez saisir un titre'>
-                    </div>
-            </div>
-        </section>
-        <?php
         if ($_SESSION['atelier_ajout_error'] === true) {
             echo '<div class="text-center font-weight-bold"> <span class="text-danger">Erreur lors de l\'ajout</span> </div>';
         }

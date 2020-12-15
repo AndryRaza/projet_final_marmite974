@@ -145,13 +145,15 @@
                             <!-- Bouton -->
                             <div class="d-flex justify-content-end">
                                 <button type="submit" name="submit_parametre" class="btn btn-warning text-uppercase text-white font-weight-bold btn AjoutEnchere mb-5" style="width:220px; height:80px;">Enregistrer modification</button>
+                            </div>
                         </form>
+                    <?php endif ?>
+                <?php endforeach ?>
             </div>
         </section>
     </section>
 </body>
 
-<?php endif ?>
-<?php endforeach ?>
+
 <!-- Footer -->
 <?php include '../includes/footer.php' ?>
