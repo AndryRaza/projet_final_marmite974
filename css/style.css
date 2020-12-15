@@ -71,7 +71,7 @@ footer {
   }
 
   .logo {
-    margin-left: 60%;
+    margin-left: 119%;
   }
 
   #form_co {
@@ -86,4 +86,13 @@ footer {
   footer{
     height:auto;
   }
+
+  .navbar-toggler {
+    margin:auto;
+  }
+
+  .navbar-nav{
+    text-align:center;
+  }
+
 }

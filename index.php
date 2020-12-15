@@ -47,33 +47,32 @@ include 'includes/fonctions.php'
         <nav class="navbar navbar-expand-md navbar-light d-flex justify-content-between ">
             <div class="container">
                 <a class="navbar-brand" href="index.php">
-                    <img src="ressources/img/logo.png" alt="" height="100" class="d-inline-block align-top logo">
+                    <img src="ressources/img/logo.png" alt="logo" height="100" class="d-inline-block align-top logo">
                 </a>
 
                 <?php if (($_SESSION['user'] === '' && $_SESSION['admin'])) { //Quand on se connecte en mode admin
                 ?>
-                    <div class="ml-auto">
-                        <p class="text-center" style="font-size:30px;">Mode Admin </p>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse mb-4 justify-content-end " id="navbarNav">
-                            <ul class="navbar-nav">
+                   <p class="msg text-center " style="font-size:40px;color:red; ">MODE ADMIN</p>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse mb-4 justify-content-end " id="navbarNav">
 
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="index.php">Accueil</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="pages/page_admin.php">Voir les membres</a>
-                                </li>
-                                <li class="nav-item">
-                                    <form action="includes/connexion.php" method="POST">
-                                        <input type="submit" class="btn btn-primary justify-self-end ml-3 mt-3" name="deconnexion" value="Se déconnecter">
-                                    </form>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                                <ul class="navbar-nav pt-2">
+
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="index.php">Accueil</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="pages/page_admin.php">Voir la liste des membres</a>
+                                    </li>
+                                    <li class="nav-item mt-2">
+                                        <form action="includes/connexion.php" method="POST">
+                                            <input type="submit" class="btn btn-primary justify-self-end ml-3 mt-2" name="deconnexion" value="Se déconnecter">
+                                        </form>
+                                    </li>
+                                </ul>
+                            </div>
                 <?php } ?>
             </div>
 
