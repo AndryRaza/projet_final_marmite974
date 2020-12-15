@@ -129,13 +129,13 @@ function affichage_atelier()
         </div>
         <div>
           <p class="card-text"> Durée : <?php echo $value['Duree'] ?> h</p>
-          <p class="card-text"> Commence à <?php echo implode(':',$value['DebutHoraire']) ?> </p>
+          <p class="card-text"> Commence à <?php echo implode('h:',$value['DebutHoraire']) ?> </p>
           <p class="card-text"> Nombre maximum de participants : <?= $value['Places_reservees'] ?> </p>
           <h4 class="card-title ml-auto text-center"><?php echo $value['Titre'] ?></h4>
         </div>
         <div class="card-body">
           <div class="barre"></div>
-          <p class="card-text description"><?php echo $value['Description'] ?></p>
+          <p class="card-text description mt-3"><?php echo $value['Description'] ?></p>
 
           <div class="d-flex justify-content-between">
             <p class="card_text mt-2 ml-auto" style="font-size:40px"><?php echo $value['Prix'] ?>€</p>
