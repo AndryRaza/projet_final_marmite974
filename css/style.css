@@ -29,7 +29,7 @@ nav {
 }
 
 .msg {
-  font-size: 40px;
+  font-size: 20px;
   width: 100%;
 }
 
@@ -37,72 +37,26 @@ nav {
   color: black;
   font-size: 16px;
 }
-/*
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-
-
-.cursor {
-=======
-
-#cursor {
->>>>>>> 51a2cf74449df342938865164c7ee6c9064561da
-    width: 40px;
-    height: 40px;
-    border: 1px dashed brown;
-    border-radius: 50%;
-    position: absolute;
-    animation: Anim1 1s infinite alternate;
-   pointer-events: none;
-}
-
-.cursor::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    width: 5px;
-    height: 5px;
-    background: crimson;
-    border-radius: 50%;
-}
-
-.expand {
-    animation: Anim2 .5s;
-    background: crimson;
-    border: 1px solid crimson;
-}
-@keyframes Anim1 {
-    from {
-        transform: scale(1) rotate(0deg);
-    }
-    to {
-        transform: scale(0.7) rotate(190deg);
-    }
-}
-
-@keyframes Anim2 {
-    0%{
-        transform: scale(1);
-    }
-    50%{
-        transform: scale(2);
-    }
-    100%{
-        transform: scale(1);
-        opacity:0;
-    }
-<<<<<<< HEAD
-}
-=======
-}
-
->>>>>>> 51a2cf74449df342938865164c7ee6c9064561da
->>>>>>> 373785e43c79617fa99569eb02de5a8deb0652e2
-*/
 
 .navbar-nav li a:hover {
   text-decoration: underline;
+}
+
+.navbar-nav li a{
+  font-size:16px;
+  margin-top:16px;
+}
+
+@media all and (max-width:400px){
+  .msg {
+    text-align: center;
+  }
+  .navbar-brand
+  {
+    margin:0%;
+  }
+
+  #logo{
+    margin-left:60%;
+  }
 }

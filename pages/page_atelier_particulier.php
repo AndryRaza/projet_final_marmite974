@@ -16,25 +16,22 @@ include '../includes/fonctions.php';
 </head>
 
 <nav class="navbar navbar-expand-md navbar-light ">
-    <a class="navbar-brand " href="index.php">
-        <img src="../ressources/img/logo.png" alt="logo" height="180" class="d-inline-block align-top">
-    </a>
-    <div class="d-flex flex-column ml-auto">
-        <div class="collapse navbar-collapse mb-4 justify-content-end " id="navbarNav">
-            <ul class="navbar-nav">
+    <div class="container">
+        <a class="navbar-brand " href="index.php">
+            <img src="../ressources/img/logo.png" alt="" height="100" class="d-inline-block align-top">
+        </a>
+        <div class="d-flex flex-column ml-auto">
+            <div class="collapse navbar-collapse mb-4 justify-content-end mt-3 " id="navbarNav">
+                <ul class="navbar-nav">
 
-                <li class="nav-item active">
-                    <a class="nav-link" href="../index.php">Accueil</a>
-                </li>
+                    <li class="nav-item active">
+                        <a class="nav-link btn btn-primary text-white" href="../index.php">Accueil</a>
+                    </li>
 
-                <li class="nav-item">
-                    <form action="../includes/connexion.php" method="POST">
-                        <input type="submit" class="btn btn-primary justify-self-end ml-3" name="deconnexion" value="Se déconnecter">
-                    </form>
-                </li>
-            </ul>
+    
+                </ul>
+            </div>
         </div>
-
     </div>
 </nav>
 <section class="container">

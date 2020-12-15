@@ -43,9 +43,10 @@ include 'includes/fonctions.php'
 
 <body>
 
-    <nav class="navbar navbar-expand-md navbar-light d-flex justify-content-between ">
-        <a class="navbar-brand" style="margin-left:50px" href="index.php">
-            <img src="ressources/img/logo.png" alt="" height="180" class="d-inline-block align-top">
+    <nav class="navbar navbar-expand-md navbar-light d-flex justify-content-between">
+        <div class="container">
+        <a class="navbar-brand" href="index.php">
+            <img src="ressources/img/logo.png" alt="" height="100" class="d-inline-block align-top" id="logo">
         </a>
         <?php if (($_SESSION['user'] === '' && $_SESSION['admin'])) { //Quand on se connecte en mode admin
         ?>
@@ -63,7 +64,7 @@ include 'includes/fonctions.php'
 
                         <li class="nav-item">
                             <form action="includes/connexion.php" method="POST">
-                                <input type="submit" class="btn btn-primary justify-self-end ml-3" name="deconnexion" value="Se déconnecter">
+                                <input type="submit" class="btn btn-primary justify-self-end ml-3 mt-3" name="deconnexion" value="Se déconnecter">
                             </form>
                         </li>
                     </ul>
@@ -77,7 +78,7 @@ include 'includes/fonctions.php'
             <form action="includes/connexion.php" method="POST" class="pt-2" style="margin-right: 50px;">
                 <input class="form-control mb-2" type="text" name="mail_user" placeholder="Votre adresse email">
                 <input class="form-control mb-2" type="password" name="mdp_user" placeholder="Votre mot de passe">
-                Pas encore inscrit ? <a href="pages/choix_utilisateur.html">S'inscrire</a>
+               <span style="font-size:13px;"> Pas encore inscrit ?  <a href="pages/choix_utilisateur.html">S'inscrire</a></span>
                 <input type="submit" class="btn btn-primary" name="connexion" value="Se connecter">
             </form>
         <?php } ?>
@@ -90,9 +91,10 @@ include 'includes/fonctions.php'
                     <?php
                     if ($_SESSION['statut'] == "cuisinier") { //Si le statut est celui d'un cuisinier
                     ?>
+                        <p class="msg" style="font-size:20px;">Bonjour <?= $_SESSION['user'] ?></p>
                         <div class="collapse navbar-collapse mb-4 justify-content-end " id="navbarNav">
 
-                            <ul class="navbar-nav">
+                            <ul class="navbar-nav pt-2">
 
                                 <li class="nav-item active">
                                     <a class="nav-link" href="index.php">Accueil</a>
@@ -103,9 +105,9 @@ include 'includes/fonctions.php'
                                 <li class="nav-item">
                                     <a class="nav-link" href="pages/formulaire_ajout.php">Ajouter un atelier</a>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item mt-2">
                                     <form action="includes/connexion.php" method="POST">
-                                        <input type="submit" class="btn btn-primary justify-self-end ml-3" name="deconnexion" value="Se déconnecter">
+                                        <input type="submit" class="btn btn-primary justify-self-end ml-3 mt-2" name="deconnexion" value="Se déconnecter">
                                     </form>
                                 </li>
                             </ul>
@@ -115,8 +117,8 @@ include 'includes/fonctions.php'
                     <?php
                     if ($_SESSION['statut'] == 'particulier') { //Sinon le statut est un particulier et on affiche
                     ?>
-                        <p class="msg">Bonjour <?= $_SESSION['user'] ?></p>
-                        <div class="collapse navbar-collapse mb-4 justify-content-end " id="navbarNav">
+                        <p class="msg" style="font-size:20px;">Bonjour <?= $_SESSION['user'] ?></p>
+                        <div class="collapse navbar-collapse  justify-content-end mb-3" id="navbarNav">
                             <ul class="navbar-nav">
 
                                 <li class="nav-item active">
@@ -127,7 +129,7 @@ include 'includes/fonctions.php'
                                 </li>
                                 <li class="nav-item">
                                     <form action="includes/connexion.php" method="POST">
-                                        <input type="submit" class="btn btn-primary justify-self-end ml-3" name="deconnexion" value="Se déconnecter">
+                                        <input type="submit" class="btn btn-primary justify-self-end ml-3 mt-3" name="deconnexion" value="Se déconnecter">
                                     </form>
                                 </li>
                             </ul>
@@ -138,6 +140,7 @@ include 'includes/fonctions.php'
             }
         }
         ?>
+        </div>
     </nav>
 
     <header class="container-fluid py-5">
