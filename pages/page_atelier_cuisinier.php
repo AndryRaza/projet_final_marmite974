@@ -45,6 +45,7 @@
                         <th class="align-middle text-center" scope="col">Modifier</th>
                     </tr>
                 </thead>
+            </table>
         </div>
     </div>
 </section>
