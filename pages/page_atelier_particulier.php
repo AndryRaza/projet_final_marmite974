@@ -48,3 +48,6 @@ include '../includes/fonctions.php';
     </table>
 
 </section>
+
+<!-- Footer -->
+<?php include '../includes/footer.php' ?>

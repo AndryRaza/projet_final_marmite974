@@ -39,24 +39,24 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/style.css">
     <title>Page de modification</title>
-    </head>
+</head>
 
 
-        <!-- Header / Nav-->
-        <header >
-            <nav class="navbar container-fluid mb-5">
-                <a href="../index.html"><img src="../ressources/img/logo.png" alt="Logo" height="180"></a>
-                <h1 class="py-3 text-center">Formulaire d'ajout d'atelier</h1>
-                <div>
-                    <a href="../index.php">
-                        <input class="btn btn-info" type="button" value="Accueil"></a>
-                    <a href="formulaire_ajout.php">
-                        <input class="btn btn-info" type="button" value="Ajouter un atelier"></a>
-                </div>
+<!-- Header / Nav-->
+<header>
+    <nav class="navbar container-fluid mb-5">
+        <a href="../index.html"><img src="../ressources/img/logo.png" alt="Logo" height="180"></a>
+        <h1 class="py-3 text-center">Formulaire d'ajout d'atelier</h1>
+        <div>
+            <a href="../index.php">
+                <input class="btn btn-info" type="button" value="Accueil"></a>
+            <a href="formulaire_ajout.php">
+                <input class="btn btn-info" type="button" value="Ajouter un atelier"></a>
+        </div>
 
-            </nav>
-        </header>
-      
+    </nav>
+</header>
+
 
 <body>
     <section class="container-fluid">
@@ -151,3 +151,5 @@
 
 <?php endif ?>
 <?php endforeach ?>
+<!-- Footer -->
+<?php include '../includes/footer.php' ?>

@@ -18,9 +18,9 @@
             <h1 class="py-3">Liste des ateliers</h1>
             <div>
                 <a href="../index.php">
-                    <input class="btn btn-info" type="button" value="Accueil"></a>
+                    <input class="btn btn-primary" type="button" value="Accueil"></a>
                 <a href="formulaire_ajout.php">
-                    <input class="btn btn-info" type="button" value="Ajouter un atelier"></a>
+                    <input class="btn btn-primary" type="button" value="Ajouter un atelier"></a>
             </div>
 
         </nav>
@@ -42,4 +42,6 @@
             </thead>
     </div>
 </div>
-<?php include '../pages/listeAtelierManager.php'; ?>
+<?php include '../pages/listeAtelierManager.php';
+
+include '../includes/footer.php'; ?>

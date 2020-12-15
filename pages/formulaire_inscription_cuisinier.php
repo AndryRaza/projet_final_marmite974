@@ -110,8 +110,9 @@ if (!isset($_SESSION['erreur_cuisinier'])) {
         </div>
     </section>
 
-   
-    
+    <!-- Footer -->
+    <?php include '../includes/footer.php' ?>
+
     <script>
         var check = function() {
             if (document.getElementById('password_cuisinier').value != '') {

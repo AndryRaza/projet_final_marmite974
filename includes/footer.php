@@ -1,5 +1,9 @@
+<head>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
 <!-- Footer -->
-<footer class="page-footer footer font-small pt-4" style="background-color: #F3671E;">
+<footer class="page-footer footer font-small pt-4 container-fluid" style="background-color: #F3671F; position:absolute; bottom:0; left:0; font-size:13px;">
 
     <!-- Footer Links -->
     <div class="container-fluid text-center text-md-left">
@@ -12,7 +16,7 @@
 
                 <!-- Content -->
                 <h5 class="text-uppercase">Marmite974</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum labore illo corrupti, veritatis at sed illum necessitatibus omnis architecto aspernatur, blanditiis magnam itaque doloremque ex iure voluptate vel debitis eos?</p>
+                <p>Nous sommes un centre de formation de cuisine qui propose des ateliers à nos élèves à partir de 12 ans, mais aussi à des particuliers. Les cours proposés aux particuliers permettent de financer l’achat de matériels et de matières premières.</p>
 
             </div>
             <!-- Grid column -->
@@ -48,16 +52,16 @@
 
                 <ul class="list-unstyled">
                     <li>
-                        <a href="#!"><i class="fab fa-facebook">Facebook</i></a>
+                        <a href="#!" class="font-link"><i class="fab fa-facebook"> Facebook</i></a>
                     </li>
-                    <li>
-                        <a href="#!"><i class="fab fa-twitter">Twitter</i></a>
+                    <li class="mt-1">
+                        <a href="#!" class="font-link"><i class="fab fa-twitter"> Twitter</i></a>
                     </li>
-                    <li>
-                        <a href="#!"><i class="fab fa-instagram">Instagram</i></a>
+                    <li class="mt-1">
+                        <a href="#!" class="font-link"><i class="fab fa-instagram"> Instagram</i></a>
                     </li>
-                    <li>
-                        <a href="#!"><i class="fab fa-linkedin-in">Linkedin</i></a>
+                    <li class="mt-1">
+                        <a href="#!" class="font-link"><i class="fab fa-linkedin-in"> Linkedin</i></a>
                     </li>
                 </ul>
 
@@ -70,12 +74,8 @@
     </div>
     <!-- Footer Links -->
 
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">Mentions légales
-    </div>
-    <!-- Copyright -->
-
 </footer>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+
 <!-- Footer -->
