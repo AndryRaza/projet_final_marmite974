@@ -46,7 +46,7 @@
                         <?php include '../pages/listeAtelierManager.php'; ?>
                     </tr>
                 </thead>
-                <?php include '../pages/listeAtelierManager.php'; ?>
+               
             </table>
         </div>
         
