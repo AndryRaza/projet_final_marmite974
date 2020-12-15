@@ -64,8 +64,8 @@ include 'includes/fonctions.php'
                         </li>
 
                 </div>
-
             </div>
+       
         <?php } ?>
 
         <?php if ($_SESSION['user'] === '' && !$_SESSION['admin']) { //Si personne est connecté, on affiche le formulaire de connexion
