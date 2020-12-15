@@ -62,7 +62,7 @@ footer {
   font-size:13px;
 }
 
-@media all and (max-width: 400px) {
+@media all and (max-width: 480px) {
   .msg {
     text-align: center;
   }
