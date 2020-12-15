@@ -164,5 +164,5 @@ include 'includes/fonctions.php'
 
 
     <!--- Footer -->
-    <?php //include 'includes/footer.php' ?>
+    <?php include 'includes/footer.php' ?>
 </body>
