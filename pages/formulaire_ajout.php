@@ -71,7 +71,7 @@ if (!isset($_SESSION['atelier_ajout_error'])) {
                 <!-- Image -->
                 <div class="form-group row row-cols-md-2 row-cols-1">
                     <label class="form-label col-md-3" for="formFileSm">Image :</label>
-                    <input class="form-control form-control-sm col-md-9" type="file" id="formFileSm" name="formFileSm" required>
+                    <input class="form-control form-control-sm col-md-9" type="file" id="formFileSm" name="image" required>
                 </div>
 
                 <!-- Date -->

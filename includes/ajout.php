@@ -11,54 +11,52 @@ $path = '../data/atelier.json';
 $json = file_get_contents("../data/atelier.json");
 $atelier = json_decode($json, true);
 
-
+include '../includes/fonctions.php';
 
 // lors de l'envoie du formulaire on fait une vérification que c'est bien une image etc.
 if (isset($_POST['ajout_atelier'])) {
-  // vérification image et upload
-
-  if (isset($_FILES['formFileSm'])) {
-    //taille MAX 
-    $maxSize = 1000000;
-    //format autorisé
-    $validExt = array('.jpg', '.jpeg', '.gif', '.png');
-    //message d'erreur
-    if($_FILES['formFileSm']['error'] > 0 )
-    {
-      Echo "Erreur pas d'image séléctionné!";
-      die;
-    }
-
-    $fileSize = $_FILES['formFileSm']['size'];
-
-    if ($fileSize > $maxSize)
-    {
-      Echo "Fichier trop volumineux";
-      die;
-    }
-
-    //création d'une variable fileName
-    $fileName = $_FILES['formFileSm']['name'];
-    $fileExt = "." . strtolower(substr(strrchr($fileName, '.'), 1));
-
-    if(!in_array($fileExt, $validExt))
-    {
-      Echo "Mauvais format de fichier";
-      die;
-    }
-    // Création de la variable nom temporaire qui va récuperer le fichier et le mettre dans un fichier temporaire
-    $tmpName = $_FILES['formFileSm']['tmp_name'];
-    // Ensuite on crée une variable qui va indiquer un chemin pour placer l'image
-    $fileName = "ressources/img/" . $fileName ;
-    //envoie de l'image que l'on récupere dans le dossier temporaire pour le mettre dans le dossier Ressources
-    $resultat = move_uploaded_file($tmpName, $fileName);
-    
-  }
-  else {
-    $fileName = "ressources/img/logo.png";
-  }
-
   
+  $dossier = 'ressources/img';
+  $fichier = basename($_FILES['image']['name']);
+  $taille_maxi = 1000000;
+  $taille = filesize($_FILES['image']['tmp_name']);
+  $extensions = array('.png', '.gif', '.jpg', '.jpeg');
+  $extension = strrchr($_FILES['image']['name'], '.');
+
+  if (!in_array($extension, $extensions)) {
+      $erreur = 'Vous devez uploader un fichier de type png, gif, jpg, jpeg';
+  }
+
+  if ($taille > $taille_maxi) {
+      $erreur = 'Le fichier est trop gros...';
+  }
+
+  if ($_FILES['image']['name'] === ' ') {
+      $erreur = 'Nom de l\'image incorrect';
+  }
+
+  if (stristr($fichier, '<') != FALSE) {
+      $erreur = 'Nom de l\'image incorrect';
+  }
+
+  if (!isset($erreur)) {
+      $fichier = strtr(
+          $fichier,
+          'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ',
+          'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy'
+      );
+      $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichier);
+      if (move_uploaded_file($_FILES['image']['tmp_name'], $dossier . $fichier)) //Si la fonction renvoie TRUE, c'est que ça a fonctionné...
+      {
+          echo '';
+      } else //Sinon (la fonction renvoie FALSE).
+      {
+          $fichier = 'no-image.png';
+      }
+  } else {
+      echo $erreur;
+      $fichier = 'no-image.png';
+  }
 
   if (
     isset($_POST['titre'])
@@ -88,7 +86,7 @@ if (isset($_POST['ajout_atelier'])) {
       "Date" => correction_date($_POST['Day'],$_POST['Mois'],$_POST['Year'])
       ,
       "DebutHoraire" => array((int) $_POST['debut_horaireH'], (int)$_POST['debut_horaireM']),
-      "Image" =>  $fileName,
+      "Image" =>  $fichier,
       "Duree" => (int)$_POST['Duree'],
       "Places" => (int) $_POST['Places'],
       "Prix" => (int) $_POST['Prix'],

@@ -16,21 +16,12 @@ include '../includes/fonctions.php';
 </head>
 
 <nav class="navbar navbar-expand-md navbar-light ">
-<<<<<<< HEAD
     <a class="navbar-brand " href="index.php">
         <img src="../ressources/img/logo.png" alt="" height="100" class="d-inline-block align-top">
     </a>
     <div class="d-flex flex-column ml-auto">
         <div class="collapse navbar-collapse mb-4 justify-content-end " id="navbarNav">
             <ul class="navbar-nav">
-=======
-        <a class="navbar-brand " href="index.php">
-            <img src="../ressources/img/logo.png" alt="logo" height="180" class="d-inline-block align-top">
-        </a>
-        <div class="d-flex flex-column ml-auto">
-                <div class="collapse navbar-collapse mb-4 justify-content-end " id="navbarNav">
-                    <ul class="navbar-nav">
->>>>>>> ff316e2cb7feb5ebf6d0a3b46e5c4a32a7d88c3e
 
                 <li class="nav-item active">
                     <a class="nav-link" href="../index.php">Accueil</a>
@@ -47,18 +38,6 @@ include '../includes/fonctions.php';
     </div>
 </nav>
 <section class="container">
-<<<<<<< HEAD
-    <table class="table table-responsive-md">
-        <thead>
-            <tr>
-                <th class="text-center" scope="col">Nom</th>
-                <th class="text-center" scope="col">Date</th>
-                <th class="text-center" scope="col">Prix</th>
-            </tr>
-        </thead>
-        <?php affichage_atelier_particulier();  ?>
-    </table>
-=======
 <table class="table table-responsive-md">
     <thead>
         <tr>
@@ -70,6 +49,5 @@ include '../includes/fonctions.php';
     </thead>
     <?php affichage_atelier_particulier();  ?>
 </table>
->>>>>>> ff316e2cb7feb5ebf6d0a3b46e5c4a32a7d88c3e
 
 </section>
