@@ -71,7 +71,7 @@ footer {
   }
 
   .logo {
-    margin-left: 60%;
+    margin-left: 0!important;
   }
 
   #form_co {
