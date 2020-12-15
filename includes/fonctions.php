@@ -28,6 +28,8 @@ function correction_date($jour,$mois,$year){  //On corrige si la date est incorr
   {
     return array(30, $mois, $year);
   }
+
+  return array($jour,$mois,$year);
 }
 
 
@@ -120,7 +122,7 @@ function affichage_atelier()
               echo 'Complet';
             }  ?>
           </div>
-          <img src="<?= $value['Image'] ?>" class="card-img-top" text="Date" alt="plat" height="300px" width="200px">
+          <img src="ressources/img/<?= $value['Image'] ?>" class="card-img-top" text="Date" alt="plat" height="300px" width="200px">
 
         </div>
         <div>
