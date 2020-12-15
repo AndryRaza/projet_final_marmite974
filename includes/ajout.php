@@ -90,7 +90,7 @@ if (isset($_POST['ajout_atelier'])) {
       "Duree" => (int)$_POST['Duree'],
       "Places" => (int) $_POST['Places'],
       "Prix" => (int) $_POST['Prix'],
-      "etat" => "inactif",
+      "etat" => "Inactif",
       "createur" => $_SESSION['mail'],
       "participant" => []
 

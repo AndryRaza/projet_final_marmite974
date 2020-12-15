@@ -107,7 +107,7 @@ function affichage_atelier()
      * c'est donc le jour qui va faire la différence 
      */
 
-   if ($value['etat'] == "actif") : ?>
+   if ($value['etat'] == "Actif") : ?>
       <!-- affiche que les cartes actives -->
       <div class="card shadow  mb-3 mx-md-3 " style="width: 20rem;" id="card_<?= $value['Id'] ?>">
 
@@ -175,7 +175,7 @@ function affichage_membre()
   foreach ($membre as $key => $value) { ?>
     <tr>
       <td class="text-center">
-        <p class="pt-5"><?= $value['nom'] ?></p>
+        <p class="pt-5"><?= $value['name'] ?></p>
       </td>
       <td class="text-center">
         <p class="pt-5"><?= $value['statut'] ?></p>

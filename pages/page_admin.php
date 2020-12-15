@@ -18,8 +18,9 @@ include '../includes/fonctions.php';
 </head>
 
 <nav class="navbar navbar-expand-md navbar-light ">
+    <div class="container">
         <a class="navbar-brand " href="../index.php">
-            <img src="../ressources/img/logo.png" alt="" height="180" class="d-inline-block align-top">
+            <img src="../ressources/img/logo.png" alt="" height="100" class="d-inline-block align-top">
         </a>
         <div class="d-flex flex-column ml-auto">
                 <p class="text-center" style="font-size:30px;">Mode Admin </p>
@@ -35,13 +36,14 @@ include '../includes/fonctions.php';
                       
                         <li class="nav-item">
                             <form action="../includes/connexion.php" method="POST">
-                                <input type="submit" class="btn btn-primary justify-self-end ml-3" name="deconnexion" value="Se déconnecter">
+                                <input type="submit" class="btn btn-primary justify-self-end ml-3 mt-3" name="deconnexion" value="Se déconnecter">
                             </form>
                         </li>
                     </ul>
                 </div>
                 
             </div>
+    </div>
 </nav>
 
 <table class="table table-responsive-md">
