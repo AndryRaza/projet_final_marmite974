@@ -11,6 +11,8 @@ if (!isset($_SESSION['atelier_ajout_error'])) {
 }
 ?>
 
+
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,8 +41,8 @@ if (!isset($_SESSION['atelier_ajout_error'])) {
                 <a href="../index.php"><input class="btn btn-info" type="button" value="Accueil"></a>
             </nav>
         </header>
-
-        <?php
+        <?php if ($_SESSION['user'] !== '' && $_SESSION['statut'] === 'cuisinier'){ 
+       
         if ($_SESSION['atelier_ajout'] === true) {
             echo '<div class="text-center font-weight-bold"> <span class="text-success">Atelier ajouté en attente d\'activation !</span> </div>';
         }
@@ -137,5 +139,11 @@ if (!isset($_SESSION['atelier_ajout_error'])) {
         </section>
     </section>
     <!-- Footer -->
+    <?php }
+
+else {
+    echo '<p class="text-center" style="color:red; font-size:40px;">Erreur</p>';
+}
+?>
     <?php include '../includes/footer.php' ?>
 </body>
