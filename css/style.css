@@ -3,13 +3,6 @@ p {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-
 .contenu {
   min-height: 100%;
 }
@@ -61,10 +54,6 @@ nav {
   height: 100px;
   overflow: hidden;
   text-align: justify;
-}
-
-footer {
-  height: 180px;
 }
 
 @media all and (max-width: 400px) {

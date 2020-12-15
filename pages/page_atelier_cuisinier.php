@@ -52,5 +52,6 @@
         <?php include '../pages/listeAtelierManager.php'; ?>
     <?php } else {
         header('Location: ../index.php');
-    } ?>
+    }
+    include '../includes/footer.php' ?>
 </body>
