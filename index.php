@@ -53,27 +53,27 @@ include 'includes/fonctions.php'
 
                 <?php if (($_SESSION['user'] === '' && $_SESSION['admin'])) { //Quand on se connecte en mode admin
                 ?>
-                   <p class="msg text-center " style="font-size:40px;color:red; ">MODE ADMIN</p>
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                            <div class="collapse navbar-collapse mb-4 justify-content-end " id="navbarNav">
+                    <p class="msg text-center " style="font-size:40px;color:red; ">MODE ADMIN</p>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse mb-4 justify-content-end " id="navbarNav">
 
-                                <ul class="navbar-nav pt-2">
+                        <ul class="navbar-nav pt-2">
 
-                                    <li class="nav-item active">
-                                        <a class="nav-link" href="index.php">Accueil</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="pages/page_admin.php">Voir la liste des membres</a>
-                                    </li>
-                                    <li class="nav-item mt-2">
-                                        <form action="includes/connexion.php" method="POST">
-                                            <input type="submit" class="btn btn-primary justify-self-end ml-3 mt-2" name="deconnexion" value="Se déconnecter">
-                                        </form>
-                                    </li>
-                                </ul>
-                            </div>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="index.php">Accueil</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="pages/page_admin.php">Voir la liste des membres</a>
+                            </li>
+                            <li class="nav-item mt-2">
+                                <form action="includes/connexion.php" method="POST">
+                                    <input type="submit" class="btn btn-primary justify-self-end ml-3 mt-2" name="deconnexion" value="Se déconnecter">
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
                 <?php } ?>
             </div>
 
@@ -163,7 +163,7 @@ include 'includes/fonctions.php'
 
         <section class="container-fluid ">
             <div class="container">
-                <div class=" row row-cols-md-3 row-cols-1">
+                <div class=" row row-cols-md-3 row-cols-1 d-flex justify-content-center">
                     <?php
                     affichage_atelier();
                     ?>
