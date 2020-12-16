@@ -173,7 +173,7 @@ include 'includes/fonctions.php'
     </section>
 
     <!--- Footer -->
-    <footer class="page-footer footer font-small  container-fluid" style="background-color: #F3671F; position:relative; bottom:0; left:0; font-size:13px;">
+    <footer class="page-footer footer font-small  container-fluid">
 
         <!-- Footer Links -->
         <div class="container-fluid text-center text-md-left">

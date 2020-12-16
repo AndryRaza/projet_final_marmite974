@@ -83,7 +83,7 @@ if (isset($_POST['ajout_atelier'])) {
       "Id" =>  $_POST['id'],
       "Titre" => htmlspecialchars($_POST['titre']),
       "Description" => htmlspecialchars($_POST['Description']),
-      "Date" => correction_date($_POST['Day'],$_POST['Mois'],$_POST['Year'])
+      "Date" => correction_date((int)$_POST['Day'],htmlspecialchars($_POST['Mois']),(int)$_POST['Year'])
       ,
       "DebutHoraire" => array((int) $_POST['debut_horaireH'], (int)$_POST['debut_horaireM']),
       "Image" =>  $fichier,
