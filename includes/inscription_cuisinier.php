@@ -14,7 +14,7 @@ $mail_existant = false;
 
 foreach ($cuisinier as $key => $value)        //On vérifie que l'adresse email est pas déjà présent 
 {
-  if ($value['mail'] === $_POST['mail_particulier']) {
+  if ($value['mail'] === $_POST['email_du_cuisinier']) {
     $mail_existant = true;
   }
 }
