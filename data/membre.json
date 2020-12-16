@@ -1,3 +1,11 @@
 [
-   
+    {
+        "name": "Cuis",
+        "prenom": "Inier",
+        "mail": "cuisinier@mail.com",
+        "specialite": "",
+        "statut": "cuisinier",
+        "id": "cui5fd99a2bce0cd",
+        "password": "61123e9a3e2819b830485c4e9ac32182"
+    }
 ]

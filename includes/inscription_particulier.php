@@ -33,8 +33,7 @@ if (isset($_POST['inscription_particulier']) && !$mail_existant) {
         "mail" => validation($_POST['mail_particulier']),
         "statut" => $_POST['statut_particulier'],
         "id" => uniqid("par"),
-        "password" =>hash('md5',validation($_POST['password_particulier']))
-        
+        "password" => hash('md5', validation($_POST['password_particulier']))
     );
 
 
@@ -56,14 +55,15 @@ if (isset($_POST['inscription_particulier']) && !$mail_existant) {
             file_put_contents($path, json_encode($membres));
         }
         $_SESSION['reussite'] = true;
+        header('Location:../index.php');
+        exit();
     } else {
         $_SESSION['erreur'] = true;
+        header('Location:../pages/formulaire_inscription_particulier.php');
+        exit();
     }
-}
-else {
+} else {
     $_SESSION['erreur'] = true;
+    header('Location:../pages/formulaire_inscription_particulier.php');
+        exit();
 }
-
-
-header('Location:../pages/formulaire_inscription_particulier.php');
-exit();
