@@ -19,7 +19,9 @@ if (isset($_POST['submit_parametre'])) : ?>
             $atelier[$key]['Date'][1] = $_POST['Mois'];
             $atelier[$key]['Date'][2] = $_POST['Year'];
             $atelier[$key]['Duree'] =  $_POST['Duree'];
-            $atelier[$key]['Places'] =  $_POST['Places'];
+            if( $atelier[$key]['Places'] >= $_POST['Places']) { 
+                $atelier[$key]['Places_reservees'] = $atelier[$key]['Places'];
+            }else {$atelier[$key]['Places_reservees'] = $_POST['Places'];};
             $atelier[$key]['Prix'] =  $_POST['Prix'];
             file_put_contents($data_file, json_encode($atelier));
         }
@@ -137,7 +139,7 @@ if (isset($_POST['submit_parametre'])) : ?>
                                 <!-- Places disponible -->
                                 <div class="form-group row row-cols-md-2 row-cols-1">
                                     <label class="col-md-3" for="Places">Places disponibles :</label>
-                                    <input class="form-control col-md-9" type="number" name="Places" id="Places" required placeholder="Entrer le nombre de place disponibles" pattern="[0-9]+" min="1" value='<?= $value['Places'] ?>'>
+                                    <input class="form-control col-md-9" type="number" name="Places" id="Places" required placeholder="Entrer le nombre de place disponibles" pattern="[0-9]+" min="1" value='<?= $value['Places_reservees'] ?>'>
                                 </div>
 
                                 <!-- Prix -->
@@ -159,6 +161,7 @@ if (isset($_POST['submit_parametre'])) : ?>
 <?php endforeach ?>
 <?php } else {
           header('Location: ../index.php');
+          exit();
     }
 ?>
 <!-- Footer -->
