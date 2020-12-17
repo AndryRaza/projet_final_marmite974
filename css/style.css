@@ -51,7 +51,7 @@ nav {
 }
 
 .description {
-  height: 100px;
+  height: auto !important;
   overflow: hidden;
   text-align: justify;
 }
@@ -60,6 +60,7 @@ footer {
   height: 100%;
   background-color: #f3671f;
   font-size: 13px;
+  margin-top: 1rem !important;
 }
 
 @media all and (max-width: 480px) {
@@ -72,7 +73,6 @@ footer {
 
   .logo {
     margin-left: 119%;
-    
   }
 
   #form_co {
@@ -89,15 +89,14 @@ footer {
   }
 
   .navbar-toggler {
-    margin:auto;
+    margin: auto;
   }
 
-  .navbar-nav{
-    text-align:center;
+  .navbar-nav {
+    text-align: center;
   }
 
-  .card{
-    margin:auto;
+  .card {
+    margin: auto;
   }
-
 }

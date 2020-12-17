@@ -3,8 +3,20 @@
 session_start();
 if (isset($_POST['submit_parametre'])) : ?>
 
+
     <!---->
     <?php
+    // fonction pour valider les données 
+    function validation($donnees)
+    {
+        // trim supprime les espaces, les retours à la ligne, les tabulations et autres "blanc"
+        $donnees = trim($donnees);
+        // stipslashes supprime les anti slash présent dans la chaîne 
+        $donnees = stripslashes($donnees);
+        // htmlsprecialchars convertit les caractères spéciaux en entités html
+        $donnees = htmlspecialchars($donnees);
+        return $donnees;
+    };
 
     $data_file = "../data/atelier.json";
     $json = file_get_contents("../data/atelier.json");
@@ -13,16 +25,18 @@ if (isset($_POST['submit_parametre'])) : ?>
     $id = $_GET['id'];
     foreach ($atelier as $key => $value) {
         if ($value['Id'] == $id) {
-            $atelier[$key]['Titre'] =  $_POST['titre'];
-            $atelier[$key]['Description'] =  $_POST['Description'];
-            $atelier[$key]['Date'][0] = $_POST['Day'];
-            $atelier[$key]['Date'][1] = $_POST['Mois'];
-            $atelier[$key]['Date'][2] = $_POST['Year'];
-            $atelier[$key]['Duree'] =  $_POST['Duree'];
-            if( $atelier[$key]['Places'] >= $_POST['Places']) { 
+            $atelier[$key]['Titre'] =  validation($_POST['titre']);
+            $atelier[$key]['Description'] =  validation($_POST['Description']);
+            $atelier[$key]['Date'][0] = validation($_POST['Day']);
+            $atelier[$key]['Date'][1] = validation($_POST['Mois']);
+            $atelier[$key]['Date'][2] = validation($_POST['Year']);
+            $atelier[$key]['Duree'] =  validation($_POST['Duree']);
+            if ($atelier[$key]['Places'] >= $_POST['Places']) {
                 $atelier[$key]['Places_reservees'] = $atelier[$key]['Places'];
-            }else {$atelier[$key]['Places_reservees'] = $_POST['Places'];};
-            $atelier[$key]['Prix'] =  $_POST['Prix'];
+            } else {
+                $atelier[$key]['Places_reservees'] = $_POST['Places'];
+            };
+            $atelier[$key]['Prix'] =  validation((int)$_POST['Prix']);
             file_put_contents($data_file, json_encode($atelier));
         }
     }
@@ -157,13 +171,9 @@ if (isset($_POST['submit_parametre'])) : ?>
                 </div>
             </section>
         </section>
-
-
-<?php endif ?>
-<?php endforeach ?>
-<?php } else {
-          header('Location: ../index.php');
-          exit();
+    <?php } else {
+        header('Location: ../index.php');
+        exit();
     }
     ?>
     <!-- Footer -->
