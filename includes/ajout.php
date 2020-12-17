@@ -113,7 +113,7 @@ if (isset($_POST['ajout_atelier'])) {
     }
 
     $_SESSION['atelier_ajout'] = true;
-    header('Location: ../pages/formulaire_ajout.php');
+    header('Location: ../pages/page_atelier_cuisinier.php');
   } else {
     $_SESSION['atelier_ajout_error'] = true;
     header('Location: ../pages/formulaire_ajout.php');
